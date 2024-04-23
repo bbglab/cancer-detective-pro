@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ca-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+<title>Cancer Detective: Què és el càncer?</title>
+<meta name="description" content="An analysis simulation based on CGI to learn about cancer and mutations">
+<meta name="author" content="BBGLab">
+<link rel="stylesheet" href="../data/css/locomotive-scroll.min.css">
+<link rel="stylesheet" href="../data/css/style.css">
+<link rel="stylesheet" href="../data/css/responsive.css">
+<script src="../data/js/lottie.js"></script>
+</head>
+
+<body>
+
+<div id="loader" class="loader">
+	<div id="cell-loader" class="fade-in">
+		<script>
+			var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('cell-loader'), renderer: 'svg', loop: true, autoplay: true, path: '../data/grafs/js/cell-load.json' });
+			cellLoader.setSpeed(0.5);
+		</script>
+	</div>
+</div>
+<div id="unloader" class="loader"></div>
+
+<div id="scroll-container" data-scroll-container>
+	
+	<a href="#section0" id="button-up" data-scroll-to></a>
+
+	<div class="menu menu-top sticky" id="menu">
+		<input type="checkbox" class="left-menu-toggler" id="menu-check">
+		<div class="left-menu-button"><div></div></div>
+		<div class="left-menu">
+			<span class="home-button" onclick="transitionToPage('../')"><img src="../data/grafs/gral/home.svg" class="width-100"></span>
+			<div>
+				<ul>
+					<li><span onclick="transitionToPage('../analysis/')"><strong>Analitza les mostres</strong></span></li>
+					<li><a href="#section0" id="menu0" data-scroll-to><strong>Què és el càncer?</strong></a></li>
+					<li><a href="#section1" id="menu1" data-scroll-to>La cèl·lula</a></li>
+					<li><a href="#section2" id="menu2" data-scroll-to>Les mutacions</a></li>
+					<li><a href="#section3" id="menu3" data-scroll-to>Els impulsors</a></li>
+					<li><a href="#section4" id="menu4" data-scroll-to>Medicina personalitzada</a></li>
+					<li><a href="#section5" id="menu5" data-scroll-to>La investigació</a></li>
+					<li><span onclick="transitionToPage('../resources/')"><strong>Vols saber-ne més?</strong></span></li>
+					<li><span onclick="transitionToPage('../about/')"><strong>Qui som?</strong></span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--
+	<div class="header header-top sticky" id="header">
+		<div class="sticky-header"><a href="#section0" class="logo" data-scroll-to><span><img src="../data/grafs/gral/logo-img.svg" class="logo-1"><img src="../data/grafs/gral/logo-txt-1.svg" class="logo-2"><img src="../data/grafs/gral/logo-txt-2.svg" class="logo-3"></span></a></div>
+	</div>
+	-->
+	<div class="header header-top sticky" id="header">
+		<div class="sticky-header"><span onclick="transitionToPage('../')" class="logo"><span><img src="../data/grafs/gral/logo-img.svg" class="logo-1"><img src="../data/grafs/gral/logo-txt-1.svg" class="logo-2"><img src="../data/grafs/gral/logo-txt-2.svg" class="logo-3"></span></span></div>
+	</div>
+	
+	<section id="content-container"><div id="content-section" data-scroll-section>
+	
+		<div id="header-background">
+
+			<div id="section0"></div>
+
+			<div id="content" class="content">
+
+				<div id="cell-header-1" class="absolute" data-scroll data-scroll-speed="1">
+					<script>
+						var cellheader1 = bodymovin.loadAnimation({ container: document.getElementById('cell-header-1'), renderer: 'svg', loop: true, autoplay: true, path: '../data/grafs/js/cell-0.json' });
+						cellheader1.setSpeed(0.25);
+					</script>
+				</div>
+
+				<!-- //////////////////////////////////////////////////// Section 0 //////////////////////////////////////////////////// -->
+
+				<div class="content-width content-width-title relative z-1">
+					<h1 class="title center" data-scroll data-scroll-speed="2"><span data-scroll data-scroll-speed="0.25" data-scroll-direction="horizontal"></span><strong data-scroll data-scroll-speed="-0.25" data-scroll-direction="horizontal">Què és el càncer?</strong></h1>
+					<p class="title-desc center">El càncer és un grup de malalties que es caracteritzen per la <strong>multiplicació descontrolada d’algunes cèl·lules del nostre cos</strong>. Pot començar a qualsevol part del cos i acabar envaint-ne d’altres.</p>
+				</div>
+
+				<!-- //////////////////////////////////////////////////// Section 1 //////////////////////////////////////////////////// -->
+
+				<section id="section1" class="section" data-scroll data-scroll-repeat data-scroll-call="menu1">
+
+					<div class="height-150"></div>
+
+					<h2 data-scroll data-scroll-speed="1" class="subtitle right">La cèl·lula</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+
+					  <div id="cell-01" class="absolute" data-scroll data-scroll-speed="1">
+						  <script>
+							  var cell0 = bodymovin.loadAnimation({ container: document.getElementById('cell-01'), renderer: 'svg', loop: true, autoplay: true, path: '../data/grafs/js/cell-nucleus.json' });
+							  cell0.setSpeed(0.25);
+						  </script>
+					  </div>
+
+					  <div class="cols-flex gap-0">
+							<!--
+						<div class="col-flex flex-wrapper"> 
+							<div class="flex-wrapper">
+
+								<div class="flex-wrapper">
+								  <p class="left reveal move-right" data-scroll>Per entendre com s’acaba desenvolupant el càncer, és útil <strong>conèixer millor les cèl·lules</strong> i el seu funcionament.</p>
+								</div>
+								<div id="cell-1" class="flex-wrapper width-100 sm-width-50">
+								  <script>
+									  var cell1 = bodymovin.loadAnimation({ container: document.getElementById('cell-1'), renderer: 'svg', loop: true, autoplay: true, path: '../data/grafs/js/cell-0.json' });
+									  cell1.setSpeed(0.25);
+								  </script>
+								</div>
+							</div>
+						</div>
+							-->
+						<div class="col-flex"> <img src="../data/grafs/cells/body-1.svg" class="width-100 sm-width-50 plr-20 z-1" alt"Cell drawing"> </div>
+						<div class="col-flex flex-wrapper z-1">
+						  <div class="height-150 responsive-remove"></div>
+						  <p class="left reveal move-right" data-scroll>Per entendre com s’acaba desenvolupant el càncer, és útil <strong>conèixer millor les cèl·lules</strong> i el seu funcionament.</p>
+						  <p class="left reveal move-right" data-scroll>Les cèl·lules del nostre cos contenen un <strong>nucli</strong> on es troba <strong>l’ADN</strong>, el llibre d’instruccions de la cèl·lula.</p>
+						</div>
+					  </div>
+					  <div class="cols-flex cols-1-2 gap-0 mt---150">
+						<div class="col-flex flex-wrapper z-1">
+						  <p class="right reveal move-left" data-scroll>La cèl·lula llegeix l’ADN en fragments concrets, com paraules, que s’anomenen «gens». Els gens contenen la informació per fer proteïnes.</p>
+						</div>
+						<div class="col-flex" data-scroll data-scroll-speed="1">
+
+							<div id="cell-2" class="flex-wrapper width-100 sm-width-70" data-scroll data-scroll-call="cell2">
+							  <!-- js script cell2 -->
+							</div>
+
+						</div>
+					  </div>
+						<div class="height-40"></div>
+					  <p class="center reveal move-up max-width" data-scroll><!--L’ordre en què es troben les lletres a l’<strong>ADN</strong> (ex: ATG TCC) <span style="color:red">(en aquest exemple CCT GGT CAA GTC GTA)</span> determinarà l’ordre en què es col·loquen els blocs de construcció de les proteïnes (Met, Leu, Asn, etc) <span style="color:red">(Ser Trp Asn Leu Met)</span>.-->L’<strong>ADN</strong> està escrit només amb quatre lletres (A, C, G, T). L’ordre en què es troben aquestes lletres (ex: CCT GGT) determinarà l’ordre en què es col·loquen els blocs de construcció de les proteïnes (Ser, Trp, Asn, etc).</p>
+					  <div class="height-60"></div>
+						<div class="center">
+							<img src="../data/grafs/cells/info-1.svg" class="width-90 lg-width-100" alt"">
+						</div>
+					  <div class="height-20"></div>
+					  <p class="center reveal move-up max-width" data-scroll>Les <strong>proteïnes</strong> són les molècules que s’encarreguen de bona part dels processos cel·lulars. És a dir, la cèl·lula funciona gràcies a l’acció de les proteïnes que es formen seguint les instruccions dels gens de l’ADN.</p>
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 2 //////////////////////////////////////////////////// -->
+
+				<div class="height-80"></div>
+
+				<section id="section2" class="section" data-scroll data-scroll-repeat data-scroll-call="menu2">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-right subtitle left">Les mutacions</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width">
+
+						<p class="center reveal move-up max-width" data-scroll>L’ADN va acumulant errors. Les paraules i frases de l’ADN van incorporant <strong>«lletres incorrectes»</strong>, són les anomenades mutacions.</p>
+
+						<div class="height-50"></div>
+
+						<div class="cols-flex gap-0">
+							<div class="col-flex flex-wrapper-1180"><p class="right reveal move-left" data-scroll>Les mutacions poden aparèixer per <strong>factors externs</strong> (tabac, llum ultraviolada), <strong>interns</strong> (metabolisme cel·lular) o per <strong>errors en la divisió cel·lular</strong> (quan es duplica l’ADN i aquest no es copia correctament).</p></div>
+							<div class="col-flex"> <img src="../data/grafs/cells/icons-1.svg" class="width-100 ms-width-60" alt"Cell drawing"> </div>
+						</div>
+
+						<div class="cols-flex gap-0">
+							<div class="col-flex"> <img src="../data/grafs/cells/cell-3.svg" class="mt--150 ms-width-50" alt"Cell drawing"> </div>
+							<div class="col-flex flex-wrapper">
+							  <p class="left reveal move-right" data-scroll>Les cèl·lules tenen <strong>mecanismes de reparació</strong> que corregeixen moltes d’aquestes mutacions. Però <strong>algunes es mantenen</strong>. I unes poques poden afectar les lletres dels gens i els blocs de les proteïnes. Per tant, hi ha <strong>mutacions</strong> que acaben afectant les funcions d’algunes proteïnes.</p>
+							  <!--<img src="../data/grafs/cells/info-2a.svg" class="width-50 ml--150 ms-width-30" alt"Cell drawing">-->
+							</div>
+						</div>
+
+						<div class="height-40"></div>
+
+						<p class="center reveal move-up max-width" data-scroll>Per exemple, el <strong>gen BRAF</strong>, conté informació per a muntar la <strong>proteïna BRAF</strong>. La proteïna BRAF controla el creixement i multiplicació cel·lular.</p>
+
+						<div class="height-50"></div>
+
+					</div>
+
+					<div class="content-width center"> <img src="../data/grafs/cells/info-2b.svg" class="width-80 lg-width-100" alt""> </div>
+
+					<div class="height-20"></div>
+
+					<div class="content-width">
+
+					  <div class="cols-flex cols-1-2 gap-0">
+						<div class="col-flex flex-wrapper flex-right" data-scroll data-scroll-speed="1">
+						  <p class="right text-400 reveal move-left max-width" data-scroll>Imaginem que el <strong>gen BRAF</strong> incorpora una mutació que afecta algún bloc de la <strong>proteïna BRAF</strong>.</p>
+						</div>
+						<div class="col-flex flex-left"> <img src="../data/grafs/cells/info-2c.svg" class="width-50 sm-width-50" alt"Cell drawing"> </div>
+					  </div>
+
+					</div>
+
+					<div class="height-20"></div>
+
+					<div class="content-width">
+						<p class="center reveal move-up max-width" data-scroll>Aquesta mutació pot provocar que la <strong>proteïna BRAF</strong> sigui més activa. Això provoca que la cèl·lula comenci a créixer o reproduir-se més de l’habitual.</p>
+					</div>
+
+					<div class="height-20"></div>
+
+					<div class="content-width center">
+					  <img src="../data/grafs/cells/info-3.svg" class="width-80 lg-width-100" alt"">
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 3 //////////////////////////////////////////////////// -->
+
+				<div class="height-80"></div>
+
+				<section id="section3" class="section" data-scroll data-scroll-repeat data-scroll-call="menu3">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-left subtitle right">Els impulsors</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width center">
+
+						<p class="center reveal move-up max-width" data-scroll>Els càncers <strong>acumulen mutacions</strong> (errors) que afecten els gens implicats en el creixement i la mort cel·lular.</p>
+
+						<div class="height-60"></div>
+
+						<img src="../data/grafs/cells/info-4.svg" class="width-100" alt"">
+
+					</div>
+
+					<div class="height-60"></div>
+
+					<div class="content-width relative">
+
+					  <div class="cols-flex gap-0">
+						<div class="col-flex flex-wrapper reveal move-left" data-scroll>
+						  <p class="left">Les mutacions que fan que les cèl·lules es multipliquin més ràpidament que les seves veïnes s’anomenen <strong>mutacions impulsores del càncer</strong> i els gens que les contenen s’anomenen <strong>gens impulsors del càncer i proteïnes impulsores del càncer</strong>.</p>
+						</div>
+						<div class="col-flex">
+							<img src="../data/grafs/cells/cell-4.svg" class="width-100 plr-10 sm-width-50" alt"Cell drawing">
+						</div>
+						<div class="col-flex flex-wrapper reveal move-right" data-scroll>
+						  <p class="right">L’acumulació de 4-6 <strong>mutacions impulsores del càncer</strong> pot donar lloc a una multiplicació descontrolada de les cèl·lules canceroses, és a dir, al càncer.</p>
+						</div>
+					  </div>
+
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 4 //////////////////////////////////////////////////// -->
+
+				<div class="height-80"></div>
+
+				<section id="section4" class="section" data-scroll data-scroll-repeat data-scroll-call="menu4">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-right subtitle left">Medicina personalitzada</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width center">
+
+						<p class="center reveal move-up max-width" data-scroll>Identificar <strong>impulsors del càncer</strong> en cada pacient ens pot ajudar a trobar tractaments més adequats per a cada persona.</p>
+
+						<div class="height-60"></div>
+
+						<div class="cols-flex cols-2-1 gap-0">
+							<div class="col-flex"> <img src="../data/grafs/cells/info-5.svg" class="width-100 sm-width-70" alt"Cell drawing"> </div>
+							<div class="col-flex flex-wrapper reveal move-right" data-scroll>
+							  <p class="left">Cada persona amb càncer té una combinació diferent de <strong>mutacions impulsores del càncer</strong>.</p>
+							</div>
+						</div>
+
+						<!--
+						<img src="../data/grafs/cells/info-6.svg" class="width-100" alt"">
+						<p class="center reveal move-up max-width" data-scroll>Cada persona amb càncer té una <strong>combinació diferent de mutacions impulsores del càncer</strong>. Identificar aquesta combinació de mutacions impulsores del càncer per a cada pacient pot servir per triar el tractament més beneficiós per a ell, un <strong>tractament personalitzat</strong>.</p>
+						-->
+						<div class="height-40 responsive-remove"></div>
+
+						<div class="cols-flex cols-1-2 gap-0">
+							<div class="col-flex flex-wrapper reveal move-left" data-scroll>
+							  <p class="right">Identificar aquesta combinació de <strong>mutacions impulsores del càncer</strong> per a cada pacient pot servir per triar el tractament més beneficiós per a ell, un tractament personalitzat.</p>
+							</div>
+							<div class="col-flex"> <img src="../data/grafs/cells/info-7.svg" class="width-100 sm-width-70" alt"Cell drawing"> </div>
+						</div>
+
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 5 //////////////////////////////////////////////////// -->
+
+				<div class="height-80"></div>
+
+				<section id="section5" class="section" data-scroll data-scroll-repeat data-scroll-call="menu5">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-left subtitle right">Investigació</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="world">
+
+						<div class="content-width">
+
+							<p class="center reveal move-up max-width" data-scroll>Identificar <strong>impulsors del càncer</strong> en cada pacient és tot un repte. El problema que ens trobem és que a les cèl·lules canceroses hi ha moltes mutacions (fins a 100.000!), però només les que afectin uns gens determinats desencadenaran la malaltia. Com els podem trobar?</p>
+
+						</div>
+
+						<div class="height-60"></div>
+
+						<div data-scroll class="reveal move-right content-width relative center">
+
+						  <div class="cols-flex gap-0">
+							<div class="col-flex">
+								<img src="../data/grafs/cells/info-9.svg" class="width-100 ms-width-70" alt"Cell drawing">
+							</div>
+							<div class="col-flex flex-wrapper reveal move-up" data-scroll>
+							  <p data-scroll class="left relative text-400 reveal move-up"><span class="number number-absolute green">01.</span><br><strong>S’estudia l’ADN</strong> dels tumors de milers de pacients al món per trobar les mutacions que contenen.</p>
+							</div>
+						  </div>
+
+						  <div class="height-60"></div>
+
+						  <img src="../data/grafs/cells/info-8.svg" class="width-90 lg-width-100" alt"">
+
+						</div>
+
+					</div>
+
+					<div data-scroll class="reveal move-left content-width relative center">
+
+						<div class="cols-flex gap-0">
+							<div class="col-flex flex-wrapper">
+							  <p data-scroll class="right force-right reveal move-up"><span class="number blue">02.</span><br>A continuació una eina informàtica identifica els <strong>gens impulsors del càncer</strong> que conté el tumor.</p>
+							</div>
+							<div class="col-flex flex-wrapper flex-left">
+								<img src="../data/grafs/cells/intogen.svg" class="width-70 sm-width-30" alt"Intogen">
+							</div>
+						</div>
+
+						<div class="height-60 responsive-remove"></div>
+
+						<img src="../data/grafs/cells/info-10.svg" class="width-90 lg-width-100" alt"">
+
+					</div>
+
+					<div class="height-60 responsive-remove"></div>
+
+					<div data-scroll class="reveal move-right content-width relative center">
+
+						<div class="cols-flex gap-0">
+							<div class="col-flex flex-wrapper flex-right">
+								<img src="../data/grafs/cells/boostdm.svg" class="width-70 sm-width-30" alt"BoostDM">
+							</div>
+							<div class="col-flex flex-wrapper">
+							  <p data-scroll class="left reveal move-up"><span class="number yellow">03.</span><br>Dins d’aquell gen afectat, una eina d’intel·ligència artificial identifica quines mutacions poden ser les desencadenants de la malaltia (també anomenades <strong>mutacions impulsores del càncer</strong>).</p>
+							</div>
+						</div>
+
+						<div class="height-60 responsive-remove"></div>
+
+						<img src="../data/grafs/cells/info-11.svg" class="width-90 lg-width-100" alt"">
+
+					</div>
+
+					<div class="height-60 responsive-remove"></div>
+
+					<div data-scroll class="reveal move-left content-width relative center">
+
+						<div class="cols-flex gap-0">
+							<div class="col-flex flex-wrapper">
+							  <p data-scroll class="right force-right reveal move-up"><span class="number orange">04.</span><br>Una darrera eina (que també empra intel·ligència artificial) consulta bases de dades per saber si existeix un tractament per les mutacions trobades.<br><br>Els oncòlegs usen totes aquestes eines per a oferir una medicina personalitzada.</p>
+							</div>
+							<div class="col-flex flex-wrapper flex-left">
+								<img src="../data/grafs/cells/cgi.svg" class="width-100 sm-width-30" alt"Cancer Genome Interpreter">
+							</div>
+						</div>
+
+						<div class="height-60 responsive-remove"></div>
+
+						<img src="../data/grafs/cells/info-12.svg" class="width-90 lg-width-100" alt"">
+
+					</div>
+
+					<div class="height-60"></div>
+
+				</section>
+				
+			</div>
+			
+			<!-- //////////////////////////////////////////////////// Section Footer //////////////////////////////////////////////////// -->
+			
+		</div>
+			
+		<footer>
+				<div class="footer-wrapper">
+					
+					<!-- ///////////////////////////////////////////////////////////////////// -->
+					<div id="home-container">
+
+							<div id="home-container-cell" class="fade-in">
+								<script>
+									var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('home-container-cell'), renderer: 'svg', loop: true, autoplay: true, path: '../data/grafs/js/cell-home.json' });
+									cellLoader.setSpeed(0.4);
+								</script>
+							</div>
+
+							<div id="home-menu"><div class="home-menu-wrapper">
+								<span><img src="../data/grafs/gral/logo.svg" class="width-100" alt""></span>
+								<div id="home-container-desc" class="home-text container-text">Una simulació per aprendre sobre el càncer i la medicina personalitzada.</div>
+								<div id="home-container-button">
+									<script>
+										var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('home-container-button'), renderer: 'svg', loop: true, autoplay: true, path: '../data/grafs/js/cell-home-button.json' });
+										cellLoader.setSpeed(0.4);
+									</script>
+									<div class="home-text button-text"><span onclick="transitionToPage('../analysis/')">Comença<br>la simulació</span></div>
+								</div>
+							</div></div>
+
+					</div>
+					<!-- ///////////////////////////////////////////////////////////////////// -->
+					
+					<!--<img src="../data/grafs/gral/logo-xl-w.svg" class="logo-footer">
+					<div>
+						<span onclick="transitionToPage('../analysis/')" class="button blue-bg">Analitza les mostres</span>
+						<div class="height-60"></div>
+						<p><span onclick="transitionToPage('../analysis/')" class="link white"><strong>Analitza les mostres</strong></span> o consulta els <span onclick="transitionToPage('../resources/')" class="link white"><strong>recursos</strong></span> per trobar més informació.</p>
+					</div>-->
+					
+					<div class="height-80"></div>
+					<ul>
+						<li class="bbglab"><a href="https://bbglab.irbbarcelona.org" target="_blank"><img src="../data/grafs/gral/bbglab.svg"></a></li>
+						<li class="copyright">
+						  <p>© Barcelona Biomedical Genomics&nbsp;Lab</p>
+						</li>
+						<li class="rrss">
+						  <ul>
+							<li class="gh"><a href="https://github.com/bbglab/cancer-detective" target="_blank"><img src="../data/grafs/gral/ico-gh.svg"></a></li>
+							<li class="tw"><a href="https://twitter.com/bbglab" target="_blank"><img src="../data/grafs/gral/ico-tw.svg"></a></li>
+						  </ul>
+						</li>
+					</ul>
+				</div>
+		</footer>
+		
+	</div></section>
+		
+</div>
+	
+<!-- js -->
+<script src="../data/js/w3.js"></script>
+<script src="../data/js/imagesloaded.pkgd.min.js"></script>
+<script src="../data/js/locomotive-scroll.min.js"></script>
+<script src="../data/js/script.js"></script>
+
+<!-- Button analitza les mostres
+<script>
+document.getElementById("home-container-button").onclick = function() {
+  	alert('oooo');
+};
+</script>
+-->
+	
+</body>
+</html>

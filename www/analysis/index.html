@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ca-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+<title>Cancer Detective: Analitza les mostres</title>
+<meta name="description" content="An analysis simulation based on CGI to learn about cancer and mutations">
+<meta name="author" content="BBGLab">
+<link rel="stylesheet" href="../data/css/locomotive-scroll.min.css">
+<link rel="stylesheet" href="../data/css/style.css">
+<link rel="stylesheet" href="../data/css/responsive.css">
+<script src="../data/js/lottie.js"></script>
+<!-- Analysis quiz -->
+<link rel="stylesheet" href="../data/css/quiz.css">
+</head>
+
+<body>
+
+<div id="loader" class="loader">
+	<div id="cell-loader" class="fade-in">
+		<script>
+			var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('cell-loader'), renderer: 'svg', loop: true, autoplay: true, path: '../data/grafs/js/cell-load.json' });
+			cellLoader.setSpeed(0.5);
+		</script>
+	</div>
+</div>
+<div id="unloader" class="loader"></div>
+
+<div id="scroll-container" data-scroll-container>
+	
+	<a href="#section0" id="button-up" data-scroll-to></a>
+
+	<div class="menu menu-top sticky" id="menu">
+		<input type="checkbox" class="left-menu-toggler" id="menu-check">
+		<div class="left-menu-button"><div></div></div>
+		<div class="left-menu">
+			<span class="home-button" onclick="transitionToPage('../')"><img src="../data/grafs/gral/home.svg" class="width-100"></span>
+			<div>
+				<ul>
+					<li><a href="#section1" class="selected-menu" id="menu0" data-scroll-to><strong>Analitza les mostres</strong></a></li>
+					<li><span onclick="transitionToPage('../introduction/')"><strong>Què és el càncer?</strong></span></li>
+					<li><span onclick="transitionToPage('../resources/')" id="menu8"><strong>Vols saber-ne més?</strong></span></li>
+					<li><span onclick="transitionToPage('../about/')" id="menu7"><strong>Qui som?</strong></span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--
+	<div class="header header-top sticky" id="header">
+		<div class="sticky-header"><span onclick="transitionToPage('../introduction/')" class="logo"><span><img src="../data/grafs/gral/logo-img.svg" class="logo-1"><img src="../data/grafs/gral/logo-txt-1.svg" class="logo-2"><img src="../data/grafs/gral/logo-txt-2.svg" class="logo-3"></span></span></div>
+	</div>
+	-->
+	<div class="header header-top sticky" id="header">
+		<div class="sticky-header"><span onclick="transitionToPage('../')" class="logo"><span><img src="../data/grafs/gral/logo-img.svg" class="logo-1"><img src="../data/grafs/gral/logo-txt-1.svg" class="logo-2"><img src="../data/grafs/gral/logo-txt-2.svg" class="logo-3"></span></span></div>
+	</div>
+	
+	<section id="content-container"><div id="content-section" data-scroll-section>
+	
+		<div id="header-background">
+
+			<div id="section0"></div>
+
+			<div id="content" class="content">
+
+				<div id="cell-header-1" class="absolute" data-scroll data-scroll-speed="1">
+					<script>
+						var cellheader1 = bodymovin.loadAnimation({ container: document.getElementById('cell-header-1'), renderer: 'svg', loop: true, autoplay: true, path: '../data/grafs/js/cell-0.json' });
+						cellheader1.setSpeed(0.25);
+					</script>
+				</div>
+
+				<!-- //////////////////////////////////////////////////// Section 0 //////////////////////////////////////////////////// -->
+
+				<div class="content-width content-width-title relative z-1">
+					<h1 class="title center" data-scroll data-scroll-speed="2"> <span data-scroll data-scroll-speed="0.5" data-scroll-direction="horizontal"></span> <strong data-scroll data-scroll-speed="-0.5" data-scroll-direction="horizontal">Analitza les mostres</strong></h1>
+					<p class="title-desc center">A continuació simularem el que passa quan arriben dues mostres de pacients al laboratori de l’hospital. Posa’t a la pell de la persona de l’equip científic que&nbsp;les&nbsp;rep.</p>
+				</div>
+
+				<!-- //////////////////////////////////////////////////// Section 1 //////////////////////////////////////////////////// -->
+
+				<section id="section1" class="section" data-scroll data-scroll-repeat data-scroll-call="menu1">
+
+					<div class="height-150"></div>
+
+					<h2 data-scroll data-scroll-speed="1" class="subtitle left z-1">Com ho farem?</h2>
+
+					<div class="height-40"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+
+					  <div id="cell-02" class="absolute" data-scroll data-scroll-speed="1">
+						  <script>
+							  var cell0 = bodymovin.loadAnimation({ container: document.getElementById('cell-02'), renderer: 'svg', loop: true, autoplay: true, path: '../data/grafs/js/cell-0.json' });
+							  cell0.setSpeed(0.25);
+						  </script>
+					  </div>
+
+					  <div class="cols-flex gap-0">
+						<div class="col-flex">
+						  <div class="flex-wrapper">
+							  <p class="right reveal move-up" data-scroll><strong>Analitza les mostres</strong> per poder diagnosticar els pacients i assignar-los un tractament. Fes-ho seguint les següents passes:</p>
+						  </div>
+						</div>
+						<div class="col-flex">
+							<div class="width-100 lg-width-50 sm-width-30 height-500 lg-height-150 sm-height-200 relative">
+								<img src="../data/grafs/cells/lab-1a.svg" class="width-100 plr-20 z-1 absolute" alt"">
+								<img src="../data/grafs/cells/lab-1b.svg" class="width-100 plr-20 z-1 absolute" alt"" data-scroll data-scroll-speed="-1">
+							</div>
+						</div>
+						<div class="col-flex flex-wrapper flex-end z-1">
+						  <p class="left reveal move-up" data-scroll><span class="number green">01.</span><br><strong>Revisa les dades del pacient, el tipus de càncer i l'exposició als factors de risc.</strong><div class="height-60 sm-responsive-remove"></div></p>
+						</div>
+					  </div>
+
+					  <div class="cols-flex-lineal sm-responsive-remove">
+
+						<div class="col-flex"> <img src="../data/grafs/cells/icons-2b.svg" class="width-100 z-1" alt"Cell drawing" data-scroll data-scroll-speed="1.5" data-scroll-direction="horizontal"> </div>
+						<div class="col-flex responsive-remove"> <img src="../data/grafs/cells/icons-2arrow.svg" class="width-100 z-1" alt"Cell drawing"> </div>
+						<div class="col-flex"> <img src="../data/grafs/cells/icons-2a.svg" class="width-100 z-1" alt"Cell drawing" data-scroll data-scroll-speed="-1.5" data-scroll-direction="horizontal"> </div>
+
+					  </div>
+						
+					<div class="height-60 sm-responsive-remove"></div>
+					
+					  <div class="height-20"></div>
+
+					  <div class="cols-flex cols-1-2 width-80 sm-width-100 gap-0 m-0-auto">
+						<div class="col-flex flex-wrapper" data-scroll-speed="1" data-scroll>
+						  <p class="right reveal" data-scroll><span class="number blue">02.</span><br><strong>Anàlitza l'ADN per obtenir totes les mutacions.</strong></p>
+						</div>
+						<div class="col-flex flex-wrapper sm-responsive-remove">
+							<div class="width-100 height-300 sm-height-250 relative">
+								<img src="../data/grafs/cells/lab-2a.svg" class="width-100 plr-20 absolute" alt"" data-scroll data-scroll-speed="-1">
+								<!--<img src="../data/grafs/cells/lab-2b.svg" class="width-100 plr-20 absolute" alt"" data-scroll data-scroll-speed="-1">-->
+							</div>
+						</div>
+					  </div>
+					
+					  <div class="height-20"></div>
+
+					  <div class="cols-flex cols-2-1 width-80 sm-width-100 gap-0 m-0-auto">
+						<div class="col-flex flex-wrapper sm-responsive-remove"> <img src="../data/grafs/cells/computer-1.svg" class="width-90" alt"Cell drawing"> </div>
+						<div class="col-flex flex-wrapper" data-scroll-speed="1" data-scroll>
+						  <p class="left reveal" data-scroll><span class="number yellow">03.</span><br><strong>Identifica quines mutacions són impulsores de càncer i si existeix un tractament.</strong></p>
+						</div>
+					  </div>
+					
+					  <div class="height-20"></div>
+
+					  <div class="cols-flex width-80 sm-width-100 gap-0 m-0-auto">
+						<div class="col-flex flex-wrapper" data-scroll-speed="1" data-scroll>
+						  <p class="right reveal" data-scroll><span class="number orange">04.</span><br><strong>Analitza els resultats: Mutacions impulsores i teràpies personalitzades.</strong></p>
+						</div>
+						<div class="col-flex flex-wrapper mt-25"> <img src="../data/grafs/cells/info-0.svg" class="width-60" alt"Cell drawing"> </div>
+					  </div>
+
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 2 //////////////////////////////////////////////////// -->
+
+				<div class="height-80"></div>
+
+			</div>
+			<div id="footer-background">
+			
+				<section id="section2" class="section section-form col-flex flex-wrapper dark-bg" data-scroll data-scroll-repeat data-scroll-call="menu2">
+
+					<div class="height-100"></div>
+
+					<!-- //////////////////////////////////////////////////// Analysis 0 - Botó inici //////////////////////////////////////////////////// -->
+						
+					<div id="quiz-section-button" class="quiz-section active">
+
+						<h2 data-scroll data-scroll-speed="1" class="subtitle right">Anàlisi de les mostres</h2>
+						
+						<div class="height-50"></div>
+						<div id="quiz-button">
+							<p>Clica aquest botó per rebre les mostres que posteriorment hauràs d'analitzar:</p>
+							<ul class="quiz-list flex">
+								<li>
+									
+									<div id="quiz-00-00" class="quiz-button">
+										<script>
+											var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('quiz-00-00'), renderer: 'svg', loop: true, autoplay: true, path: '../data/grafs/js/cell-home-button.json' });
+											cellLoader.setSpeed(0.4);
+										</script>
+										<div class="quiz-button-text">Rebre<br>les mostres</div>
+									</div>
+								
+								</li>
+							</ul>
+						</div>
+						<div id="quiz-loader" class="quiz-loader-style opacity-00">
+							<img src="../data/grafs/gral/loader.svg" class="width-100" alt"">
+						</div>
+						<div class="height-50"></div>
+
+					</div>
+
+					<!-- //////////////////////////////////////////////////// Analysis 1 - Mostres aleatòries de cada pacient //////////////////////////////////////////////////// -->
+						
+					<div id="quiz-section-00" class="quiz-section opacity-00">
+
+						<h2 data-scroll data-scroll-speed="1" class="subtitle right">Mostres rebudes</h2>
+
+						<div class="sub-header content-width min-width center">
+							<p class="m-0-auto">Característiques de les mostres dels dos pacients:</p>
+						</div>
+						<div id="sample-types">
+							<div id="sample-types-wrapper">
+								<!-- Js random items -->
+							</div>
+						</div>
+						<div id="quiz-section-00-01"></div>
+						<div class="height-50"></div>
+						<p>Quin dels dos pacients creus que presentarà més mutacions?</p>
+						<ul id="quiz-00" class="quiz-list flex">
+							<li><button id="quiz-00-01" class="button blue-bg">Pacient 1</button></li>
+							<li><button id="quiz-00-02" class="button blue-bg">Pacient 2</button></li>
+							<li><button id="quiz-00-03" class="button blue-bg">Similar</button></li>
+						</ul>
+						<div id="quiz-00-result" class="bubble-text flex">
+							<p class="quiz-00-result active">Selecciona una resposta...</p>
+							<p class="quiz-00-result" id="quiz-00-result-01">El <strong>Pacient 1</strong> presentarà més mutacions.</p>
+							<p class="quiz-00-result" id="quiz-00-result-02">El <strong>Pacient 2</strong> presentarà més mutacions.</p>
+							<p class="quiz-00-result" id="quiz-00-result-03">El nombre de mutacions serà <strong>similar en els dos pacients</strong>.</p>
+						</div>
+						<div class="height-50"></div>
+
+					</div>
+					
+					<!-- //////////////////////////////////////////////////// Analysis 2 - Llistat de mutacions //////////////////////////////////////////////////// -->
+					
+					<div id="quiz-section-01" class="quiz-section">
+						
+						<div class="height-100"></div>
+						<div class="content-width min-width center">
+							<p id="quiz-section-01-subtitle" class="subtitle-p"></p>
+						</div>
+						<div class="height-20"></div>
+						<div class="relative" id="quiz-secuenciador">
+							<img src="../data/grafs/gral/loader.svg" class="absolute opacity-00" id="quiz-secuenciador-00" alt"">
+							<img src="../data/grafs/cells/computer-0.svg" class="width-140 top-20 absolute left-100 opacity-00" id="quiz-computer-01" alt"">
+							<img src="../data/grafs/cells/computer-2a.svg" class="width-140 top-20 absolute opacity-00" id="quiz-computer-02a" alt"">
+							<img src="../data/grafs/cells/computer-2b.svg" class="width-140 top-20 absolute opacity-00" id="quiz-computer-02b" alt"">
+							<img src="../data/grafs/cells/computer-2c.svg" class="width-140 top-20 absolute opacity-00" id="quiz-computer-02c" alt"">
+							<img src="../data/grafs/cells/lab-2a.svg" class="width-100 absolute" id="quiz-secuenciador-01" alt"">
+							<img src="../data/grafs/cells/lab-2d.svg" class="width-100 absolute" id="quiz-secuenciador-02" alt"">
+							<img src="../data/grafs/cells/lab-2e.svg" class="width-100 absolute scale-00" alt"" id="quiz-secuenciador-04">
+							<img src="../data/grafs/cells/lab-2c.svg" class="width-100 absolute opacity-00" alt"" id="quiz-secuenciador-03">
+						</div>
+						<div class="opacity-00 hide" id="quiz-results">
+							<div class="gen gen-sample-1">
+								<div class="sample-type"></div>
+								<p></p>
+								<!-- Js mutacions corresponents a random items A -->
+							</div>
+							<div class="gen gen-sample-2">
+								<div class="sample-type"></div>
+								<p></p>
+								<!-- Js mutacions corresponents a random items B -->
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div id="quiz-01-01-wrapper" class="quiz-01-wrapper">
+							<button id="quiz-01-01" class="button blue-bg scaleInOut">Identifica els gens mutats<br>i els canvis a la proteïna</button>
+						</div>
+						<div id="quiz-01-02-wrapper" class="quiz-01-wrapper scale-00 hide">
+							<button id="quiz-01-02-back" class="button button-margin white-bg">Tornar<br>enrere</button>
+							<button id="quiz-01-02" class="button button-margin blue-bg scaleInOut">Identifica les mutacions<br>que són impulsores</button>
+						</div>
+						<div id="quiz-01-03-wrapper" class="quiz-01-wrapper scale-00 hide">
+							<button id="quiz-01-03-back" class="button button-margin white-bg">Tornar<br>enrere</button>
+							<button id="quiz-01-03" class="button button-margin blue-bg scaleInOut">Cerca si hi ha teràpia<br>per la mutació</button>
+						</div> 
+						<div id="quiz-01-04-wrapper" class="quiz-01-wrapper scale-00 hide">
+							<p class="desc-form">Un cop hagis analitzat detingudament els resultats dels dos pacients, clica a <strong>“Com funcionen els factors de risc del càncer?”</strong></p>
+							<br><br>
+							<button id="quiz-01-04-back" class="button button-margin white-bg">Tornar<br>enrere</button>
+							<button id="quiz-01-04" class="button button-margin blue-bg scaleInOut">Com funcionen els<br>factors de risc del càncer?</button>
+						</div>
+						<div id="quiz-01-06-wrapper" class="quiz-01-wrapper scale-00 hide">
+							<!-- //////////////////////////////////////////////////////////////////////// -->
+						</div>
+						<div class="height-50"></div>
+						
+					</div>
+					
+					<!-- //////////////////////////////////////////////////// Analysis 3 - Factors de risc del càncer //////////////////////////////////////////////////// -->
+					
+					<div id="quiz-section-02" class="quiz-section relative">
+						<div id="sample-analysis" class="sample-wrapper">
+						
+							<!-- //////////////////////////////////////////////////// Slide inici //////////////////////////////////////////////////// -->
+							<div class="sample-selection active" id="slide-0">
+
+								<div class="relative">
+									<h2 class="subtitle-form">Com funcionen els factors de risc del càncer?</h2>
+									<p class="content-width min-width">Escull el tipus de tumor:</p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="sample-1">
+											<div>
+												<img src="../data/grafs/cells/icon-1.svg" alt="">
+												<p><strong>El càncer de pell es desenvolupa a partir de les cèl·lules de la pell</strong></p>
+											</div>
+											<span><strong>Càncer de pell</strong></span>
+										</li>
+										<li id="sample-2">
+											<div>
+												<img src="../data/grafs/cells/icon-2.svg" alt="">
+												<p><strong>El càncer de pulmó es desenvolupa a partir de les cèl·lules del pulmó</strong></p>
+											</div>
+											<span><strong>Càncer de pulmó</strong></span>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 1 pell //////////////////////////////////////////////////// -->
+							<div class="sample-selection" id="slide-1-skin">
+
+								<div class="relative">
+									<p class="content-width min-width">Tenint en compte els tipus de mostres que has analitzat fins ara, <strong>quan creus que hi haurà més risc de mutacions a la pell en funció de l'edat?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide1-skin-option1">
+											<div><img src="../data/grafs/cells/icon-1i2-1.svg" alt=""><p><strong>Pacient jove</strong></p></div>
+											<span><strong>Jove</strong> 1-20 anys</span>
+										</li>
+										<li id="slide1-skin-option2">
+											<div><img src="../data/grafs/cells/icon-1i2-2.svg" alt=""><p><strong>Pacient de mitjana edat</strong></p></div>
+											<span><strong>Mitjana edat</strong> 21-60 anys</span>
+										</li>
+										<li id="slide1-skin-option3">
+											<div><img src="../data/grafs/cells/icon-1i2-3.svg" alt=""><p><strong>Pacient de la tercera edat</strong></p></div>
+											<span><strong>Gran</strong> Més de 61 anys</span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide1-skin-back">Retrocedir</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 2 pell //////////////////////////////////////////////////// -->
+							<div class="sample-selection" id="slide-2-skin">
+
+								<div class="relative">
+
+									<p class="content-width min-width"><strong>Quan creus que hi haurà més risc de mutacions a la pell en funció de l'exposició a la radiació ultraviolada del sol?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide2-skin-option1">
+											<div><img src="../data/grafs/cells/icon-1b-1.svg" alt=""><p><strong>Exposició baixa</strong></p></div>
+											<span><strong>Exposició baixa</strong> al sol</span>
+										</li>
+										<li id="slide2-skin-option2">
+											<div><img src="../data/grafs/cells/icon-1b-2.svg" alt=""><p><strong>Exposició mitjana</strong></p></div>
+											<span><strong>Exposició mitjana</strong> al sol</span>
+										</li>
+										<li id="slide2-skin-option3">
+											<div><img src="../data/grafs/cells/icon-1b-3.svg" alt=""><p><strong>Exposició alta</strong></p></div>
+											<span><strong>Exposició alta</strong> al sol</span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide2-skin-back">Retrocedir</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 3 pell //////////////////////////////////////////////////// -->
+							<div class="sample-selection" id="slide-3-skin">
+
+								<div class="relative">
+
+									<p class="content-width min-width"><strong>Quan creus que hi haurà menys risc de mutacions a la pell en funció de la protecció que prenem envers el sol?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide3-skin-option1">
+											<div><img src="../data/grafs/cells/icon-1c-1.svg" alt=""><p><strong>Protecció freqüent</strong></p></div>
+											<span><strong>Ús de protecció solar de factor alt i roba protectora</strong></span>
+										</li>
+										<li id="slide3-skin-option2">
+											<div><img src="../data/grafs/cells/icon-1c-2.svg" alt=""><p><strong>Protecció ocasional</strong></p></div>
+											<span><strong>Ús ocasional de protecció solar i roba protectora</strong></span>
+										</li>
+										<li id="slide3-skin-option3">
+											<div><img src="../data/grafs/cells/icon-1c-3.svg" alt=""><p><strong>Protecció baixa</strong></p></div>
+											<span><strong>No utilitza protecció solar ni roba protectora</strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide3-skin-back">Retrocedir</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 1 pulmó //////////////////////////////////////////////////// -->
+							<div class="sample-selection" id="slide-1-lung">
+
+								<div class="relative">
+
+									<p class="content-width min-width">Tenint en compte els tipus de mostres que has analitzat fins ara, <strong>quan creus que hi haurà més risc de mutacions al pulmó en funció de l'edat?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide1-lung-option1">
+											<div><img src="../data/grafs/cells/icon-1i2-1.svg" alt=""><p><strong>Pacient jove</strong></p></div>
+											<span><strong>Jove</strong> 1-20 anys</span>
+										</li>
+										<li id="slide1-lung-option2">
+											<div><img src="../data/grafs/cells/icon-1i2-2.svg" alt=""><p><strong>Pacient de mitjana edat</strong></p></div>
+											<span><strong>Mitjana edat</strong> 21-60 anys</span>
+										</li>
+										<li id="slide1-lung-option3">
+											<div><img src="../data/grafs/cells/icon-1i2-3.svg" alt=""><p><strong>Pacient de la tercera edat</strong></p></div>
+											<span><strong>Gran</strong> Més de 61 anys</span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide1-lung-back">Retrocedir</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 2 pulmó //////////////////////////////////////////////////// -->
+							<div class="sample-selection" id="slide-2-lung">
+
+								<div class="relative">
+
+									<p class="content-width min-width"><strong>Quan creus que hi haurà més risc de mutacions al pulmó en funció dels productes químics que hi ha al tabac?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide2-lung-option1">
+											<div><img src="../data/grafs/cells/icon-2b-1.svg" alt=""><p><strong>No fumador</strong></p></div>
+											<span><strong>No fumador</strong> No fuma gens</span>
+										</li>
+										<li id="slide2-lung-option2">
+											<div><img src="../data/grafs/cells/icon-2b-2.svg" alt=""><p><strong>Fumador ocasional</strong></p></div>
+											<span><strong>Ocasional</strong> Fuma de tant en tant</span>
+										</li>
+										<li id="slide2-lung-option3">
+											<div><img src="../data/grafs/cells/icon-2b-3.svg" alt=""><p><strong>Fumador regular</strong></p></div>
+											<span><strong>Regular</strong> Fuma habitualment</span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide2-lung-back">Retrocedir</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 3 pulmó //////////////////////////////////////////////////// -->
+							<div class="sample-selection" id="slide-3-lung">
+
+								<div class="relative">
+
+									<p class="content-width min-width"><strong>Quan creus que hi haurà menys risc de mutacions al pulmó en funció de l'exposició al fum que aspirem dels fumadors de tabac?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide3-lung-option1">
+											<div><img src="../data/grafs/cells/icon-2c-1.svg" alt=""><p><strong>Sense exposició</strong></p></div>
+											<span><strong>El pacient no és fumador passiu</strong></span>
+										</li>
+										<li id="slide3-lung-option2">
+											<div><img src="../data/grafs/cells/icon-2c-2.svg" alt=""><p><strong>Exposició ocasional</strong></p></div>
+											<span><strong>El pacient és fumador passiu ocasional</strong></span>
+										</li>
+										<li id="slide3-lung-option3">
+											<div><img src="../data/grafs/cells/icon-2c-3.svg" alt=""><p><strong>Exposició regular</strong></p></div>
+											<span><strong>El pacient és fumador passiu habitual</strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide3-lung-back">Retrocedir</strong></div>
+								</div>
+
+							</div>
+							
+							<!-- //////////////////////////////////////////////////// Slide Test (Modificar) //////////////////////////////////////////////////// -->
+							<!--
+							<div class="sample-selection" id="slide-test-1">
+
+								<div class="relative">
+
+									<p class="content-width min-width"><strong>Pregunta test 1</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slidetest1-option1">
+											<div><img src="../data/grafs/cells/icon-test1-1.svg" alt=""><p><strong>Opció&nbsp;1</strong></p></div>
+											<span><strong>Text de la <b>opció 1</b> de test 1</strong></span>
+										</li>
+										<li id="slidetest1-option2">
+											<div><img src="../data/grafs/cells/icon-test1-2.svg" alt=""><p><strong>Opció&nbsp;2</strong></p></div>
+											<span><strong>Text de la <b>opció 2</b> de test 1 (Opció correcte)</strong></span>
+										</li>
+										<li id="slidetest1-option3">
+											<div><img src="../data/grafs/cells/icon-test1-3.svg" alt=""><p><strong>Opció&nbsp;3</strong></p></div>
+											<span><strong>Text de la <b>opció 3</b> de test 1</strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slidetest1-back">Retrocedir</strong></div>
+								</div>
+
+							</div>
+							-->
+							
+							<!-- //////////////////////////////////////////////////// Slide 4 comú //////////////////////////////////////////////////// -->
+							<div class="sample-selection" id="slide-4">
+
+								<div class="relative">
+
+									<p class="content-width min-width"><strong>Quin dels càncers dels dos pacients té més mutacions impulsores?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide4-option1">
+											<div><img src="../data/grafs/cells/icon-pacient-1.svg" alt=""><p><strong>Mostra del pacient&nbsp;1</strong></p></div>
+											<span><strong>El càncer del pacient&nbsp;1 <b>té més&nbsp;mutacions&nbsp;impulsores</b></strong></span>
+										</li>
+										<li id="slide4-option2">
+											<div><img src="../data/grafs/cells/icon-pacient-2.svg" alt=""><p><strong>Mostra del pacient&nbsp;2</strong></p></div>
+											<span><strong>El càncer del pacient&nbsp;2  <b>té més&nbsp;mutacions&nbsp;impulsores</b></strong></span>
+										</li>
+										<li id="slide4-option3">
+											<div><img src="../data/grafs/cells/icon-pacient-0.svg" alt=""><p><strong>Les dos mostres</strong></p></div>
+											<span><strong>Els dos càncers <b>tenen les mateixes mutacions&nbsp;impulsores</b></strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide4-back">Retrocedir</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide end //////////////////////////////////////////////////// -->
+							<div class="sample-selection" id="sample-end">
+
+								<div class="relative">
+									
+									<img src="../data/grafs/cells/icon-end.svg" alt="" class="img-end">
+									<!-- //////////////////////////////////////////////////// Si s'afegeix un nou slide s'ha de canviar el número de preguntes (Modificar) //////////////////////////////////////////////////// -->
+									<h2 class="subtitle-form">Has encertat <strong id="sample-end-var"></strong> de 4 preguntes!</h2>
+									
+									<p class="bubble-text">La simulació d’anàlisi de mostra que has fet depèn de l’atzar, com la vida mateixa. <strong>Com més resultats acumulis millor podràs comprendre com funcionen els factors de risc.</strong> Segueix analitzant més mostres per aconseguir-ho!<br><span onclick="transitionToAnchor()" class="button green-bg">Analitza més mostres</span></p>
+									
+									<div class="height-40 responsive-remove-sm"></div>
+									
+									<p class="desc-form content-width min-width center">Vols saber més coses sobre la recerca que es fa en medicina personalitzada relacionada amb el càncer? Visita les webs dels següents projectes: <a href="https://www.cgiclinics.eu" target="_blank" class="link"><strong>CGI clinics</strong></a> i <a href="https://www.cancergenomeinterpreter.org/home" target="_blank"><strong>Cancer genome interpreter</strong></a></p>
+									<br>
+									<img src="../data/grafs/gral/logo-cgi.svg" alt="" class="img-end">
+									<br>
+									<img src="../data/grafs/gral/european-union.png" alt="Funded by the European Union" class="img-end">
+									<br>
+									<p class="desc-form desc-peq">This project has received funding from the European Union's Horizon Europe programme under grant agreement CGI-Clinics 101057509. | Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Health and Digital Executive Agency (HADEA). Neither the European Union nor the granting authority can be held responsible for them.</p>
+
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slides end //////////////////////////////////////////////////// -->
+						</div>
+					</div>
+					
+					<!-- //////////////////////////////////////////////////// End Analysis 3 - Factors de risc del càncer //////////////////////////////////////////////////// -->
+
+				</section>
+				
+				<!-- //////////////////////////////////////////////////// Section Footer //////////////////////////////////////////////////// -->
+			
+				<footer>
+					<div class="footer-wrapper">
+						<ul>
+							<li class="bbglab"><a href="https://bbglab.irbbarcelona.org" target="_blank"><img src="../data/grafs/gral/bbglab.svg"></a></li>
+							<li class="copyright">
+							  <p>© Barcelona Biomedical Genomics&nbsp;Lab</p>
+							</li>
+							<li class="rrss">
+							  <ul>
+								<li class="gh"><a href="https://github.com/bbglab/cancer-detective" target="_blank"><img src="../data/grafs/gral/ico-gh.svg"></a></li>
+								<li class="tw"><a href="https://twitter.com/bbglab" target="_blank"><img src="../data/grafs/gral/ico-tw.svg"></a></li>
+							  </ul>
+							</li>
+						</ul>
+					</div>
+				</footer>
+		
+			</div>
+			
+		</div>
+	</div></section>
+		
+</div>
+
+<!-- //////////////////////////////////////////////////// Popups slider //////////////////////////////////////////////////// -->
+<div class="popup" id="popup-error">
+	<div>
+		<p><strong>No és correcte, continua provant.</strong></p>
+		<button id="popup-close" class="button red-bg">Acceptar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-1-skin">
+	<div>
+		<p><strong>Correcte!</strong><br>Les mutacions a la pell <strong>s’acumulen amb l’edat</strong>. Per això la gent gran tendeix a tenir-ne més que la jove.</p>
+		<button id="popup-slide-1-skin-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-2-skin">
+	<div>
+		<p><strong>Correcte!</strong><br>La llum ultraviolada (UV) del Sol pot causar mutacions. Com més exposició al Sol més possibilitat d’acumular mutacions.</p>
+		<button id="popup-slide-2-skin-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-3-skin">
+	<div>
+		<p><strong>Correcte!</strong><br>El nombre de mutacions atribuïdes a l’exposició solar serà més baix en les persones que utilitzen protecció solar de factor alt.</p>
+		<button id="popup-slide-3-skin-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-1-lung">
+	<div>
+		<p><strong>Correcte!</strong><br>Les mutacions als pulmons <strong>s’acumulen amb l’edat</strong>. Per això la gent gran tendeix a tenir-ne més que la jove.</p>
+		<button id="popup-slide-1-lung-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-2-lung">
+	<div>
+		<p><strong>Correcte!</strong><br>Els productes químics que conté el tabac provoquen mutacions. Com a conseqüència les persones que fumen tendeixen a presentar més mutacions.</p>
+		<button id="popup-slide-2-lung-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-3-lung">
+	<div>
+		<p><strong>Correcte!</strong><br>Les cèl·lules del pulmó es poden malmetre quan es respira el fum del tabac d’una altra persona. Les persones exposades a aquests fums tendeixen a tenir més mutacions.</p>
+		<button id="popup-slide-3-lung-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<!-- //////////////////////////////////////////////////// Popup Slide Test (Modificar) //////////////////////////////////////////////////// -->
+<!--
+<div class="popup" id="popup-slide-test-1">
+	<div>
+		<p><strong>Correcte!</strong><br>Text de l'slide.</p>
+		<button id="popup-slide-test-1-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+-->
+
+<div class="popup" id="popup-slide-4">
+	<div>
+		<p>
+			<strong>Correcte!</strong>
+			<br>
+			<span id="driver-1">El càncer del pacient 1 té més mutacions impulsores.</span>
+			<br>
+			<span id="driver-2">El càncer del pacient 2 té més mutacions impulsores.</span>
+			<br>
+			<span id="driver-0">Els dos càncers tenen les mateixes mutacions impulsores.</span>
+		</p>
+		<button id="popup-slide-4-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<!-- js -->
+<script src="../data/js/w3.js"></script>
+<script src="../data/js/imagesloaded.pkgd.min.js"></script>
+<script src="../data/js/locomotive-scroll.min.js"></script>
+<script src="../data/js/script.js"></script>
+<script src="../data/js/gens.js"></script>
+<script src="../data/js/quiz.js"></script>
+<script src="../data/js/analysis-slider.js"></script>
+	
+<script>
+if (window.location.search.indexOf('redo=true') > -1) {
+	setTimeout(function() {
+		scroll.scrollTo('#section2');
+    }, 1000);
+}
+</script>
+
+</body>
+</html>

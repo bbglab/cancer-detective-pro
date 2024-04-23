@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ca-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+<title>Cancer Detective</title>
+<meta name="description" content="An analysis simulation based on CGI to learn about cancer and mutations">
+<meta name="author" content="BBGLab">
+<link rel="stylesheet" href="data/css/locomotive-scroll.min.css">
+<link rel="stylesheet" href="data/css/style.css">
+<link rel="stylesheet" href="data/css/responsive.css">
+<script src="data/js/lottie.js"></script>
+<!--home-->
+<link rel="stylesheet" href="data/css/home.css">
+</head>
+
+<body class="home">
+
+<div id="unloader" class="loader"></div>
+
+<div id="home" class="fade-in">
+
+	<div id="home-container" data-scroll-container>
+		
+		<div id="home-container-cell" class="fade-in">
+			<script>
+				var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('home-container-cell'), renderer: 'svg', loop: true, autoplay: true, path: 'data/grafs/js/cell-home.json' });
+				cellLoader.setSpeed(0.4);
+			</script>
+		</div>
+		
+		<div id="home-menu"><div class="home-menu-wrapper">
+			<span onclick="transitionToPage('about/')" style="cursor:pointer"><img src="data/grafs/gral/logo.svg" class="width-100" alt""></span>
+			<div id="home-container-desc" class="home-text container-text">Una simulació per aprendre sobre el càncer i la medicina personalitzada.</div>
+			<div id="home-container-button">
+				<script>
+					var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('home-container-button'), renderer: 'svg', loop: true, autoplay: true, path: 'data/grafs/js/cell-home-button.json' });
+					cellLoader.setSpeed(0.4);
+				</script>
+				<div class="home-text button-text">Comença<br>la simulació</div>
+			</div>
+		</div></div>
+		
+		<div id="home-container-menu" class="scale-00">
+			<script>
+				var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('home-container-menu'), renderer: 'svg', loop: true, autoplay: true, path: 'data/grafs/js/cell-home-container.json' });
+				cellLoader.setSpeed(0.4);
+			</script>
+			<div id="menu-close">
+				<img src="data/grafs/gral/ico-close.svg" alt="Close">
+			</div>
+			<div id="menu">
+				<p>Abans de començar la simulació descobreix què és el càncer i com funciona.</p>
+				<ul>
+					<li id="home-menu-2"><span onclick="transitionToPage('introduction/')"><strong>Continua</strong></span></li>
+					<li id="home-menu-1"><span onclick="transitionToPage('analysis/')"><strong>Saltar introducció</strong></span></li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+				
+<footer id="home-footer">
+	<ul>
+		<li class="bbglab"><a href="https://bbglab.irbbarcelona.org" target="_blank"><img src="data/grafs/gral/bbglab.svg"></a></li>
+		<li class="copyright">
+			<p class="copyright-1">© Barcelona Biomedical Genomics&nbsp;Lab</p>
+			<p class="copyright-2">©&nbsp;BBG&nbsp;Lab&nbsp;&nbsp;</p>
+		</li>
+		<li class="rrss">
+			<ul>
+				<li class="gh"><a href="https://github.com/bbglab/cancer-detective" target="_blank"><img src="data/grafs/gral/ico-gh.svg"></a></li>
+				<li class="tw"><a href="https://twitter.com/bbglab" target="_blank"><img src="data/grafs/gral/ico-tw.svg"></a></li>
+			</ul>
+		</li>
+	</ul>
+</footer>
+
+<script>
+/* Page transition */
+window.transitionToPage = function(href) {
+	document.getElementById('unloader').classList.add('visible');
+	setTimeout(function() { 
+        window.location.href = href;
+		setTimeout(function() { 
+			document.getElementById('unloader').classList.remove('visible');
+		}, 500);
+    }, 500);
+};
+/* Button */
+var popuplink = document.getElementById("home-container-menu");
+var popupno1 = document.getElementById("home-container-cell");
+var popupno2 = document.getElementById("home-menu");
+document.getElementById("home-container-button").onclick = function() {
+  	popuplink.classList.remove("scale-00");
+  	popupno1.classList.add("home-no");
+  	popupno2.classList.add("home-no");
+};
+document.getElementById("menu-close").onclick = function() {
+  	popuplink.classList.add("scale-00");
+  	popupno1.classList.remove("home-no");
+  	popupno2.classList.remove("home-no");
+};
+</script>
+	
+	
+<!-- js -->
+<!--<script src="data/js/w3.js"></script>
+<script src="data/js/imagesloaded.pkgd.min.js"></script>
+<script src="data/js/locomotive-scroll.min.js"></script>
+<script src="data/js/script.js"></script>-->
+
+</body>
+</html>

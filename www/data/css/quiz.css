@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#sample-types { background:var(--dark); width:100%; height:100%; display:flex; justify-content:center; align-items:center; flex-wrap:wrap; }
+.type, .type li { margin:0; padding:0; list-style:none; }
+.type { visibility:hidden; display:none; width:100%; justify-content:center; align-items:flex-start; flex-wrap:wrap; margin:50px 0; }
+.type.active { visibility:visible; display:flex; }
+.type li { float:left; text-align:center; }
+.gen .sample-type, .gen .sample-type:before { width:200px; height:200px; }
+.gen .sample-type:before { display:block; content:""; }
+.type li.sample, .gen .sample-type, .gen .sample-type:before { background:no-repeat center top; background-width:contain; }
+.type.user1 li.sample, .gen-sample-1 .sample-type { background-image:url(../grafs/cells/icon-bg-01.svg); }
+.type.user2 li.sample, .gen-sample-2 .sample-type { background-image:url(../grafs/cells/icon-bg-02.svg); }
+.type li:before { width:200px; height:200px; border-radius:100%; background:transparent no-repeat center center; background-size:contain; margin:10px; display:inline-block; content:""; }
+.type li:not(.sample):before { border:1px solid rgba(255,255,255,.25); }
+.type-a .sample:before, .gen-type-a .sample-type:before { background-image:url(../grafs/cells/icon-1-0.svg); }
+.type-b .sample:before, .gen-type-b .sample-type:before { background-image:url(../grafs/cells/icon-2-0.svg); }
+.type .sample-1a:before { background-image:url(../grafs/cells/icon-1i2-1.svg); }
+.type .sample-1b:before { background-image:url(../grafs/cells/icon-1i2-2.svg); }
+.type .sample-1c:before { background-image:url(../grafs/cells/icon-1i2-3.svg); }
+.type-a .sample-2a:before { background-image:url(../grafs/cells/icon-1b-1.svg); }
+.type-a .sample-2b:before { background-image:url(../grafs/cells/icon-1b-2.svg); }
+.type-a .sample-2c:before { background-image:url(../grafs/cells/icon-1b-3.svg); }
+.type-a .sample-3a:before { background-image:url(../grafs/cells/icon-1c-1.svg); }
+.type-a .sample-3b:before { background-image:url(../grafs/cells/icon-1c-2.svg); }
+.type-a .sample-3c:before { background-image:url(../grafs/cells/icon-1c-3.svg); }
+.type-b .sample-2a:before { background-image:url(../grafs/cells/icon-2b-1.svg); }
+.type-b .sample-2b:before { background-image:url(../grafs/cells/icon-2b-2.svg); }
+.type-b .sample-2c:before { background-image:url(../grafs/cells/icon-2b-3.svg); }
+.type-b .sample-3a:before { background-image:url(../grafs/cells/icon-2c-1.svg); }
+.type-b .sample-3b:before { background-image:url(../grafs/cells/icon-2c-2.svg); }
+.type-b .sample-3c:before { background-image:url(../grafs/cells/icon-2c-3.svg); }
+.type li:after { content:"..."; font-family:'Fira Sans', sans-serif; font-weight:400; font-size:18px; line-height:24px; color:var(--light); margin:10px 25% 0; padding:0; text-align:center; display:block; max-width:200px; /*min-height:40px;*/ }
+.type-a li.sample:after, .type-b li.sample:after { font-weight:700; color:var(--extrathin); }
+.type-a li.sample:after { content:"Càncer de pell"; }
+.type-b li.sample:after { content:"Càncer de pulmó"; }
+.type li.sample-1a:after { content:"Pacient jove (d'1 a 20 anys)"; }
+.type li.sample-1b:after { content:"Pacient de mitjana edat (de 21 a 60 anys)"; }
+.type li.sample-1c:after { content:"Pacient de la tercera edat (més de 60 anys)"; }
+.type-a li.sample-2a:after { content:"Baixa exposició al sol"; }
+.type-a li.sample-2b:after { content:"Exposició al sol moderada"; }
+.type-a li.sample-2c:after { content:"Alta exposició al sol"; }
+.type-a li.sample-3a:after { content:"Ús de protector solar i roba de protecció solar"; }
+.type-a li.sample-3b:after { content:"Ús esporàdic de protector solar"; }
+.type-a li.sample-3c:after { content:"Sense ús de protector solar"; }
+.type-b li.sample-2a:after { content:"No fumador"; }
+.type-b li.sample-2b:after { content:"Fumador ocasional"; }
+.type-b li.sample-2c:after { content:"Fumador regular"; }
+.type-b li.sample-3a:after { content:"No exposat al tabac d'altres"; }
+.type-b li.sample-3b:after { content:"Fumador passiu ocasional"; }
+.type-b li.sample-3c:after { content:"Fumador passiu regular"; }
+
+@media (min-width:1151px) {
+	.type-a li.sample-3a:after { margin-left:5%; margin-right:5%; }
+	.type li.sample:after, .type li.sample-1a:after, .type li.sample-1b:after, .type li.sample-1c:after, .type-a li.sample-3b:after, .type-a li.sample-3c:after, .type-b li.sample-3a:after, .type-b li.sample-3b:after, .type-b li.sample-3c:after { margin-left:15%; margin-right:15%; }
+}
+
+@media (max-width:1150px) {
+	.type li:before { width:150px; height:150px; margin:5px; }
+	.type li:after { margin:5px 5% 0; }
+}
+
+@media (max-width:1000px) {
+	.type li:before { width:125px; height:125px; margin:0; }
+	.type li:after { margin:5px 2% 0; }
+}
+
+@media (max-width:700px) {
+	#footer-background  #section2 .quiz-section { padding-left:5%; padding-right:5%; }
+	#footer-background  #section2 .quiz-section .subtitle { border:none!important; padding:0!important; margin:0 0 20px!important; width:100%!important; text-align:center!important; }
+	#footer-background  #section2 .quiz-section p { text-align:center!important; }
+	#footer-background  #section2 .quiz-section .subtitle::after { display:none!important; }
+	#sample-types-wrapper { width:500px!important; }
+	#quiz-00 li button { font-size:14px; }
+	.type { margin:50px 0 100px 0; }
+	.type.user2 { margin-bottom:0; }
+	.type li { margin-bottom:30px; width:50%; background-size:180px!important; }
+	.type li:before { width:150px; height:150px; margin:10px; }
+	.type li:after { margin:10px 20px 0; }
+}
+
+@media (max-width:400px) {
+	#sample-types-wrapper { width:100%!important; }
+	#quiz-00 li { margin:10px .5%; width:30.3333%; }
+	#quiz-00 li button { font-size:13px; padding:10px 0; width:100%; display:block; }
+	.type li, .type li:after { width:90%; max-width:90%; }
+	.type li { margin-bottom:20px; text-align:center; }
+	.type li:after { margin:10px 5% 0 5%; }
+}
+
+@media (max-width:280px) {
+	#quiz-00 li { margin:10px 0; width:100%; }
+	#quiz-00 li button { font-size:14px; }
+}
+
+/* Gen */
+.gen1:before { content:"Gen"; }
+.gen2:before { content:"Canvi a la proteïna"; }
+.gen3:before { content:"Mutació"; }
+.gen4:before { content:"Tractament"; }
+
+.gen li:not(.gen1):after { content:"-"; }
+
+/* Gen 1 i 2 */
+.ATM.R2526K .gen1 a:after { content:"ATM"; } .ATM.R2526K .gen2.active:after { content:"R2526K"; } .ATOH1.G339R .gen1 a:after { content:"ATOH1"; } .ATOH1.G339R .gen2.active:after { content:"G339R"; } .BRAF.G466A .gen1 a:after { content:"BRAF"; } .BRAF.G466A .gen2.active:after { content:"G466A"; } .BRAF.G469E .gen1 a:after { content:"BRAF"; } .BRAF.G469E .gen2.active:after { content:"G469E"; } .BRAF.G466V .gen1 a:after { content:"BRAF"; } .BRAF.G466V .gen2.active:after { content:"G466V"; } .BRAF.V600E .gen1 a:after { content:"BRAF"; } .BRAF.V600E .gen2.active:after { content:"V600E"; } .BRAF.V600G .gen1 a:after { content:"BRAF"; } .BRAF.V600G .gen2.active:after { content:"V600G"; } .BRD4.P597L .gen1 a:after { content:"BRD4"; } .BRD4.P597L .gen2.active:after { content:"P597L"; } .C9.G75E .gen1 a:after { content:"C9"; } .C9.G75E .gen2.active:after { content:"G75E"; } .CCDC70.E48K .gen1 a:after { content:"CCDC70"; } .CCDC70.E48K .gen2.active:after { content:"E48K"; } .CDH11.R50S .gen1 a:after { content:"CDH11"; } .CDH11.R50S .gen2.active:after { content:"R50S"; } .CETN1.Q31K .gen1 a:after { content:"CETN1"; } .CETN1.Q31K .gen2.active:after { content:"Q31K"; } .CSH1.V153M .gen1 a:after { content:"CSH1"; } .CSH1.V153M .gen2.active:after { content:"V153M"; } .EGFR.G857V .gen1 a:after { content:"EGFR"; } .EGFR.G857V .gen2.active:after { content:"G857V"; } .EGFR.L858R .gen1 a:after { content:"EGFR"; } .EGFR.L858R .gen2.active:after { content:"L858R"; } .EGFR.L861Q .gen1 a:after { content:"EGFR"; } .EGFR.L861Q .gen2.active:after { content:"L861Q"; } .EGFR.S768I .gen1 a:after { content:"EGFR"; } .EGFR.S768I .gen2.active:after { content:"S768I"; } .EGFR.T790M .gen1 a:after { content:"EGFR"; } .EGFR.T790M .gen2.active:after { content:"T790M"; } .F9.M8T .gen1 a:after { content:"F9"; } .F9.M8T .gen2.active:after { content:"M8T"; } .FAM135B.G483V .gen1 a:after { content:"FAM135B"; } .FAM135B.G483V .gen2.active:after { content:"G483V"; } .GRIN2A.G751E .gen1 a:after { content:"GRIN2A"; } .GRIN2A.G751E .gen2.active:after { content:"G751E"; } .GRIN2A.P415L .gen1 a:after { content:"GRIN2A"; } .GRIN2A.P415L .gen2.active:after { content:"P415L"; } .GSTA2.K141R .gen1 a:after { content:"GSTA2"; } .GSTA2.K141R .gen2.active:after { content:"K141R"; } .GUCA2A.E105K .gen1 a:after { content:"GUCA2A"; } .GUCA2A.E105K .gen2.active:after { content:"E105K"; } .INSL4.E60K .gen1 a:after { content:"INSL4"; } .INSL4.E60K .gen2.active:after { content:"E60K"; } .KIT.M722I .gen1 a:after { content:"KIT"; } .KIT.M722I .gen2.active:after { content:"M722I"; } .KRAS.G12R .gen1 a:after { content:"KRAS"; } .KRAS.G12R .gen2.active:after { content:"G12R"; } .KRT28.P251L .gen1 a:after { content:"KRT28"; } .KRT28.P251L .gen2.active:after { content:"P251L"; } .KRTAP12-2.T4A .gen1 a:after { content:"KRTAP12-2"; } .KRTAP12-2.T4A .gen2.active:after { content:"T4A"; } .KRTAP22-1.G16R .gen1 a:after { content:"KRTAP22-1"; } .KRTAP22-1.G16R .gen2.active:after { content:"G16R"; } .LCN1.D90E .gen1 a:after { content:"LCN1"; } .LCN1.D90E .gen2.active:after { content:"D90E"; } .MAGEB10.G209C .gen1 a:after { content:"MAGEB10"; } .MAGEB10.G209C .gen2.active:after { content:"G209C"; } .MS4A5.S22F .gen1 a:after { content:"MS4A5"; } .MS4A5.S22F .gen2.active:after { content:"S22F"; } .NDST4.I98V .gen1 a:after { content:"NDST4"; } .NDST4.I98V .gen2.active:after { content:"I98V"; } .OR10A5.P211S .gen1 a:after { content:"OR10A5"; } .OR10A5.P211S .gen2.active:after { content:"P211S"; } .OR10K1.H251Y .gen1 a:after { content:"OR10K1"; } .OR10K1.H251Y .gen2.active:after { content:"H251Y"; } .OR12D3.G27E .gen1 a:after { content:"OR12D3"; } .OR12D3.G27E .gen2.active:after { content:"G27E"; } .OR13G1.M161I .gen1 a:after { content:"OR13G1"; } .OR13G1.M161I .gen2.active:after { content:"M161I"; } .OR13J1.Y123S .gen1 a:after { content:"OR13J1"; } .OR13J1.Y123S .gen2.active:after { content:"Y123S"; } .OR1G1.G3E .gen1 a:after { content:"OR1G1"; } .OR1G1.G3E .gen2.active:after { content:"G3E"; } .OR1L6.P22S .gen1 a:after { content:"OR1L6"; } .OR1L6.P22S .gen2.active:after { content:"P22S"; } .OR2AE1.R228L .gen1 a:after { content:"OR2AE1"; } .OR2AE1.R228L .gen2.active:after { content:"R228L"; } .OR2D2.G16R .gen1 a:after { content:"OR2D2"; } .OR2D2.G16R .gen2.active:after { content:"G16R"; } .OR2M5.M206I .gen1 a:after { content:"OR2M5"; } .OR2M5.M206I .gen2.active:after { content:"M206I"; } .OR2W1.M25I .gen1 a:after { content:"OR2W1"; } .OR2W1.M25I .gen2.active:after { content:"M25I"; } .OR4C46.A101V .gen1 a:after { content:"OR4C46"; } .OR4C46.A101V .gen2.active:after { content:"A101V"; } .OR4D6.S67L .gen1 a:after { content:"OR4D6"; } .OR4D6.S67L .gen2.active:after { content:"S67L"; } .OR4K13.C97S .gen1 a:after { content:"OR4K13"; } .OR4K13.C97S .gen2.active:after { content:"C97S"; } .OR4K15.S234F .gen1 a:after { content:"OR4K15"; } .OR4K15.S234F .gen2.active:after { content:"S234F"; } .OR4K17.L45F .gen1 a:after { content:"OR4K17"; } .OR4K17.L45F .gen2.active:after { content:"L45F"; } .OR52B6.S236F .gen1 a:after { content:"OR52B6"; } .OR52B6.S236F .gen2.active:after { content:"S236F"; } .OR56B1.E120D .gen1 a:after { content:"OR56B1"; } .OR56B1.E120D .gen2.active:after { content:"E120D"; } .OR5AP2.L149F .gen1 a:after { content:"OR5AP2"; } .OR5AP2.L149F .gen2.active:after { content:"L149F"; } .OR5J2.S67L .gen1 a:after { content:"OR5J2"; } .OR5J2.S67L .gen2.active:after { content:"S67L"; } .OR5M8.Y131F .gen1 a:after { content:"OR5M8"; } .OR5M8.Y131F .gen2.active:after { content:"Y131F"; } .OR6C6.S227Y .gen1 a:after { content:"OR6C6"; } .OR6C6.S227Y .gen2.active:after { content:"S227Y"; } .OR6K3.P129T .gen1 a:after { content:"OR6K3"; } .OR6K3.P129T .gen2.active:after { content:"P129T"; } .OR8B8.P129S .gen1 a:after { content:"OR8B8"; } .OR8B8.P129S .gen2.active:after { content:"P129S"; } .OR8D2.M145I .gen1 a:after { content:"OR8D2"; } .OR8D2.M145I .gen2.active:after { content:"M145I"; } .OR8H3.T8K .gen1 a:after { content:"OR8H3"; } .OR8H3.T8K .gen2.active:after { content:"T8K"; } .OR9Q1.G190V .gen1 a:after { content:"OR9Q1"; } .OR9Q1.G190V .gen2.active:after { content:"G190V"; } .PIK3CA.D390N .gen1 a:after { content:"PIK3CA"; } .PIK3CA.D390N .gen2.active:after { content:"D390N"; } .PIK3CA.E545K .gen1 a:after { content:"PIK3CA"; } .PIK3CA.E545K .gen2.active:after { content:"E545K"; } .PIK3R1.N564D .gen1 a:after { content:"PIK3R1"; } .PIK3R1.N564D .gen2.active:after { content:"N564D"; } .RNF213.S2211F .gen1 a:after { content:"RNF213"; } .RNF213.S2211F .gen2.active:after { content:"S2211F"; } .SMARCA4.G1232S .gen1 a:after { content:"SMARCA4"; } .SMARCA4.G1232S .gen2.active:after { content:"G1232S"; } .TAAR5.P211H .gen1 a:after { content:"TAAR5"; } .TAAR5.P211H .gen2.active:after { content:"P211H"; } .TFAP2D.P313S .gen1 a:after { content:"TFAP2D"; } .TFAP2D.P313S .gen2.active:after { content:"P313S"; } .TP53.G244S .gen1 a:after { content:"TP53"; } .TP53.G244S .gen2.active:after { content:"G244S"; } .TP53.H214R .gen1 a:after { content:"TP53"; } .TP53.H214R .gen2.active:after { content:"H214R"; } .UGT2B11.L187V .gen1 a:after { content:"UGT2B11"; } .UGT2B11.L187V .gen2.active:after { content:"L187V"; }
+
+/* Gen 3 */
+.ATM.R2526K .gen3.active:after, .BRAF.G466A .gen3.active:after, .BRAF.G469E .gen3.active:after, .BRAF.G466V .gen3.active:after, .BRAF.V600E .gen3.active:after, .BRAF.V600G .gen3.active:after, .BRD4.P597L .gen3.active:after, .CDH11.R50S .gen3.active:after, .EGFR.G857V .gen3.active:after, .EGFR.L858R .gen3.active:after, .EGFR.L861Q .gen3.active:after, .EGFR.S768I .gen3.active:after, .EGFR.T790M .gen3.active:after, .FAM135B.G483V .gen3.active:after, .GRIN2A.G751E .gen3.active:after, .GRIN2A.P415L .gen3.active:after, .KIT.M722I .gen3.active:after, .KRAS.G12R .gen3.active:after, .PIK3CA.D390N .gen3.active:after, .PIK3CA.E545K .gen3.active:after, .PIK3R1.N564D .gen3.active:after, .RNF213.S2211F .gen3.active:after, .SMARCA4.G1232S .gen3.active:after, .TP53.G244S .gen3.active:after, .TP53.H214R .gen3.active:after { content:"Impulsora"; color:var(--red); }
+.ATOH1.G339R .gen3.active:after, .C9.G75E .gen3.active:after, .CCDC70.E48K .gen3.active:after, .CETN1.Q31K .gen3.active:after, .CSH1.V153M .gen3.active:after, .F9.M8T .gen3.active:after, .GSTA2.K141R .gen3.active:after, .GUCA2A.E105K .gen3.active:after, .INSL4.E60K .gen3.active:after, .KRT28.P251L .gen3.active:after, .KRTAP12-2.T4A .gen3.active:after, .KRTAP22-1.G16R .gen3.active:after, .LCN1.D90E .gen3.active:after, .MAGEB10.G209C .gen3.active:after, .MS4A5.S22F .gen3.active:after, .NDST4.I98V .gen3.active:after, .OR10A5.P211S .gen3.active:after, .OR10K1.H251Y .gen3.active:after, .OR12D3.G27E .gen3.active:after, .OR13G1.M161I .gen3.active:after, .OR13J1.Y123S .gen3.active:after, .OR1G1.G3E .gen3.active:after, .OR1L6.P22S .gen3.active:after, .OR2AE1.R228L .gen3.active:after, .OR2D2.G16R .gen3.active:after, .OR2M5.M206I .gen3.active:after, .OR2W1.M25I .gen3.active:after, .OR4C46.A101V .gen3.active:after, .OR4D6.S67L .gen3.active:after, .OR4K13.C97S .gen3.active:after, .OR4K15.S234F .gen3.active:after, .OR4K17.L45F .gen3.active:after, .OR52B6.S236F .gen3.active:after, .OR56B1.E120D .gen3.active:after, .OR5AP2.L149F .gen3.active:after, .OR5J2.S67L .gen3.active:after, .OR5M8.Y131F .gen3.active:after, .OR6C6.S227Y .gen3.active:after, .OR6K3.P129T .gen3.active:after, .OR8B8.P129S .gen3.active:after, .OR8D2.M145I .gen3.active:after, .OR8H3.T8K .gen3.active:after, .OR9Q1.G190V .gen3.active:after, .TAAR5.P211H .gen3.active:after, .TFAP2D.P313S .gen3.active:after, .UGT2B11.L187V .gen3.active:after { content:"No impulsora"; }
+
+/* Gen 4 no */
+.ATM.R2526K .gen4.active:after, .ATOH1.G339R .gen4.active:after, .BRAF.G466A .gen4.active:after, .BRD4.P597L .gen4.active:after, .C9.G75E .gen4.active:after, .CCDC70.E48K .gen4.active:after, .CDH11.R50S .gen4.active:after, .CETN1.Q31K .gen4.active:after, .CSH1.V153M .gen4.active:after, .EGFR.G857V .gen4.active:after, .F9.M8T .gen4.active:after, .FAM135B.G483V .gen4.active:after, .GRIN2A.G751E .gen4.active:after, .GRIN2A.P415L .gen4.active:after, .GSTA2.K141R .gen4.active:after, .GUCA2A.E105K .gen4.active:after, .INSL4.E60K .gen4.active:after, .KIT.M722I .gen4.active:after, .KRAS.G12R .gen4.active:after, .KRT28.P251L .gen4.active:after, .KRTAP12-2.T4A .gen4.active:after, .KRTAP22-1.G16R .gen4.active:after, .LCN1.D90E .gen4.active:after, .MAGEB10.G209C .gen4.active:after, .MS4A5.S22F .gen4.active:after, .NDST4.I98V .gen4.active:after, .OR10A5.P211S .gen4.active:after, .OR10K1.H251Y .gen4.active:after, .OR12D3.G27E .gen4.active:after, .OR13G1.M161I .gen4.active:after, .OR13J1.Y123S .gen4.active:after, .OR1G1.G3E .gen4.active:after, .OR1L6.P22S .gen4.active:after, .OR2AE1.R228L .gen4.active:after, .OR2D2.G16R .gen4.active:after, .OR2M5.M206I .gen4.active:after, .OR2W1.M25I .gen4.active:after, .OR4C46.A101V .gen4.active:after, .OR4D6.S67L .gen4.active:after, .OR4K13.C97S .gen4.active:after, .OR4K15.S234F .gen4.active:after, .OR4K17.L45F .gen4.active:after, .OR52B6.S236F .gen4.active:after, .OR56B1.E120D .gen4.active:after, .OR5AP2.L149F .gen4.active:after, .OR5J2.S67L .gen4.active:after, .OR5M8.Y131F .gen4.active:after, .OR6C6.S227Y .gen4.active:after, .OR6K3.P129T .gen4.active:after, .OR8B8.P129S .gen4.active:after, .OR8D2.M145I .gen4.active:after, .OR8H3.T8K .gen4.active:after, .OR9Q1.G190V .gen4.active:after, .PIK3CA.D390N .gen4.active:after, .PIK3CA.E545K .gen4.active:after, .PIK3R1.N564D .gen4.active:after, .RNF213.S2211F .gen4.active:after, .SMARCA4.G1232S .gen4.active:after, .TAAR5.P211H .gen4.active:after, .TFAP2D.P313S .gen4.active:after, .TP53.G244S .gen4.active:after, .TP53.H214R .gen4.active:after, .UGT2B11.L187V .gen4.active:after { content:"Cap"; display:inline-block; background:url("../grafs/gral/supr.svg") no-repeat left center; background-size:20px; padding-left:25px; line-height:30px; color:var(--red); color:rgba(255,255,255,.4); }
+
+/* Gen 4 sí */
+.BRAF.G469E .gen4.active:after { content:"Sorafenib"; }
+.BRAF.G466V .gen4.active:after { content:"Dasatinib"; }
+.gen-type-a .BRAF.V600E .gen4.active:after { content:"Dabrafenib;Trametinib"; } /* Type A */
+.gen-type-b .BRAF.V600E .gen4.active:after { content:"Dabrafenib"; } /* Type B */
+.BRAF.V600G .gen4.active:after { content:"Vemurafenib"; }
+.EGFR.L858R .gen4.active:after { content:"Erlotinib"; }
+.EGFR.L861Q .gen4.active:after { content:"Afatinib"; }
+.EGFR.S768I .gen4.active:after { content:"Afatinib"; }
+.EGFR.T790M .gen4.active:after { content:"Rociletinib,HM61713"; }
+
+.gen p:before { content:"Llistat de gens amb mutacions"; }
+
+/* Quiz */
+#quiz-section-01-subtitle:before { content:"\0031.\00A0 Seqüència l’ADN del tumor per obtenir el llistat de mutacions"; }
+#quiz-section-01-subtitle:after { content:"(trobaràs el botó per fer-ho a sota del seqüenciador)"; }
+#quiz-section-01-subtitle.analisis-01:before { content:"\0032.\00A0 La seqüenciació de l’ADN ens permet identificar quins gens han patit una mutació i localitzar a quina proteïna hi ha hagut un canvi o mutació. El següent pas serà identificar quines de les mutacions són impulsores."; }
+#quiz-section-01-subtitle.analisis-01:after { content:"(revisa les mutacions a les fitxes dels gens i clica el botó al final del llistat)"; }
+#quiz-section-01-subtitle.analisis-02:before { content:"\0033.\00A0 Finalment, hauràs de cercar si existeix una teràpia per a la mutació"; }
+#quiz-section-01-subtitle.analisis-02:after { content:"(revisa els canvis a les fitxes dels gens i clica el botó al final del llistat)"; }
+#quiz-section-01-subtitle.analisis-03:before { content:"\2713\00A0 Genial, has seguit totes les passes correctament!"; }
+#quiz-section-01-subtitle.analisis-03:after { content:"\279C\00A0 Has encertat quin pacient tindrà més mutacions? Fixa’t que com més mutacions més possibilitats hi haurà que apareguin gens impulsors del càncer. Malauradament, encara no existeixen tractaments per a totes les mutacions impulsores."; background:var(--grey); background:rgba(255,255,255,.1); margin-top:20px; padding:20px; display:block; border-radius:8px; color:var(--white); font-size:16px; line-height:24px; padding:20px 50px; }
+
+#quiz-section-02-subtitle:before { content:"Com funcionen els factors de risc del càncer?"; }
+#quiz-section-02-subtitle:after { content:"(escull el tipus de tumor que vols analitzar)"; }
+

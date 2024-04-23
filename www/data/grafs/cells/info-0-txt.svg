@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 790 736" style="enable-background:new 0 0 790 736;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#373A47;}
+	.st1{font-family:'FiraSans-Regular';}
+	.st2{font-size:44.2766px;}
+	.st3{font-family:'FiraSans-Bold';}
+	.st4{fill:none;stroke:#AFAAAA;stroke-miterlimit:10;}
+	.st5{fill:#8FB5BC;}
+	.st6{fill:#FF2A2A;}
+</style>
+<text transform="matrix(1 0 0 1 44.1641 483.927)" class="st0 st1 st2">Gen</text>
+<text transform="matrix(1 0 0 1 44.1641 557.72)" class="st0 st1 st2">Canvi a la proteïna</text>
+<text transform="matrix(1 0 0 1 44.1641 631.5149)" class="st0 st1 st2">Mutació</text>
+<text transform="matrix(1 0 0 1 44.1641 705.3098)" class="st0 st1 st2">Tractament</text>
+<text transform="matrix(1 0 0 1 486.9297 483.927)" class="st0 st3 st2">BRAF</text>
+<text transform="matrix(1 0 0 1 486.9297 557.72)" class="st0 st3 st2">V600E</text>
+<text transform="matrix(1 0 0 1 486.9297 631.5149)" class="st0 st3 st2">Impulsora</text>
+<text transform="matrix(1 0 0 1 486.9297 705.3098)" class="st0 st3 st2">Vemurafenib</text>
+<rect x="2.9" y="5.2" class="st4" width="783.9" height="725.6"/>
+<line class="st4" x1="2.9" y1="427.9" x2="787.1" y2="427.9"/>
+<line class="st4" x1="2.9" y1="503.9" x2="787.1" y2="503.9"/>
+<line class="st4" x1="2.9" y1="579.5" x2="787.1" y2="579.5"/>
+<line class="st4" x1="2.9" y1="655.2" x2="787.1" y2="655.2"/>
+<g>
+	<path class="st5" d="M430.9,221.2c14.2-9.6,28.2-21.8,39.7-39.8c19.2-30.4,28-72.3,28-131.9h-30.1c0,52.9-7.7,90.8-23.4,115.9
+		c-11.6,18.4-26.8,28.8-43.2,38.6c-16.4-9.8-31.4-20.1-43.2-38.6c-15.9-25.1-23.4-62.9-23.4-115.9h-29.9c0,59.4,8.9,101.5,28,131.9
+		c11.4,18.1,25.6,30.3,39.7,39.8c-14.6,9.6-28.6,21.6-40.2,39.8c-18.8,29.5-27.5,70.3-27.5,127.8h30.1c0-50.9,7.4-87.6,22.9-111.8
+		c11.6-18.3,26.9-28.6,43.5-38.6c16.6,9.8,31.9,20.1,43.5,38.6c15.5,24.2,22.9,60.9,22.9,111.8h30.1c0-57.7-8.9-98.3-27.5-127.8
+		C459.5,242.8,445.5,231,430.9,221.2z"/>
+	<polygon class="st6" points="292.3,86 279.2,77.9 279.2,91 266.3,91 274.1,104.1 266.3,117 279.2,117 279.2,130.1 292.3,122.2 
+		305.2,130.1 305.2,117 318.3,117 310.4,104.1 318.3,91 305.2,91 305.2,77.9 	"/>
+</g>
+</svg>
