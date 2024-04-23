@@ -22,7 +22,7 @@ This project is a web application for cancer detection. The application is struc
 
 The application is containerized using Docker. To run the application, you need to have Docker and Docker Compose installed on your machine.
 
-1. Build the Docker image: `docker build -t cancer-detective .`. You only need to do this once.
+1. Build the Docker image: `docker-compose -f docker-compose.yml up --build`. You only need to do this once.
 2. Run the Docker container: `docker-compose up`
 3. Access the application at `http://localhost:8080`
 
