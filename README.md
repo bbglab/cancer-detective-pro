@@ -23,7 +23,14 @@ This project is a web application for cancer detection. The application is struc
 The application is containerized using Docker. To run the application, you need to have Docker and Docker Compose installed on your machine.
 
 1. Build the Docker image: `docker-compose -f docker-compose.yml up --build`. You only need to do this once.
-2. Run the Docker container: `docker-compose up`
-3. Access the application at `http://localhost:8080`
+2. Access the application at `http://localhost:8080`
+
+If you do not have docker installed, you can follow these steps:
+1. `sudo apt install docker.io`
+2. `sudo apt install docker-compose`
+
+If docker compose raises the following error `ERROR: Couldn't connect to Docker daemon at http+docker://localhost - is it running?` when running `docker-compose -f docker-compose.yml up --build`, you can try to run the command with `sudo`.
+
+If you have correctly run the website, the next time you want to run it, you can run the Docker container with the command `docker-compose up`. 
 
 Please note that any changes made to the files in the `www` directory will be reflected in the running application.
