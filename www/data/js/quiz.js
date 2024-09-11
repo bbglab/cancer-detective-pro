@@ -46,12 +46,12 @@ function finalitems() {
 		if ( randomItemA1 === '1a' ) { a1value=1; } else if ( randomItemA1 === '1b' ) { a1value=2; } else if ( randomItemA1 === '1c' ) { a1value=3; }
 		if ( randomItemA2 === '2a' ) { a2value=1; } else if ( randomItemA2 === '2b' ) { a2value=2; } else if ( randomItemA2 === '2c' ) { a2value=3; }
 		if ( randomItemA3 === '3a' ) { a3value=1; } else if ( randomItemA3 === '3b' ) { a3value=2; } else if ( randomItemA3 === '3c' ) { a3value=3; }
-		if ( randomItemA4 === '4a' ) { a4value=1; } else if ( randomItemA4 === '4b' ) { a4value=2; }
+		if ( randomItemA4 === '4a' ) { a4value=1; } else if ( randomItemA4 === '4b' ) { a4value=2; } else if ( randomItemA4 === '4c' ) { a4value=3; } else if ( randomItemA4 === '4d' ) { a4value=4; } else if ( randomItemA4 === '4e' ) { a4value=5; } else if ( randomItemA4 === '4f' ) { a4value=6; } else if ( randomItemA4 === '4g' ) { a4value=7; } else if ( randomItemA4 === '4h' ) { a4value=8; } else if ( randomItemA4 === '4i' ) { a4value=9; } else if ( randomItemA4 === '4j' ) { a4value=10; }
 
 		if ( randomItemB1 === '1a' ) { b1value=1; } else if ( randomItemB1 === '1b' ) { b1value=2; } else if ( randomItemB1 === '1c' ) { b1value=3; }
 		if ( randomItemB2 === '2a' ) { b2value=1; } else if ( randomItemB2 === '2b' ) { b2value=2; } else if ( randomItemB2 === '2c' ) { b2value=3; }
 		if ( randomItemB3 === '3a' ) { b3value=1; } else if ( randomItemB3 === '3b' ) { b3value=2; } else if ( randomItemB3 === '3c' ) { b3value=3; }
-		if ( randomItemB4 === '4a' ) { b4value=1; } else if ( randomItemB4 === '4b' ) { b4value=2; }
+		if ( randomItemB4 === '4a' ) { b4value=1; } else if ( randomItemB4 === '4b' ) { b4value=2; } else if ( randomItemB4 === '4c' ) { b4value=3; } else if ( randomItemB4 === '4d' ) { b4value=4; } else if ( randomItemB4 === '4e' ) { b4value=5; } else if ( randomItemB4 === '4f' ) { b4value=6; } else if ( randomItemB4 === '4g' ) { b4value=7; } else if ( randomItemB4 === '4h' ) { b4value=8; } else if ( randomItemB4 === '4i' ) { b4value=9; } else if ( randomItemB4 === '4j' ) { b4value=10; }
 		
 		// assigna gene type
 		w3.addClass('.gen-sample-1, .gen-sample-2', finalgeneType);
@@ -602,7 +602,6 @@ function finalitems() {
 		var typeB269 = document.getElementById( 'gen-b-1c-2c-3c-4i' ); if(typeA01) { typeB269.innerHTML += muta_b_1c_2c_3c_4i; }
 		var typeB270 = document.getElementById( 'gen-b-1c-2c-3c-4j' ); if(typeA01) { typeB270.innerHTML += muta_b_1c_2c_3c_4j; }
 
-		//	
 	}
 }
 finalitems();
