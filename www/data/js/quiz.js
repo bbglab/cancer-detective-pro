@@ -1,6 +1,6 @@
 // variables aleatòries
 function random_types(types) { return types[Math.floor(Math.random()*types.length)]; }
-var types = ['a']; // variables pel tipus de mostra: skin / types
+var types = ['a']; // variables pel tipus de mostra: skin / lung
 function random_item1(items1) { return items1[Math.floor(Math.random()*items1.length)]; }
 var items1 = ['1a', '1b', '1c']; // variables pel factor: edat
 function random_item2(items2) { return items2[Math.floor(Math.random()*items2.length)]; }
