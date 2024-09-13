@@ -28,8 +28,7 @@ var sample2driver;
 
 // Functions Slide 4 (add class "driver" to all driver mutations)
 function driverCount() {
-	w3.addClass('.ATM.R2526K .gen3, .BRAF.G466A .gen3, .BRAF.G469E .gen3, .BRAF.G466V .gen3, .BRAF.V600E .gen3, .BRAF.V600G .gen3, .BRD4.P597L .gen3, .CDH11.R50S .gen3, .EGFR.G857V .gen3, .EGFR.L858R .gen3, .EGFR.L861Q .gen3, .EGFR.S768I .gen3, .EGFR.T790M .gen3, .FAM135B.G483V .gen3, .GRIN2A.G751E .gen3, .GRIN2A.P415L .gen3, .KIT.M722I .gen3, .KRAS.G12R .gen3, .PIK3CA.D390N .gen3, .PIK3CA.E545K .gen3, .PIK3R1.N564D .gen3, .RNF213.S2211F .gen3, .SMARCA4.G1232S .gen3, .TP53.G244S .gen3, .TP53.H214R .gen3','driver');
-	sample1driver = document.querySelectorAll('.gen-sample-1 .driver').length;
+	w3.addClass('.BRAF.V600E .gen3, .BRAF.V600K .gen3, .CDKN2A.P81L .gen3, .EGFR.L858R .gen3, .EGFR.L861Q .gen3, .HRAS.G12V .gen3, .KEAP1.C23Y .gen3, .KEAP1.V155F .gen3, .KRAS.G12C .gen3, .KRAS.G12D .gen3, .NF1.R1276P .gen3, .NFE2L2.G31R .gen3, .NRAS.Q61H .gen3, .NRAS.Q61K .gen3, .PTEN.D162G .gen3, .TP53.L145R .gen3, .TP53.P151S .gen3, .TP53.R248G .gen3, .TP53.R273H .gen3, .TP53.Y220C .gen3','driver');	sample1driver = document.querySelectorAll('.gen-sample-1 .driver').length;
 	sample2driver = document.querySelectorAll('.gen-sample-2 .driver').length;
 	if ( sample1driver > sample2driver ) {
 		sampleWinner=1;
