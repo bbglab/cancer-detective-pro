@@ -41,7 +41,7 @@ function finalitems() {
 	if ( finalitem1 == finalitem2 ) {
 		finalitems();
 	} else {
-		document.getElementById("sample-types-wrapper").innerHTML += "<ul class='type "+ finaltype +" active user1' id='"+ finalitem1 +"'><li class='sample'></li><li class='sample-"+ randomItemA1 +"'></li><li class='sample-"+ randomItemA2 +"'></li><li class='sample-"+ randomItemA3 +"'></li><li class='sample-"+ randomItemA4 +"'></li></ul><ul class='type "+ finaltype +" active user2' id='"+ finalitem2 +"'><li class='sample'></li><li class='sample-"+ randomItemB1 +"'></li><li class='sample-"+ randomItemB2 +"'></li><li class='sample-"+ randomItemB3 +"'></li><li class='sample-"+ randomItemB4 +"'></li></ul>";
+		document.getElementById("sample-types-wrapper").innerHTML += "<ul class='type "+ finaltype +" active user1' id='"+ finalitem1 +"'><li class='sample'></li><li class='sample-"+ randomItemA1 +"'></li><li class='sample-"+ randomItemA2 +"'></li><li class='sample-"+ randomItemA3 +"'></li></ul><ul class='type "+ finaltype +" active user2' id='"+ finalitem2 +"'><li class='sample'></li><li class='sample-"+ randomItemB1 +"'></li><li class='sample-"+ randomItemB2 +"'></li><li class='sample-"+ randomItemB3 +"'></li></ul>";
 		// assigna values a la variable de la suma
 		if ( randomItemA1 === '1a' ) { a1value=1; } else if ( randomItemA1 === '1b' ) { a1value=2; } else if ( randomItemA1 === '1c' ) { a1value=3; }
 		if ( randomItemA2 === '2a' ) { a2value=1; } else if ( randomItemA2 === '2b' ) { a2value=2; } else if ( randomItemA2 === '2c' ) { a2value=3; }
