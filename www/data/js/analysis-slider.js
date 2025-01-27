@@ -7,6 +7,10 @@ var countVarSlide2;
 var countVarSlide3;
 // var countVarSlideTest1; // Modificar
 var countVarSlide4;
+var countVarSlide5;
+// var countVarSlide6;
+var countVarSlide7;
+// var countVarSlide8;
 
 function actualitzaVar() {
 	sampleVar = 0;
@@ -15,31 +19,34 @@ function actualitzaVar() {
 	countVarSlide3 = 2;
 	// countVarSlideTest1 = 2; // Modificar
 	countVarSlide4 = 2;
+	countVarSlide5 = 2;
+	countVarSlide6 = 2;
+	// countVarSlide7 = 2;
+	// countVarSlide8 = 2;
 }
 
 var sampleVar;
 var resultEnd;
 actualitzaVar();
 
-// Driver mutations
-var sampleWinner;
-var sample1driver;
-var sample2driver;
+// Functions Slide 4 (count all mutations) xxx
 
-// Functions Slide 4 (add class "driver" to all driver mutations)
-function driverCount() {
-	w3.addClass('.BRAF.V600E .gen3, .BRAF.V600K .gen3, .CDKN2A.P81L .gen3, .EGFR.L858R .gen3, .EGFR.L861Q .gen3, .HRAS.G12V .gen3, .KEAP1.C23Y .gen3, .KEAP1.V155F .gen3, .KRAS.G12C .gen3, .KRAS.G12D .gen3, .NF1.R1276P .gen3, .NFE2L2.G31R .gen3, .NRAS.Q61H .gen3, .NRAS.Q61K .gen3, .PTEN.D162G .gen3, .TP53.L145R .gen3, .TP53.P151S .gen3, .TP53.R248G .gen3, .TP53.R273H .gen3, .TP53.Y220C .gen3','driver');	
-	sample1driver = document.querySelectorAll('.gen-sample-1 .driver').length;
-	sample2driver = document.querySelectorAll('.gen-sample-2 .driver').length;
-	if ( sample1driver > sample2driver ) {
-		sampleWinner=1;
-		w3.addClass('#popup-slide-4 #driver-1','active');
-	} else if ( sample1driver < sample2driver ) {
-		sampleWinner=2;
-		w3.addClass('#popup-slide-4 #driver-2','active');
-	} else if ( sample1driver == sample2driver ) {
-		sampleWinner=0;
-		w3.addClass('#popup-slide-4 #driver-3','active');
+var mutationsWinner;
+var sample1mutations;
+var sample2mutations;
+
+function mutationsCount() {
+	sample1mutations = document.querySelectorAll('.gen-sample-1 .gen3').length;
+	sample2mutations = document.querySelectorAll('.gen-sample-2 .gen3').length;
+	if ( sample1mutations > sample2mutations ) {
+		mutationsWinner=1;
+		w3.addClass('#mutations-1','active');
+	} else if ( sample1mutations < sample2mutations ) {
+		mutationsWinner=2;
+		w3.addClass('#mutations-2','active');
+	} else if ( sample1mutations == sample2mutations ) {
+		mutationsWinner=0;
+		w3.addClass('#mutations-3','active');
 	}
 }
 function sampleSlide4ok() {
@@ -50,11 +57,89 @@ function sampleSlide4ok() {
 	}, 10);
 }
 
+// Functions Slide 5 (add class "driver" to all driver mutations)
+
+var sampleWinner;
+var sample1driver;
+var sample2driver;
+
+function driverCount() {
+	w3.addClass('.BRAF.V600E .gen3, .BRAF.V600K .gen3, .CDKN2A.P81L .gen3, .EGFR.L858R .gen3, .EGFR.L861Q .gen3, .HRAS.G12V .gen3, .KEAP1.C23Y .gen3, .KEAP1.V155F .gen3, .KRAS.G12C .gen3, .KRAS.G12D .gen3, .NF1.R1276P .gen3, .NFE2L2.G31R .gen3, .NRAS.Q61H .gen3, .NRAS.Q61K .gen3, .PTEN.D162G .gen3, .TP53.L145R .gen3, .TP53.P151S .gen3, .TP53.R248G .gen3, .TP53.R273H .gen3, .TP53.Y220C .gen3','driver');	
+	sample1driver = document.querySelectorAll('.gen-sample-1 .driver').length;
+	sample2driver = document.querySelectorAll('.gen-sample-2 .driver').length;
+	if ( sample1driver > sample2driver ) {
+		sampleWinner=1;
+		w3.addClass('#driver-1','active');
+	} else if ( sample1driver < sample2driver ) {
+		sampleWinner=2;
+		w3.addClass('#driver-2','active');
+	} else if ( sample1driver == sample2driver ) {
+		sampleWinner=0;
+		w3.addClass('#driver-3','active');
+	}
+}
+function sampleSlide5ok() {
+	w3.addClass('#popup-slide-5','visible');
+	setTimeout(function() { 
+		w3.addClass('#popup-slide-5, #popup-slide-5 div','active');
+		scroll.scrollTo('#quiz-section-02');
+	}, 10);
+}
+
+//
+
+function sampleSlide6ok() {
+	w3.addClass('#popup-slide-6','visible');
+	setTimeout(function() { 
+		w3.addClass('#popup-slide-6, #popup-slide-6 div','active');
+		scroll.scrollTo('#quiz-section-02');
+	}, 10);
+}
+
+// xxx
+
+var therapyWinner;
+var sample1therapy;
+var sample2therapy;
+
+function therapyCount() {
+	w3.addClass('.BRAF.V600E .gen4, .BRAF.V600K .gen4, .EGFR.L858R .gen4, .EGFR.L861Q .gen4','therapy');
+	sample1therapy = document.querySelectorAll('.gen-sample-1 .therapy').length;
+	sample2therapy = document.querySelectorAll('.gen-sample-2 .therapy').length;
+	if ( sample1therapy > sample2therapy ) {
+		therapyWinner=1;
+		w3.addClass('#therapy-1','active');
+	} else if ( sample1therapy < sample2therapy ) {
+		therapyWinner=2;
+		w3.addClass('#therapy-2','active');
+	} else if ( sample1therapy == sample2therapy ) {
+		therapyWinner=0;
+		w3.addClass('#therapy-3','active');
+	}
+}
+function sampleSlide7ok() {
+	w3.addClass('#popup-slide-7','visible');
+	setTimeout(function() { 
+		w3.addClass('#popup-slide-7, #popup-slide-7 div','active');
+		scroll.scrollTo('#quiz-section-02');
+	}, 10);
+}
+
+//
+
+function sampleSlide8ok() {
+	w3.addClass('#popup-slide-8','visible');
+	setTimeout(function() { 
+		w3.addClass('#popup-slide-8, #popup-slide-8 div','active');
+		scroll.scrollTo('#quiz-section-02');
+	}, 10);
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////// Functions
 
 // Functions Slide End // Afegir una variable per slide X 2 // Modificar
 // function addEnd(addEnd1, addEnd2, addEnd3, addEndTest1, addEnd4) { resultEnd = addEnd1 + addEnd2 + addEnd3 + addEndTest1 + addEnd4; return resultEnd; }
-function addEnd(addEnd1, addEnd2, addEnd3, addEnd4) { resultEnd = addEnd1 + addEnd2 + addEnd3 + addEnd4; return resultEnd; }
+function addEnd(addEnd1, addEnd2, addEnd3, addEnd4, addEnd5, addEnd6, addEnd7, addEnd8) { resultEnd = addEnd1 + addEnd2 + addEnd3 + addEnd4 + addEnd5 + addEnd6; return resultEnd; }
 
 // Functions Close Popup
 function popupClose() {
@@ -241,52 +326,147 @@ document.getElementById("slidetest1-option3").addEventListener('click', function
 });
 */
 
-// Buttons Slide 4
+// Buttons Slide 4 functions
 document.getElementById("slide4-option1").addEventListener('click', function(){
-	driverCount();
-	if ( sampleWinner == 1 ) {
+	mutationsCount();
+	if ( mutationsWinner == 1 ) {
 		if ( countVarSlide4 == 2 ) { countVarSlide4 = 1; }
 		sampleSlide4ok();
-	} else if ( sampleWinner == 2 ) {
+	} else if ( mutationsWinner == 2 ) {
 		if ( countVarSlide4 == 2 ) { countVarSlide4 = 0; }
 		activaPopupError();
 		scroll.scrollTo('#quiz-section-02');
-	} else if ( sampleWinner == 0 ) {
+	} else if ( mutationsWinner == 0 ) {
 		if ( countVarSlide4 == 2 ) { countVarSlide4 = 0; }
 		activaPopupError();
 		scroll.scrollTo('#quiz-section-02');
 	}
 });
 document.getElementById("slide4-option2").addEventListener('click', function(){
-	driverCount();
-	if ( sampleWinner == 1 ) {
+	mutationsCount();
+	if ( mutationsWinner == 1 ) {
 		if ( countVarSlide4 == 2 ) { countVarSlide4 = 0; }
 		activaPopupError();
 		scroll.scrollTo('#quiz-section-02');
-	} else if ( sampleWinner == 2 ) {
+	} else if ( mutationsWinner == 2 ) {
 		if ( countVarSlide4 == 2 ) { countVarSlide4 = 1; }
 		sampleSlide4ok();
-	} else if ( sampleWinner == 0 ) {
+	} else if ( mutationsWinner == 0 ) {
 		if ( countVarSlide4 == 2 ) { countVarSlide4 = 0; }
 		activaPopupError();
 		scroll.scrollTo('#quiz-section-02');
 	}
 });
 document.getElementById("slide4-option3").addEventListener('click', function(){
-	driverCount();
-	if ( sampleWinner == 1 ) {
+	mutationsCount();
+	if ( mutationsWinner == 1 ) {
 		if ( countVarSlide4 == 2 ) { countVarSlide4 = 0; }
 		activaPopupError();
 		scroll.scrollTo('#quiz-section-02');
-	} else if ( sampleWinner == 2 ) {
+	} else if ( mutationsWinner == 2 ) {
 		if ( countVarSlide4 == 2 ) { countVarSlide4 = 0; }
 		activaPopupError();
 		scroll.scrollTo('#quiz-section-02');
-	} else if ( sampleWinner == 0 ) {
+	} else if ( mutationsWinner == 0 ) {
 		if ( countVarSlide4 == 2 ) { countVarSlide4 = 1; }
 		sampleSlide4ok();
 	}
 });
+
+// Buttons Slide 5 functions
+document.getElementById("slide5-option1").addEventListener('click', function(){
+	driverCount();
+	if ( sampleWinner == 1 ) {
+		if ( countVarSlide5 == 2 ) { countVarSlide5 = 1; }
+		sampleSlide5ok();
+	} else if ( sampleWinner == 2 ) {
+		if ( countVarSlide5 == 2 ) { countVarSlide5 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	} else if ( sampleWinner == 0 ) {
+		if ( countVarSlide5 == 2 ) { countVarSlide5 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
+});
+document.getElementById("slide5-option2").addEventListener('click', function(){
+	driverCount();
+	if ( sampleWinner == 1 ) {
+		if ( countVarSlide5 == 2 ) { countVarSlide5 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	} else if ( sampleWinner == 2 ) {
+		if ( countVarSlide5 == 2 ) { countVarSlide5 = 1; }
+		sampleSlide5ok();
+	} else if ( sampleWinner == 0 ) {
+		if ( countVarSlide5 == 2 ) { countVarSlide5 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
+});
+document.getElementById("slide5-option3").addEventListener('click', function(){
+	driverCount();
+	if ( sampleWinner == 1 ) {
+		if ( countVarSlide5 == 2 ) { countVarSlide5 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	} else if ( sampleWinner == 2 ) {
+		if ( countVarSlide5 == 2 ) { countVarSlide5 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	} else if ( sampleWinner == 0 ) {
+		if ( countVarSlide5 == 2 ) { countVarSlide5 = 1; }
+		sampleSlide5ok();
+	}
+});
+
+// Buttons Slide 6 functions
+document.getElementById("slide6-option1").addEventListener('click', function(){
+	therapyCount();
+	if ( therapyWinner == 1 ) {
+		if ( countVarSlide6 == 2 ) { countVarSlide6 = 1; }
+		sampleSlide6ok();
+	} else if ( therapyWinner == 2 ) {
+		if ( countVarSlide6 == 2 ) { countVarSlide6 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	} else if ( therapyWinner == 0 ) {
+		if ( countVarSlide6 == 2 ) { countVarSlide6 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
+});
+document.getElementById("slide6-option2").addEventListener('click', function(){
+	therapyCount();
+	if ( therapyWinner == 1 ) {
+		if ( countVarSlide6 == 2 ) { countVarSlide6 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	} else if ( therapyWinner == 2 ) {
+		if ( countVarSlide6 == 2 ) { countVarSlide6 = 1; }
+		sampleSlide6ok();
+	} else if ( therapyWinner == 0 ) {
+		if ( countVarSlide6 == 2 ) { countVarSlide6 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
+});
+document.getElementById("slide6-option3").addEventListener('click', function(){
+	therapyCount();
+	if ( therapyWinner == 1 ) {
+		if ( countVarSlide6 == 2 ) { countVarSlide6 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	} else if ( therapyWinner == 2 ) {
+		if ( countVarSlide6 == 2 ) { countVarSlide6 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	} else if ( therapyWinner == 0 ) {
+		if ( countVarSlide6 == 2 ) { countVarSlide6 = 1; }
+		sampleSlide6ok();
+	}
+});
+
 
 ////////////////////////////////////////////////////////////////////////////////////////// Buttons Popups
 
@@ -337,6 +517,20 @@ document.getElementById("popup-slide-3-lung-close").addEventListener('click', fu
 	w3.addClass('#slide-4','active');
 });
 
+// Buttons Popup Encert Comuns (next slide)
+document.getElementById("popup-slide-4-close").addEventListener('click', function(){
+	popupClose();
+	w3.removeClass('#slide-4','active');
+	w3.addClass('#slide-4','go-right');
+	w3.addClass('#slide-5','active');
+});
+document.getElementById("popup-slide-5-close").addEventListener('click', function(){
+	popupClose();
+	w3.removeClass('#slide-5','active');
+	w3.addClass('#slide-5','go-right');
+	w3.addClass('#slide-6','active');
+});
+
 // Buttons Popup Encert slide-test-1 (next slide) // Modificar
 /*
 document.getElementById("popup-slide-test-1-close").addEventListener('click', function(){
@@ -348,15 +542,15 @@ document.getElementById("popup-slide-test-1-close").addEventListener('click', fu
 });
 */
 
-// Buttons Popup Encert Slide 4 (next slide)
-document.getElementById("popup-slide-4-close").addEventListener('click', function(){
+// Buttons Popup Encert Slide 6 (next slide)
+document.getElementById("popup-slide-6-close").addEventListener('click', function(){
 	// Counter // Afegir una variable per slide // Modificar
 	// document.getElementById("sample-end-var").innerHTML += addEnd(countVarSlide1, countVarSlide2, countVarSlide3, countVarSlideTest1, countVarSlide4);
-	document.getElementById("sample-end-var").innerHTML += addEnd(countVarSlide1, countVarSlide2, countVarSlide3, countVarSlide4);
+	document.getElementById("sample-end-var").innerHTML += addEnd(countVarSlide1, countVarSlide2, countVarSlide3, countVarSlide4, countVarSlide5, countVarSlide6);
 	//
 	popupClose();
-	w3.removeClass('#slide-4','active');
-	w3.addClass('#slide-4','go-right');
+	w3.removeClass('#slide-6','active');
+	w3.addClass('#slide-6','go-right');
 	w3.addClass('#sample-end','active');
 	//
 	// Només quan va a l'últim slide
@@ -420,6 +614,18 @@ document.getElementById("slide4-back").addEventListener('click', function(){
 		w3.removeClass('#slide-3-lung','go-right');
 		w3.addClass('#slide-3-lung','active');
 	}
+});
+
+document.getElementById("slide5-back").addEventListener('click', function(){
+	w3.removeClass('.sample-selection','active');
+	w3.removeClass('#slide-4','go-right');
+	w3.addClass('#slide-4','active');
+});
+
+document.getElementById("slide6-back").addEventListener('click', function(){
+	w3.removeClass('.sample-selection','active');
+	w3.removeClass('#slide-5','go-right');
+	w3.addClass('#slide-5','active');
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////// End Buttons

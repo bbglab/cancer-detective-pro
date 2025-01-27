@@ -889,7 +889,7 @@ document.getElementById('quiz-01-04-back').addEventListener('click', function cl
 
 // Accions del botó 4 "Com funcionen els factors de risc del càncer"
 document.getElementById('quiz-01-04').addEventListener('click', function clickEvent0104 () {
-	document.getElementById('quiz-01-04').classList.add('hide');
+	document.getElementById('quiz-01-04-wrapper').classList.add('hide');
 	document.getElementById('quiz-section-02').classList.add('active');
 	scroll.update();
 	scroll.scrollTo('#quiz-section-02');
