@@ -16,59 +16,24 @@ const scroll = new LocomotiveScroll({
 /* Menu anchors mark function */
 function anchorsMark() {
 	scroll.on('call', (obj) => {
-		if ( obj=='menu1' ) {
-			document.getElementById('menu1').classList.toggle('active');
-		} else if ( obj=='menu2' ) {
-			document.getElementById('menu2').classList.toggle('active');
-			if ( document.getElementById('section1').classList.contains('is-inview') ) {
-				document.getElementById('menu1').classList.toggle('active2');
+		const toggleClass = (id, className) => {
+			const element = document.getElementById(id);
+			if (element) element.classList.toggle(className);
+		};
+
+		// Check if the object corresponds to a menu
+		if (obj.startsWith('menu')) {
+			const menuNumber = parseInt(obj.replace('menu', '')); // Extract the number from 'menuX'
+			toggleClass(`menu${menuNumber}`, 'active');
+
+			// Handle section check and toggling 'active2'
+			const currentSection = document.getElementById(`section${menuNumber - 1}`);
+			if (currentSection && currentSection.classList.contains('is-inview')) {
+				toggleClass(`menu${menuNumber - 1}`, 'active2');
 			}
-		} else if ( obj=='menu3' ) {
-			document.getElementById('menu3').classList.toggle('active');
-			if ( document.getElementById('section2').classList.contains('is-inview') ) {
-				document.getElementById('menu2').classList.toggle('active2');
-			}
-		} else if ( obj=='menu4' ) {
-			document.getElementById('menu4').classList.toggle('active');
-			if ( document.getElementById('section3').classList.contains('is-inview') ) {
-				document.getElementById('menu3').classList.toggle('active2');
-			}
-		} else if ( obj=='menu5' ) {
-			document.getElementById('menu5').classList.toggle('active');
-			if ( document.getElementById('section4').classList.contains('is-inview') ) {
-				document.getElementById('menu4').classList.toggle('active2');
-			}
-		} else if ( obj=='menu6' ) {
-			document.getElementById('menu6').classList.toggle('active');
-			if ( document.getElementById('section5').classList.contains('is-inview') ) {
-				document.getElementById('menu5').classList.toggle('active2');
-			}
-		} else if ( obj=='menu7' ) {
-			document.getElementById('menu7').classList.toggle('active');
-			if ( document.getElementById('section6').classList.contains('is-inview') ) {
-				document.getElementById('menu6').classList.toggle('active2');
-			}
-		} else if ( obj=='menu8' ) {
-			document.getElementById('menu8').classList.toggle('active');
-			if ( document.getElementById('section7').classList.contains('is-inview') ) {
-				document.getElementById('menu7').classList.toggle('active2');
-			}
-		} else if ( obj=='menu9' ) {
-			document.getElementById('menu9').classList.toggle('active');
-			if ( document.getElementById('section8').classList.contains('is-inview') ) {
-				document.getElementById('menu8').classList.toggle('active2');
-			}
-		} else if ( obj=='menu10' ) {
-			document.getElementById('menu10').classList.toggle('active');
-			if ( document.getElementById('section9').classList.contains('is-inview') ) {
-				document.getElementById('menu9').classList.toggle('active2');
-			}
-		} else if ( obj=='menu11' ) {
-			document.getElementById('menu11').classList.toggle('active');
-			if ( document.getElementById('section10').classList.contains('is-inview') ) {
-				document.getElementById('menu10').classList.toggle('active2');
-			}
-		} else if ( obj=='cell2' ) { cell2.play(); }
+		} else if (obj === 'cell2') {
+			cell2.play();
+		}
 	});
 }
 
