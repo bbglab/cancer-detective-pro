@@ -464,6 +464,10 @@ footer ul li.rrss ul li img { width:25px; }
 #popup-slide-7 div p span { display:none; }
 #popup-slide-7 div p span.active { display:block; }
 
+#popup-slide-8 div p span { display:none; }
+#popup-slide-8 div p span.active { display:block; }
+
+
 /* perso */
 .perso, .perso li { margin:0; padding:0; list-style:none; }
 .perso { max-width:900px; margin:0 auto; }

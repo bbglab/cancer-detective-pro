@@ -17,12 +17,11 @@ function actualitzaVar() {
 	countVarSlide1 = 2;
 	countVarSlide2 = 2;
 	countVarSlide3 = 2;
-	// countVarSlideTest1 = 2; // Modificar
 	countVarSlide4 = 2;
 	countVarSlide5 = 2;
 	countVarSlide6 = 2;
 	countVarSlide7 = 2;
-	// countVarSlide8 = 2;
+	countVarSlide8 = 2;
 }
 
 var sampleVar;
@@ -126,7 +125,6 @@ var driverSample1Winner;
 var driverSample2Winner;
 
 function driverSample(sample) {
-
 	const elementId = `.gen-sample-${sample}`;
 	const elements = document.querySelectorAll( elementId + ' .driver');
 	const elementsAll = document.querySelectorAll(elementId + ' .gen1');
@@ -155,13 +153,15 @@ function driverSample(sample) {
 			const par = element.querySelector("p");
 			if (span && par) {
 				if ( shuffledIndices[i] == 0 ) {
-
 					if ( sample == 1 ) {
 						w3.addClass('#driver-gen-1','active');
 						const elementDriver = document.getElementById("driver-gen-1");
-						elementDriver.innerHTML = "La mutació " + driverSelected + " del pacient 1 és una mutació impulsora";
+						elementDriver.innerHTML = "El gen " + driverSelected + " del pacient 1 és un gen impulsor";
 						driverSample1Winner = i;
 					} else if ( sample == 2 ) {
+						w3.addClass('#driver-gen-2','active');
+						const elementDriver = document.getElementById("driver-gen-2");
+						elementDriver.innerHTML = "El gen " + driverSelected + " del pacient 2 és un gen impulsor";
 						driverSample2Winner = i;
 					}
 					span.innerHTML = "<strong>" + driverSelected + "</strong>";
@@ -218,7 +218,7 @@ function therapyCount() {
 
 // Functions Slide End // Afegir una variable per slide X 2 // Modificar
 // function addEnd(addEnd1, addEnd2, addEnd3, addEndTest1, addEnd4) { resultEnd = addEnd1 + addEnd2 + addEnd3 + addEndTest1 + addEnd4; return resultEnd; }
-function addEnd(addEnd1, addEnd2, addEnd3, addEnd4, addEnd5, addEnd6, addEnd7, addEnd8) { resultEnd = addEnd1 + addEnd2 + addEnd3 + addEnd4 + addEnd5 + addEnd6; return resultEnd; }
+//function addEnd(addEnd1, addEnd2, addEnd3, addEnd4, addEnd5, addEnd6, addEnd7, addEnd8) { resultEnd = addEnd1 + addEnd2 + addEnd3 + addEnd4 + addEnd5 + addEnd6; return resultEnd; }
 
 // Functions Close Popup
 function popupClose() {
@@ -526,8 +526,6 @@ document.getElementById("slide6-option3").addEventListener('click', function(){
 
 // Buttons Slide 7 functions
 document.getElementById("slide7-option1").addEventListener('click', function(){
-	console.log("es la 1!!!")
-	console.log(driverSample1Winner)
 	if ( driverSample1Winner == 0 ) {
 		if ( countVarSlide7 == 2 ) { countVarSlide7 = 1; }
 		sampleSlide7ok();
@@ -538,7 +536,6 @@ document.getElementById("slide7-option1").addEventListener('click', function(){
 	}
 });
 document.getElementById("slide7-option2").addEventListener('click', function(){
-	console.log("es la 2!!!")
 	 if ( driverSample1Winner == 1 ) {
 		if ( countVarSlide7 == 2 ) { countVarSlide7 = 1; }
 		sampleSlide7ok();
@@ -549,7 +546,6 @@ document.getElementById("slide7-option2").addEventListener('click', function(){
 	}
 });
 document.getElementById("slide7-option3").addEventListener('click', function(){
-	console.log("es la 3!!!")
 	if ( driverSample1Winner == 2 ) {
 		if ( countVarSlide7 == 2 ) { countVarSlide7 = 1; }
 		sampleSlide7ok();
@@ -560,6 +556,37 @@ document.getElementById("slide7-option3").addEventListener('click', function(){
 	}
 });
 
+// Buttons Slide 8 functions
+document.getElementById("slide8-option1").addEventListener('click', function(){
+	if ( driverSample2Winner == 0 ) {
+		if ( countVarSlide8 == 2 ) { countVarSlide8 = 1; }
+		sampleSlide8ok();
+	} else {
+		if ( countVarSlide8 == 2 ) { countVarSlide8 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
+});
+document.getElementById("slide8-option2").addEventListener('click', function(){
+	if ( driverSample2Winner == 1 ) {
+		if ( countVarSlide8 == 2 ) { countVarSlide8 = 1; }
+		sampleSlide8ok();
+	} else {
+		if ( countVarSlide8 == 2 ) { countVarSlide8 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
+});
+document.getElementById("slide8-option3").addEventListener('click', function(){
+	if ( driverSample2Winner == 2 ) {
+		if ( countVarSlide8 == 2 ) { countVarSlide8 = 1; }
+		sampleSlide8ok();
+	} else {
+		if ( countVarSlide8 == 2 ) { countVarSlide8 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
+});
 ////////////////////////////////////////////////////////////////////////////////////////// Buttons Popups
 
 // Buttons Popup Error (close popup)
@@ -584,7 +611,6 @@ document.getElementById("popup-slide-3-skin-close").addEventListener('click', fu
 	popupClose();
 	w3.removeClass('#slide-3-skin','active');
 	w3.addClass('#slide-3-skin','go-right');
-	// w3.addClass('#slide-test-1','active'); // Modificar
 	w3.addClass('#slide-4','active');
 });
 
@@ -605,7 +631,6 @@ document.getElementById("popup-slide-3-lung-close").addEventListener('click', fu
 	popupClose();
 	w3.removeClass('#slide-3-lung','active');
 	w3.addClass('#slide-3-lung','go-right');
-	// w3.addClass('#slide-test-1','active'); // Modificar
 	w3.addClass('#slide-4','active');
 });
 
@@ -631,16 +656,25 @@ document.getElementById("popup-slide-6-close").addEventListener('click', functio
 	driverSample(1)
 });
 
-// Buttons Popup Encert Slide 7 (next slide)
 document.getElementById("popup-slide-7-close").addEventListener('click', function(){
-	// Counter // Afegir una variable per slide // Modificar
-	// document.getElementById("sample-end-var").innerHTML += addEnd(countVarSlide1, countVarSlide2, countVarSlide3, countVarSlideTest1, countVarSlide4);
-	document.getElementById("sample-end-var").innerHTML += addEnd(countVarSlide1, countVarSlide2,
-		countVarSlide3, countVarSlide4, countVarSlide5, countVarSlide6, countVarSlide7);
-	//
 	popupClose();
 	w3.removeClass('#slide-7','active');
 	w3.addClass('#slide-7','go-right');
+	w3.addClass('#slide-8','active');
+	driverSample(2)
+});
+
+// Buttons Popup Encert Slide 7 (next slide)
+document.getElementById("popup-slide-8-close").addEventListener('click', function(){
+
+	document.getElementById("sample-end-var").innerHTML +=
+		[countVarSlide1, countVarSlide2, countVarSlide3, countVarSlide4,
+			countVarSlide5, countVarSlide6, countVarSlide7, countVarSlide8]
+		.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+	//
+	popupClose();
+	w3.removeClass('#slide-8','active');
+	w3.addClass('#slide-8','go-right');
 	w3.addClass('#sample-end','active');
 	//
 	// Només quan va a l'últim slide
@@ -724,4 +758,9 @@ document.getElementById("slide7-back").addEventListener('click', function(){
 	w3.addClass('#slide-6','active');
 });
 
+document.getElementById("slide8-back").addEventListener('click', function(){
+	w3.removeClass('.sample-selection','active');
+	w3.removeClass('#slide-7','go-right');
+	w3.addClass('#slide-7','active');
+});
 ////////////////////////////////////////////////////////////////////////////////////////// End Buttons
