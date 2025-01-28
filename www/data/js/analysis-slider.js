@@ -21,7 +21,7 @@ function actualitzaVar() {
 	countVarSlide4 = 2;
 	countVarSlide5 = 2;
 	countVarSlide6 = 2;
-	// countVarSlide7 = 2;
+	countVarSlide7 = 2;
 	// countVarSlide8 = 2;
 }
 
@@ -96,7 +96,103 @@ function sampleSlide6ok() {
 	}, 10);
 }
 
-// xxx
+function getGenes(elements) {
+	const elementsSelected = [];
+	elements.forEach(element => {
+		const parent = element.parentElement;
+		const parentClasses = parent.className;
+		const gene = parentClasses.split(' ')[0];
+		elementsSelected.push(gene);
+	});
+	return elementsSelected;
+}
+
+function getTwoRandomElements(arr) {
+	if (arr.length < 2) {
+		throw new Error("Array must contain at least two elements");
+	}
+
+	const firstIndex = Math.floor(Math.random() * arr.length);
+
+	let secondIndex;
+	do {
+		secondIndex = Math.floor(Math.random() * arr.length);
+	} while (secondIndex === firstIndex);
+
+	return [arr[firstIndex], arr[secondIndex]];
+}
+
+var driverSample1Winner;
+var driverSample2Winner;
+
+function driverSample(sample) {
+
+	const elementId = `.gen-sample-${sample}`;
+	const elements = document.querySelectorAll( elementId + ' .driver');
+	const elementsAll = document.querySelectorAll(elementId + ' .gen1');
+
+	const driverGenes = getGenes(elements);
+	const allGenes = getGenes(elementsAll);
+	const passengerGenes = allGenes.filter(gene => !driverGenes.includes(gene));
+
+	const driverSelected = driverGenes[Math.floor(Math.random() * driverGenes.length)];
+	const [passenger1, passenger2] = getTwoRandomElements(passengerGenes);
+
+	const indices = [0, 1, 2];
+	const shuffledIndices = indices.sort(() => Math.random() - 0.5);
+	indices.forEach((i) => {
+		let elementId ;
+		if ( sample == 1 ) {
+			elementId = `slide7-option${i+1}`;
+		} else if ( sample == 2 ) {
+			elementId = `slide8-option${i+1}`;
+		}
+
+		const element = document.getElementById(elementId);
+
+		if (element) {
+			const span = element.querySelector("span");
+			const par = element.querySelector("p");
+			if (span && par) {
+				if ( shuffledIndices[i] == 0 ) {
+
+					if ( sample == 1 ) {
+						w3.addClass('#driver-gen-1','active');
+						const elementDriver = document.getElementById("driver-gen-1");
+						elementDriver.innerHTML = "La mutació " + driverSelected + " del pacient 1 és una mutació impulsora";
+						driverSample1Winner = i;
+					} else if ( sample == 2 ) {
+						driverSample2Winner = i;
+					}
+					span.innerHTML = "<strong>" + driverSelected + "</strong>";
+					par.innerHTML = "<strong>" + driverSelected + "</strong>";
+				} else if ( shuffledIndices[i] == 1) {
+					span.innerHTML = "<strong>" + passenger1 + "</strong>";
+					par.innerHTML = "<strong>" + passenger1 + "</strong>";
+				} else if (shuffledIndices[i] == 2) {
+					span.innerHTML = "<strong>" + passenger2 + "</strong>";
+					par.innerHTML = "<strong>" + passenger2 + "</strong>";
+				}
+			}
+		}
+	});
+}
+
+function sampleSlide7ok() {
+	w3.addClass('#popup-slide-7','visible');
+	setTimeout(function() {
+		w3.addClass('#popup-slide-7, #popup-slide-7 div','active');
+		scroll.scrollTo('#quiz-section-02');
+	}, 10);
+}
+
+function sampleSlide8ok() {
+	w3.addClass('#popup-slide-8','visible');
+	setTimeout(function() {
+		w3.addClass('#popup-slide-8, #popup-slide-8 div','active');
+		scroll.scrollTo('#quiz-section-02');
+	}, 10);
+}
 
 var therapyWinner;
 var sample1therapy;
@@ -116,23 +212,6 @@ function therapyCount() {
 		therapyWinner=0;
 		w3.addClass('#therapy-3','active');
 	}
-}
-function sampleSlide7ok() {
-	w3.addClass('#popup-slide-7','visible');
-	setTimeout(function() { 
-		w3.addClass('#popup-slide-7, #popup-slide-7 div','active');
-		scroll.scrollTo('#quiz-section-02');
-	}, 10);
-}
-
-//
-
-function sampleSlide8ok() {
-	w3.addClass('#popup-slide-8','visible');
-	setTimeout(function() { 
-		w3.addClass('#popup-slide-8, #popup-slide-8 div','active');
-		scroll.scrollTo('#quiz-section-02');
-	}, 10);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////// Functions
@@ -303,29 +382,6 @@ document.getElementById("slide3-lung-option3").addEventListener('click', functio
 	scroll.scrollTo('#quiz-section-02');
 });
 
-// Buttons slide-test-1 // Modificar
-/*
-document.getElementById("slidetest1-option1").addEventListener('click', function(){
-	if ( countVarSlideTest1 == 2 ) { countVarSlideTest1 = 0; }
-	activaPopupError();
-	scroll.scrollTo('#quiz-section-02');
-});
-document.getElementById("slidetest1-option2").addEventListener('click', function(){
-	if ( countVarSlideTest1 == 2 ) { countVarSlideTest1 = 1; }
-	//
-	w3.addClass('#popup-slide-test-1','visible');
-	setTimeout(function() { 
-		w3.addClass('#popup-slide-test-1, #popup-slide-test-1 div','active');
-		scroll.scrollTo('#quiz-section-02');
-	}, 10);
-});
-document.getElementById("slidetest1-option3").addEventListener('click', function(){
-	if ( countVarSlideTest1 == 2 ) { countVarSlideTest1 = 0; }
-	activaPopupError();
-	scroll.scrollTo('#quiz-section-02');
-});
-*/
-
 // Buttons Slide 4 functions
 document.getElementById("slide4-option1").addEventListener('click', function(){
 	mutationsCount();
@@ -468,6 +524,42 @@ document.getElementById("slide6-option3").addEventListener('click', function(){
 });
 
 
+// Buttons Slide 7 functions
+document.getElementById("slide7-option1").addEventListener('click', function(){
+	console.log("es la 1!!!")
+	console.log(driverSample1Winner)
+	if ( driverSample1Winner == 0 ) {
+		if ( countVarSlide7 == 2 ) { countVarSlide7 = 1; }
+		sampleSlide7ok();
+	} else {
+		if ( countVarSlide7 == 2 ) { countVarSlide7 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
+});
+document.getElementById("slide7-option2").addEventListener('click', function(){
+	console.log("es la 2!!!")
+	 if ( driverSample1Winner == 1 ) {
+		if ( countVarSlide7 == 2 ) { countVarSlide7 = 1; }
+		sampleSlide7ok();
+	} else {
+		if ( countVarSlide7 == 2 ) { countVarSlide7 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
+});
+document.getElementById("slide7-option3").addEventListener('click', function(){
+	console.log("es la 3!!!")
+	if ( driverSample1Winner == 2 ) {
+		if ( countVarSlide7 == 2 ) { countVarSlide7 = 1; }
+		sampleSlide7ok();
+	} else {
+		if ( countVarSlide7 == 2 ) { countVarSlide7 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
+});
+
 ////////////////////////////////////////////////////////////////////////////////////////// Buttons Popups
 
 // Buttons Popup Error (close popup)
@@ -531,26 +623,24 @@ document.getElementById("popup-slide-5-close").addEventListener('click', functio
 	w3.addClass('#slide-6','active');
 });
 
-// Buttons Popup Encert slide-test-1 (next slide) // Modificar
-/*
-document.getElementById("popup-slide-test-1-close").addEventListener('click', function(){
-	popupClose();
-	w3.removeClass('#slide-test-1','active');
-	w3.addClass('#slide-test-1','go-right');
-	//
-	w3.addClass('#slide-4','active');
-});
-*/
-
-// Buttons Popup Encert Slide 6 (next slide)
 document.getElementById("popup-slide-6-close").addEventListener('click', function(){
-	// Counter // Afegir una variable per slide // Modificar
-	// document.getElementById("sample-end-var").innerHTML += addEnd(countVarSlide1, countVarSlide2, countVarSlide3, countVarSlideTest1, countVarSlide4);
-	document.getElementById("sample-end-var").innerHTML += addEnd(countVarSlide1, countVarSlide2, countVarSlide3, countVarSlide4, countVarSlide5, countVarSlide6);
-	//
 	popupClose();
 	w3.removeClass('#slide-6','active');
 	w3.addClass('#slide-6','go-right');
+	w3.addClass('#slide-7','active');
+	driverSample(1)
+});
+
+// Buttons Popup Encert Slide 7 (next slide)
+document.getElementById("popup-slide-7-close").addEventListener('click', function(){
+	// Counter // Afegir una variable per slide // Modificar
+	// document.getElementById("sample-end-var").innerHTML += addEnd(countVarSlide1, countVarSlide2, countVarSlide3, countVarSlideTest1, countVarSlide4);
+	document.getElementById("sample-end-var").innerHTML += addEnd(countVarSlide1, countVarSlide2,
+		countVarSlide3, countVarSlide4, countVarSlide5, countVarSlide6, countVarSlide7);
+	//
+	popupClose();
+	w3.removeClass('#slide-7','active');
+	w3.addClass('#slide-7','go-right');
 	w3.addClass('#sample-end','active');
 	//
 	// Només quan va a l'últim slide
@@ -626,6 +716,12 @@ document.getElementById("slide6-back").addEventListener('click', function(){
 	w3.removeClass('.sample-selection','active');
 	w3.removeClass('#slide-5','go-right');
 	w3.addClass('#slide-5','active');
+});
+
+document.getElementById("slide7-back").addEventListener('click', function(){
+	w3.removeClass('.sample-selection','active');
+	w3.removeClass('#slide-6','go-right');
+	w3.addClass('#slide-6','active');
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////// End Buttons
