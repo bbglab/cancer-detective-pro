@@ -888,17 +888,15 @@ document.getElementById('quiz-01-04-back').addEventListener('click', function cl
 });
 
 // Accions del botó 4 "Com funcionen els factors de risc del càncer"
-document.getElementById('quiz-01-04').addEventListener('click', function clickEvent0104 () {
-	document.getElementById('quiz-01-04-wrapper').classList.add('hide');
-	document.getElementById('quiz-section-02').classList.add('active');
-	scroll.update();
-	scroll.scrollTo('#quiz-section-02');
-	const myTimeout = setTimeout( function(){
-		document.getElementById('quiz-01-05-wrapper').classList.remove('hide');
-		const myTimeout = setTimeout( function(){				
-		}, 500);
-	}, 500);
+document.addEventListener("DOMContentLoaded", function() {
+	document.getElementById('quiz-01-04').addEventListener('click', function clickEvent0104() {
+		document.getElementById('quiz-01-04-wrapper').classList.add('hide');
+		document.getElementById('quiz-section-02').classList.add('active');
+		scroll.update();
+		scroll.scrollTo('#quiz-section-02');
+	});
 });
+
 
 // Veure accions dels botons de l'slider "Com funcionen els factors de risc del càncer" al document "analysis-slider.js"
 

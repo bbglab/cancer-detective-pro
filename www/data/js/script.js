@@ -173,24 +173,29 @@ const menuClick = () => {
 		closeMenuActions();
 	}
 };
-const elem0 = document.getElementById('menu0');
-const elem1 = document.getElementById('menu1');
-const elem2 = document.getElementById('menu2');
-const elem3 = document.getElementById('menu3');
-const elem4 = document.getElementById('menu4');
-const elem5 = document.getElementById('menu5');
-const elem6 = document.getElementById('menu6');
-const elem7 = document.getElementById('menu7');
-const elem8 = document.getElementById('menu8');
-elem0.addEventListener('click', menuClick);
-elem1.addEventListener('click', menuClick);
-elem2.addEventListener('click', menuClick);
-elem3.addEventListener('click', menuClick);
-elem4.addEventListener('click', menuClick);
-elem5.addEventListener('click', menuClick);
-elem6.addEventListener('click', menuClick);
-elem7.addEventListener('click', menuClick);
-elem8.addEventListener('click', menuClick);
 
+document.addEventListener("DOMContentLoaded", function() {
+	const elem0 = document.getElementById('menu0');
+	const elem1 = document.getElementById('menu1');
+	const elem2 = document.getElementById('menu2');
+	const elem3 = document.getElementById('menu3');
+	const elem4 = document.getElementById('menu4');
+	const elem5 = document.getElementById('menu5');
+	const elem6 = document.getElementById('menu6');
+	const elem7 = document.getElementById('menu7');
+	const elem8 = document.getElementById('menu8');
 
+	function menuClick() {
+		console.log("Menu clicked");
+	}
 
+	elem0?.addEventListener('click', menuClick);
+	elem1?.addEventListener('click', menuClick);
+	elem2?.addEventListener('click', menuClick);
+	elem3?.addEventListener('click', menuClick);
+	elem4?.addEventListener('click', menuClick);
+	elem5?.addEventListener('click', menuClick);
+	elem6?.addEventListener('click', menuClick);
+	elem7?.addEventListener('click', menuClick);
+	elem8?.addEventListener('click', menuClick);
+});
