@@ -272,6 +272,7 @@
 	footer ul li.bbglab img { margin-bottom:-10px; }
 	footer ul li.rrss ul li img { margin-bottom:-5px; }
 }
+
 @media screen and (max-width:599px) {
 	/* footer */
 	footer ul li { margin:10px 0; }

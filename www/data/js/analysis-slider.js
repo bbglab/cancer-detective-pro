@@ -22,6 +22,7 @@ function actualitzaVar() {
 	countVarSlide6 = 2;
 	countVarSlide7 = 2;
 	countVarSlide8 = 2;
+	countVarSlide9 = 2;
 }
 
 var sampleVar;
@@ -190,6 +191,62 @@ function sampleSlide8ok() {
 	w3.addClass('#popup-slide-8','visible');
 	setTimeout(function() {
 		w3.addClass('#popup-slide-8, #popup-slide-8 div','active');
+		scroll.scrollTo('#quiz-section-02');
+	}, 10);
+}
+
+
+var therapySample1Winner;
+
+function therapySample(sample) {
+
+	let elementId = `.gen-sample-${sample}`;
+	const elements = document.querySelectorAll( elementId + ' .therapy');
+	console.log(elements);
+
+	elementId = `slide9-option3`;
+	let element = document.getElementById(elementId);
+	let span = element.querySelector("span");
+	let par = element.querySelector("p");
+	span.innerHTML = "<strong>No hi ha opcions terapèutiques</strong>";
+	par.innerHTML = "<strong>No hi ha opcions terapèutiques</strong>";
+
+	console.log(elements.length);
+	if ( elements.length == 0 ) {
+		therapySample1Winner = 3;
+	} else {
+		const therapySelected = elements[Math.floor(Math.random() * elements.length)];
+		const afterTherapy = window.getComputedStyle(therapySelected, "::after").content;
+		const cleanTherapy = afterTherapy.replace(/['"]/g, "");
+
+		therapySample1Winner = Math.floor(Math.random() * 2) + 1
+
+		if ( therapySample1Winner == 1 ) {
+			elementId = `slide9-option1`;
+			element = document.getElementById(elementId);
+			span = element.querySelector("span");
+			par = element.querySelector("p");
+			span.innerHTML = "<strong>" + cleanTherapy + "</strong>";
+			par.innerHTML = "<strong>" + cleanTherapy + "</strong>";
+
+			elementId = `slide9-option2`;
+			element = document.getElementById(elementId);
+			span = element.querySelector("span");
+			par = element.querySelector("p");
+			
+			span.innerHTML = "<strong>No hi ha opcions terapèutiques</strong>";
+			par.innerHTML = "<strong>No hi ha opcions terapèutiques</strong>";
+		} else if ( therapySample1Winner == 2 ) {
+
+		}
+		console.log("::after content: 2", cleanContent);
+	}
+}
+
+function sampleSlide9ok() {
+	w3.addClass('#popup-slide-9','visible');
+	setTimeout(function() {
+		w3.addClass('#popup-slide-9, #popup-slide-9 div','active');
 		scroll.scrollTo('#quiz-section-02');
 	}, 10);
 }
@@ -587,6 +644,38 @@ document.getElementById("slide8-option3").addEventListener('click', function(){
 		scroll.scrollTo('#quiz-section-02');
 	}
 });
+
+// Buttons Slide 9 functions
+document.getElementById("slide9-option1").addEventListener('click', function(){
+	//if ( driverSample2Winner == 0 ) {
+	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 1; }
+	//	sampleSlide8ok();
+	//} else {
+	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 0; }
+	//	activaPopupError();
+	//	scroll.scrollTo('#quiz-section-02');
+	//}
+});
+document.getElementById("slide9-option2").addEventListener('click', function(){
+	//if ( driverSample2Winner == 1 ) {
+	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 1; }
+	//	sampleSlide8ok();
+	//} else {
+	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 0; }
+	//	activaPopupError();
+	//	scroll.scrollTo('#quiz-section-02');
+	//}
+});
+document.getElementById("slide9-option3").addEventListener('click', function(){
+	//if ( driverSample2Winner == 2 ) {
+	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 1; }
+	//	sampleSlide8ok();
+	//} else {
+	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 0; }
+	//	activaPopupError();
+	//	scroll.scrollTo('#quiz-section-02');
+	//}
+});
 ////////////////////////////////////////////////////////////////////////////////////////// Buttons Popups
 
 // Buttons Popup Error (close popup)
@@ -664,17 +753,25 @@ document.getElementById("popup-slide-7-close").addEventListener('click', functio
 	driverSample(2)
 });
 
-// Buttons Popup Encert Slide 7 (next slide)
 document.getElementById("popup-slide-8-close").addEventListener('click', function(){
-
-	document.getElementById("sample-end-var").innerHTML +=
-		[countVarSlide1, countVarSlide2, countVarSlide3, countVarSlide4,
-			countVarSlide5, countVarSlide6, countVarSlide7, countVarSlide8]
-		.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-	//
 	popupClose();
 	w3.removeClass('#slide-8','active');
 	w3.addClass('#slide-8','go-right');
+	w3.addClass('#slide-9','active');
+	therapySample(1)
+});
+
+document.getElementById("popup-slide-9-close").addEventListener('click', function(){
+
+	document.getElementById("sample-end-var").innerHTML +=
+		[countVarSlide1, countVarSlide2, countVarSlide3, countVarSlide4,
+			countVarSlide5, countVarSlide6, countVarSlide7, countVarSlide8
+			,countVarSlide9]
+		.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+	//
+	popupClose();
+	w3.removeClass('#slide-9','active');
+	w3.addClass('#slide-9','go-right');
 	w3.addClass('#sample-end','active');
 	//
 	// Només quan va a l'últim slide
@@ -762,5 +859,11 @@ document.getElementById("slide8-back").addEventListener('click', function(){
 	w3.removeClass('.sample-selection','active');
 	w3.removeClass('#slide-7','go-right');
 	w3.addClass('#slide-7','active');
+});
+
+document.getElementById("slide9-back").addEventListener('click', function(){
+	w3.removeClass('.sample-selection','active');
+	w3.removeClass('#slide-8','go-right');
+	w3.addClass('#slide-8','active');
 });
 ////////////////////////////////////////////////////////////////////////////////////////// End Buttons
