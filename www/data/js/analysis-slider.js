@@ -200,9 +200,9 @@ var therapySample1Winner;
 
 function therapySample(sample) {
 
+	const notExistTHerapy = ["Trastuzumab", "Imatinib", "Fulvestrant", "Rucaparib", "Inotuzumab"]
 	let elementId = `.gen-sample-${sample}`;
 	const elements = document.querySelectorAll( elementId + ' .therapy');
-	console.log(elements);
 
 	elementId = `slide9-option3`;
 	let element = document.getElementById(elementId);
@@ -211,17 +211,37 @@ function therapySample(sample) {
 	span.innerHTML = "<strong>No hi ha opcions terapèutiques</strong>";
 	par.innerHTML = "<strong>No hi ha opcions terapèutiques</strong>";
 
-	console.log(elements.length);
 	if ( elements.length == 0 ) {
-		therapySample1Winner = 3;
+		w3.addClass('#therapy-1','active');
+		const elementDriver = document.getElementById("therapy-res-1");
+		elementDriver.innerHTML = "No hi ha tractament per el pacient 1";
+
+		therapySample1Winner = 2;
+
+		const therapyNotExistSelected1 = notExistTHerapy[Math.floor(Math.random() * notExistTHerapy.length)];
+		const therapyNotExistSelected2 = notExistTHerapy[Math.floor(Math.random() * notExistTHerapy.length)];
+		elementId = `slide9-option1`;
+		element = document.getElementById(elementId);
+		span = element.querySelector("span");
+		par = element.querySelector("p");
+		span.innerHTML = "<strong>" + therapyNotExistSelected1 + "</strong>";
+		par.innerHTML = "<strong>" + therapyNotExistSelected1 + "</strong>";
+
+		elementId = `slide9-option2`;
+		element = document.getElementById(elementId);
+		span = element.querySelector("span");
+		par = element.querySelector("p");
+		span.innerHTML = "<strong>" + therapyNotExistSelected2 + "</strong>";
+		par.innerHTML = "<strong>" + therapyNotExistSelected2 + "</strong>";
 	} else {
 		const therapySelected = elements[Math.floor(Math.random() * elements.length)];
 		const afterTherapy = window.getComputedStyle(therapySelected, "::after").content;
 		const cleanTherapy = afterTherapy.replace(/['"]/g, "");
 
-		therapySample1Winner = Math.floor(Math.random() * 2) + 1
+		therapySample1Winner = Math.floor(Math.random() * 1)
+		const therapyNotExistSelected = notExistTHerapy[Math.floor(Math.random() * notExistTHerapy.length)];
 
-		if ( therapySample1Winner == 1 ) {
+		if ( therapySample1Winner == 0 ) {
 			elementId = `slide9-option1`;
 			element = document.getElementById(elementId);
 			span = element.querySelector("span");
@@ -233,13 +253,31 @@ function therapySample(sample) {
 			element = document.getElementById(elementId);
 			span = element.querySelector("span");
 			par = element.querySelector("p");
-			
-			span.innerHTML = "<strong>No hi ha opcions terapèutiques</strong>";
-			par.innerHTML = "<strong>No hi ha opcions terapèutiques</strong>";
-		} else if ( therapySample1Winner == 2 ) {
+			span.innerHTML = "<strong>" + therapyNotExistSelected + "</strong>";
+			par.innerHTML = "<strong>" + therapyNotExistSelected + "</strong>";
 
+			w3.addClass('#therapy-1','active');
+			const elementDriver = document.getElementById("therapy-res-1");
+			elementDriver.innerHTML = "El pacient 1 pot rebre " + cleanTherapy + " com a tractament";
+		} else if ( therapySample1Winner == 1 ) {
+			elementId = `slide9-option2`;
+			element = document.getElementById(elementId);
+			span = element.querySelector("span");
+			par = element.querySelector("p");
+			span.innerHTML = "<strong>" + cleanTherapy + "</strong>";
+			par.innerHTML = "<strong>" + cleanTherapy + "</strong>";
+
+			elementId = `slide9-option1`;
+			element = document.getElementById(elementId);
+			span = element.querySelector("span");
+			par = element.querySelector("p");
+			span.innerHTML = "<strong>" + therapyNotExistSelected + "</strong>";
+			par.innerHTML = "<strong>" + therapyNotExistSelected + "</strong>";
+
+			w3.addClass('#therapy-1','active');
+			const elementDriver = document.getElementById("therapy-res-1");
+			elementDriver.innerHTML = "El pacient 1 pot rebre " + cleanTherapy + " com a tractament";
 		}
-		console.log("::after content: 2", cleanContent);
 	}
 }
 
@@ -647,34 +685,34 @@ document.getElementById("slide8-option3").addEventListener('click', function(){
 
 // Buttons Slide 9 functions
 document.getElementById("slide9-option1").addEventListener('click', function(){
-	//if ( driverSample2Winner == 0 ) {
-	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 1; }
-	//	sampleSlide8ok();
-	//} else {
-	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 0; }
-	//	activaPopupError();
-	//	scroll.scrollTo('#quiz-section-02');
-	//}
+	if ( therapySample1Winner == 0 ) {
+		if ( countVarSlide9 == 2 ) { countVarSlide9 = 1; }
+		sampleSlide9ok();
+	} else {
+		if ( countVarSlide9 == 2 ) { countVarSlide9 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
 });
 document.getElementById("slide9-option2").addEventListener('click', function(){
-	//if ( driverSample2Winner == 1 ) {
-	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 1; }
-	//	sampleSlide8ok();
-	//} else {
-	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 0; }
-	//	activaPopupError();
-	//	scroll.scrollTo('#quiz-section-02');
-	//}
+	if ( therapySample1Winner == 1 ) {
+		if ( countVarSlide9 == 2 ) { countVarSlide9 = 1; }
+		sampleSlide9ok();
+	} else {
+		if ( countVarSlide9 == 2 ) { countVarSlide9 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
 });
 document.getElementById("slide9-option3").addEventListener('click', function(){
-	//if ( driverSample2Winner == 2 ) {
-	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 1; }
-	//	sampleSlide8ok();
-	//} else {
-	//	if ( countVarSlide8 == 2 ) { countVarSlide8 = 0; }
-	//	activaPopupError();
-	//	scroll.scrollTo('#quiz-section-02');
-	//}
+	if ( therapySample1Winner-1 == 2 ) {
+		if ( countVarSlide9 == 2 ) { countVarSlide9 = 1; }
+		sampleSlide9ok();
+	} else {
+		if ( countVarSlide9 == 2 ) { countVarSlide9 = 0; }
+		activaPopupError();
+		scroll.scrollTo('#quiz-section-02');
+	}
 });
 ////////////////////////////////////////////////////////////////////////////////////////// Buttons Popups
 
