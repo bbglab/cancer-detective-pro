@@ -109,10 +109,6 @@ function getGenes(elements) {
 }
 
 function getTwoRandomElements(arr) {
-	if (arr.length < 2) {
-		throw new Error("Array must contain at least two elements");
-	}
-
 	const firstIndex = Math.floor(Math.random() * arr.length);
 
 	let secondIndex;
@@ -136,7 +132,14 @@ function driverSample(sample) {
 	const passengerGenes = allGenes.filter(gene => !driverGenes.includes(gene));
 
 	const driverSelected = driverGenes[Math.floor(Math.random() * driverGenes.length)];
-	const [passenger1, passenger2] = getTwoRandomElements(passengerGenes);
+
+	let passenger1, passenger2;
+	if (passengerGenes.length >= 2) {
+		[passenger1, passenger2] = getTwoRandomElements(passengerGenes);
+	} else {
+		passenger1 = passengerGenes[0];
+		passenger2 = "No hi ha gens impulsors";
+	}
 
 	const indices = [0, 1, 2];
 	const shuffledIndices = indices.sort(() => Math.random() - 0.5);
@@ -230,8 +233,13 @@ function therapySample(sample) {
 		therapySample1Winner = 2;
 		therapySample2Winner = 2;
 
-		const therapyNotExistSelected1 = notExistTHerapy[Math.floor(Math.random() * notExistTHerapy.length)];
-		const therapyNotExistSelected2 = notExistTHerapy[Math.floor(Math.random() * notExistTHerapy.length)];
+		const notExistTHerapyCopy = [...notExistTHerapy];
+
+		const randomIndex1 = Math.floor(Math.random() * notExistTHerapyCopy.length);
+		const therapyNotExistSelected1 = notExistTHerapyCopy.splice(randomIndex1, 1)[0];
+
+		const randomIndex2 = Math.floor(Math.random() * notExistTHerapyCopy.length);
+		const therapyNotExistSelected2 = notExistTHerapyCopy[randomIndex2];
 
 		elementId = 'slide' + slideId + '-option1';
 		element = document.getElementById(elementId);
@@ -293,8 +301,6 @@ function therapySample(sample) {
 			elementDriver.innerHTML = "El pacient " + sample + " pot rebre " + cleanTherapy + " com a tractament";
 		}
 	}
-
-	console.log(therapySample1Winner, therapySample2Winner);
 }
 
 function sampleSlide9ok() {
