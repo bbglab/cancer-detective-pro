@@ -189,6 +189,14 @@ window.transitionToPage = function(href) {
     }, 500);
 };
 
+/* Download sheet */
+downloadSheet = function() {
+	document.getElementById('unloader').classList.add('visible');
+	setTimeout(function() {
+		window.location.replace('../analysis/?redo=true');
+	}, 500);
+};
+
 /* Anchor transition */
 window.transitionToAnchor = function() {
 	document.getElementById('unloader').classList.add('visible');
