@@ -222,13 +222,13 @@ function therapySample(sample) {
 	let element = document.getElementById(elementId);
 	let span = element.querySelector("span");
 	let par = element.querySelector("p");
-	span.innerHTML = "<strong>No hi ha opcions terapèutiques</strong>";
-	par.innerHTML = "<strong>No hi ha opcions terapèutiques</strong>";
+	span.innerHTML = "<strong>Cap dels anteriors</strong>";
+	par.innerHTML = "<strong>Cap dels anteriors</strong>";
 
 	if ( elements.length == 0 ) {
 		w3.addClass('#therapy-' + sample,'active');
 		const elementDriver = document.getElementById("therapy-res-" + sample);
-		elementDriver.innerHTML = "No hi ha tractament per el pacient " + sample;
+		elementDriver.innerHTML = "No s'ha trobat cap teràpia dirigida contra els gens impulsors alterats en aquest pacient";
 
 		therapySample1Winner = 2;
 		therapySample2Winner = 2;
