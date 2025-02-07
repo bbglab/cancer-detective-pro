@@ -1,6 +1,6 @@
 // variables aleatòries
 function random_types(types) { return types[Math.floor(Math.random()*types.length)]; }
-var types = ['a']; // variables pel tipus de mostra: skin / lung
+var types = ['a', 'b']; // variables pel tipus de mostra: skin / lung
 function random_item1(items1) { return items1[Math.floor(Math.random()*items1.length)]; }
 var items1 = ['1a', '1b', '1c']; // variables pel factor: edat
 function random_item2(items2) { return items2[Math.floor(Math.random()*items2.length)]; }
@@ -15,11 +15,11 @@ function sumar1(sumA1, sumA2, sumA3, sumA4) { resultado1 = sumA1 + sumA2 + sumA3
 function sumar2(sumB1, sumB2, sumB3, sumA4) { resultado2 = sumB1 + sumB2 + sumB3 + sumA4; return resultado2; }
 
 // funció que genera les dues mostres dels pacients a partir de les variables aleatòries
-function finalitems() {
+function finalitems(type) {
 	// Call function and get random cancer type
 	var randomTypeVariable = random_types(types);
 	//
-	var finaltype = "type-" + randomTypeVariable;
+	var finaltype = "type-" + type; //randomTypeVariable;
 	var finalgene = "gen-" + randomTypeVariable;
 	var finalmuta = "muta_" + randomTypeVariable;
 	var finalgeneType = "gen-type-" + randomTypeVariable;
@@ -39,7 +39,7 @@ function finalitems() {
 
 	// Avoid getting same samples
 	if ( finalitem1 == finalitem2 ) {
-		finalitems();
+		finalitems(type);
 	} else {
 		document.getElementById("sample-types-wrapper").innerHTML += "<ul class='type "+ finaltype +" active user1' id='"+ finalitem1 +"'><li class='sample'></li><li class='sample-"+ randomItemA1 +"'></li><li class='sample-"+ randomItemA2 +"'></li><li class='sample-"+ randomItemA3 +"'></li></ul><ul class='type "+ finaltype +" active user2' id='"+ finalitem2 +"'><li class='sample'></li><li class='sample-"+ randomItemB1 +"'></li><li class='sample-"+ randomItemB2 +"'></li><li class='sample-"+ randomItemB3 +"'></li></ul>";
 		// assigna values a la variable de la suma
@@ -604,10 +604,31 @@ function finalitems() {
 
 	}
 }
-finalitems();
+
 
 // Accions del botó 0 "Rebre les mostres"
-document.getElementById('quiz-00-00').addEventListener('click', function clickEvent0000 () {
+document.getElementById('quiz-00-00-1').addEventListener('click', function clickEvent0000 () {
+	finalitems("a");
+	document.getElementById('quiz-button').classList.add('opacity-00');
+	document.getElementById('quiz-loader').classList.remove('opacity-00');
+	document.getElementById('quiz-loader').classList.add('opacity-25');
+	const myTimeout = setTimeout( function(){
+		document.getElementById('quiz-loader').classList.remove('opacity-25');
+		document.getElementById('quiz-loader').classList.add('opacity-00');
+		const myTimeout = setTimeout( function(){
+			document.getElementById('quiz-section-00').classList.add('active');
+			document.getElementById('quiz-section-button').classList.add('hide');
+			scroll.update();
+			scroll.scrollTo('#section2');
+			const myTimeout = setTimeout( function(){
+				document.getElementById('quiz-section-00').classList.remove('opacity-00');
+			}, 500);
+		}, 500);
+	}, 1500);
+});
+
+document.getElementById('quiz-00-00-2').addEventListener('click', function clickEvent0000 () {
+	finalitems("b");
 	document.getElementById('quiz-button').classList.add('opacity-00');
 	document.getElementById('quiz-loader').classList.remove('opacity-00');
 	document.getElementById('quiz-loader').classList.add('opacity-25');

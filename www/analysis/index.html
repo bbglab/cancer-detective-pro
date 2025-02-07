@@ -192,18 +192,44 @@
 						
 						<div class="height-50"></div>
 						<div id="quiz-button">
-							<p>Clica aquest botó per rebre les mostres que posteriorment hauràs d'analitzar:</p>
+							<p>Han arribat mostres de pacients de càncer de pell i altres de pacients de càncer de pulmó.<br>Quin tipus de cancer vols analitzar?</p>
 							<ul class="quiz-list flex">
-								<li>
-									
-									<div id="quiz-00-00" class="quiz-button">
+								<li class="quiz-item">
+									<div id="quiz-00-00-1" class="quiz-button">
+										<div class="quiz-button-content">
+											<img src="../data/grafs/cells/skin.svg" class="quiz-button-img" alt="">
+											<div class="quiz-button-text">Càncer<br>de pell</div>
+										</div>
+
 										<script>
-											var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('quiz-00-00'), renderer: 'svg', loop: true, autoplay: true, path: '../data/grafs/js/cell-home-button.json' });
+											var cellLoader = bodymovin.loadAnimation({
+												container: document.getElementById('quiz-00-00-1'),
+												renderer: 'svg',
+												loop: true,
+												autoplay: true,
+												path: '../data/grafs/js/cell-home-button.json'
+											});
 											cellLoader.setSpeed(0.4);
 										</script>
-										<div class="quiz-button-text">Rebre<br>les mostres</div>
 									</div>
-								
+
+									<div id="quiz-00-00-2" class="quiz-button">
+										<div class="quiz-button-content">
+											<img src="../data/grafs/cells/lung.svg" class="quiz-button-img" alt="">
+											<div class="quiz-button-text">Càncer<br>de pulmó</div>
+										</div>
+
+										<script>
+											var cellLoader = bodymovin.loadAnimation({
+												container: document.getElementById('quiz-00-00-2'),
+												renderer: 'svg',
+												loop: true,
+												autoplay: true,
+												path: '../data/grafs/js/cell-home-button.json'
+											});
+											cellLoader.setSpeed(0.4);
+										</script>
+									</div>
 								</li>
 							</ul>
 						</div>
@@ -752,7 +778,13 @@
 									<!-- ! //////////////////////////////////////////////////// Si s'afegeix un nou slide s'ha de canviar el número de preguntes (Modificar) //////////////////////////////////////////////////// -->
 									<h2 class="subtitle-form">Has encertat <strong id="sample-end-var"></strong> de 10 preguntes!</h2>
 									
-									<p class="bubble-text">La simulació d’anàlisi de mostra que has fet depèn de l’atzar, com la vida mateixa. <strong>Com més resultats acumulis millor podràs comprendre com funcionen els factors de risc.</strong> Segueix analitzant més mostres per aconseguir-ho!<br><span onclick="transitionToAnchor()" class="button green-bg">Analitza més mostres</span></p>
+									<p class="bubble-text">La simulació d’anàlisi de mostra que has fet depèn de l’atzar, com la vida mateixa. <strong>Com més resultats acumulis millor podràs comprendre com funcionen els factors de risc.</strong> Segueix analitzant més mostres per aconseguir-ho!
+										<br>
+										<span class="button-container">
+											<span onclick="downloadSheet()" class="button orange-bg-2">Descargar la simulació</span>
+											<span onclick="transitionToAnchor()" class="button green-bg">Analitza més mostres</span>
+										</span>
+									</p>
 									
 									<div class="height-40 responsive-remove-sm"></div>
 									
@@ -789,7 +821,7 @@
 							</li>
 							<li class="rrss">
 							  <ul>
-								<li class="gh"><a href="https://github.com/bbglab/cancer-detective" target="_blank"><img src="../data/grafs/gral/ico-gh.svg"></a></li>
+								<li class="gh"><a href="https://github.com/bbglab/cancer-detective-pro" target="_blank"><img src="../data/grafs/gral/ico-gh.svg"></a></li>
 								<li class="tw"><a href="https://twitter.com/bbglab" target="_blank"><img src="../data/grafs/gral/ico-tw.svg"></a></li>
 							  </ul>
 							</li>
