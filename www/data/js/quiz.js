@@ -16,14 +16,12 @@ function sumar2(sumB1, sumB2, sumB3, sumA4) { resultado2 = sumB1 + sumB2 + sumB3
 
 // funció que genera les dues mostres dels pacients a partir de les variables aleatòries
 function finalitems(type) {
-	// Call function and get random cancer type
-	var randomTypeVariable = random_types(types);
-	//
-	var finaltype = "type-" + type; //randomTypeVariable;
-	var finalgene = "gen-" + randomTypeVariable;
-	var finalmuta = "muta_" + randomTypeVariable;
-	var finalgeneType = "gen-type-" + randomTypeVariable;
-	//
+
+	var finaltype = "type-" + type;
+	var finalgene = "gen-" + type;
+	var finalmuta = "muta_" + type;
+	var finalgeneType = "gen-type-" + type;
+
 	var randomItemA1 = random_item1(items1);
 	var randomItemA2 = random_item2(items2);
 	var randomItemA3 = random_item3(items3);
@@ -38,6 +36,7 @@ function finalitems(type) {
 	var finalgene2 = finalgene + '-' + randomItemB1 + '-' + randomItemB2 + '-' + randomItemB3 + '-' + randomItemB4;
 
 	// Avoid getting same samples
+	console.log("type", type)
 	if ( finalitem1 == finalitem2 ) {
 		finalitems(type);
 	} else {
