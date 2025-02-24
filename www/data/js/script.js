@@ -156,10 +156,40 @@ window.transitionToPage = function(href) {
 
 /* Download sheet */
 downloadSheet = function() {
-	document.getElementById('unloader').classList.add('visible');
-	setTimeout(function() {
-		window.location.replace('../analysis/?redo=true');
-	}, 500);
+	const greeting = "Hola";
+
+	const tableHTML = `
+  		<table>
+  		  <tr>
+  		    <th>Name</th>
+  		    <th>Age</th>
+  		    <th>City</th>
+  		  </tr>
+  		  <tr>
+  		    <td>${greeting}</td>
+  		    <td>30</td>
+  		    <td>New York</td>
+  		  </tr>
+  		  <tr>
+  		    <td>Bob</td>
+  		    <td>25</td>
+  		    <td>Los Angeles</td>
+  		  </tr>
+  		</table>
+	`;
+
+	const blob = new Blob([tableHTML], { type: 'application/vnd.ms-excel' });
+
+	const link = document.createElement('a');
+	if (link.download !== undefined) {
+		const url = URL.createObjectURL(blob);
+		link.setAttribute('href', url);
+		link.setAttribute('download', 'data.xls');
+		link.style.visibility = 'hidden';
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	}
 };
 
 /* Anchor transition */
