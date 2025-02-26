@@ -36,7 +36,6 @@ function finalitems(type) {
 	var finalgene2 = finalgene + '-' + randomItemB1 + '-' + randomItemB2 + '-' + randomItemB3 + '-' + randomItemB4;
 
 	// Avoid getting same samples
-	console.log("type", type)
 	if ( finalitem1 == finalitem2 ) {
 		finalitems(type);
 	} else {

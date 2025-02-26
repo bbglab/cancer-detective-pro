@@ -154,31 +154,99 @@ window.transitionToPage = function(href) {
     }, 500);
 };
 
+function getGenes(elements) {
+	const elementsSelected = [];
+	elements.forEach(element => {
+		const parent = element.parentElement;
+		const parentClasses = parent.className;
+		const gene = parentClasses.split(' ')[0];
+		elementsSelected.push(gene);
+	});
+	return elementsSelected;
+}
+
+function getAfterElement(elements) {
+	const elementsSelected = [];
+	elements.forEach(element => {
+		const afterElement = window.getComputedStyle(element, "::after").content;
+		const cleanElement = afterElement.replace(/['"]/g, "");
+		elementsSelected.push(cleanElement);
+	});
+	return elementsSelected;
+}
+
+function produceTable(elementId, tableHTML){
+	const elementsgenAll = document.querySelectorAll(elementId + ' .gen1');
+	const allGenes = getGenes(elementsgenAll);
+
+	const elementsprotAll = document.querySelectorAll(elementId + ' .gen2');
+	const allProteins = getAfterElement(elementsprotAll);
+
+	const elementsmutAll = document.querySelectorAll(elementId + ' .gen3');
+	const allMutation = getAfterElement(elementsmutAll);
+
+	const elementstherapyAll = document.querySelectorAll(elementId + ' .gen4');
+	const allTherapy = getAfterElement(elementstherapyAll);
+
+	for (let i = 0; i < allGenes.length; i++) {
+		tableHTML += `
+  		  <tr>
+  		    <td>${allGenes[i]}</td>
+  		    <td>${allProteins[i]}</td>
+  		    <td>${allMutation[i]}</td>
+  		    <td>${allTherapy[i]}</td>
+  		  </tr>
+		`
+	}
+
+	return tableHTML;
+}
+
+function constructTable() {
+
+	let tableHTML = `<table>
+  		  <tr>
+  		    <th colspan="4" align="center"><b>Pacient 1</b></th>
+  		  </tr>
+  		  <tr>
+  		    <th>Gen</th>
+  		    <th>Proteína</th>
+  		    <th>Mutació</th>
+  		    <th>Tractament</th>
+  		  </tr>
+	`
+
+	let elementId = `.gen-sample-1`;
+
+	tableHTML = produceTable(elementId, tableHTML);
+
+	tableHTML += `
+  		  <tr>
+  		  </tr>
+  		  <tr>
+  		    <th colspan="4" align="center"><b>Pacient 2</b></th>
+  		  </tr>
+  		  <tr>
+  		    <th>Gen</th>
+  		    <th>Proteína</th>
+  		    <th>Mutació</th>
+  		    <th>Tractament</th>
+  		  </tr>
+	`
+
+	elementId = `.gen-sample-2`;
+	tableHTML = produceTable(elementId, tableHTML);
+
+	tableHTML += `</table>`
+	return tableHTML;
+}
+
 /* Download sheet */
 downloadSheet = function() {
-	const greeting = "Hola";
 
-	const tableHTML = `
-  		<table>
-  		  <tr>
-  		    <th>Name</th>
-  		    <th>Age</th>
-  		    <th>City</th>
-  		  </tr>
-  		  <tr>
-  		    <td>${greeting}</td>
-  		    <td>30</td>
-  		    <td>New York</td>
-  		  </tr>
-  		  <tr>
-  		    <td>Bob</td>
-  		    <td>25</td>
-  		    <td>Los Angeles</td>
-  		  </tr>
-  		</table>
-	`;
+	const tableSimulation = constructTable();
 
-	const blob = new Blob([tableHTML], { type: 'application/vnd.ms-excel' });
+	const blob = new Blob([tableSimulation], { type: 'application/vnd.ms-excel' });
 
 	const link = document.createElement('a');
 	if (link.download !== undefined) {

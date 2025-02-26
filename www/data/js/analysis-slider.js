@@ -205,7 +205,7 @@ var therapySample2Winner;
 
 function therapySample(sample) {
 
-	const notExistTHerapy = ["Trastuzumab", "Imatinib", "Fulvestrant", "Rucaparib", "Inotuzumab"]
+	const notExistTherapy = ["Trastuzumab", "Imatinib", "Fulvestrant", "Rucaparib", "Inotuzumab"]
 
 	let elementId = `.gen-sample-${sample}`;
 	const elements = document.querySelectorAll( elementId + ' .therapy');
@@ -233,13 +233,13 @@ function therapySample(sample) {
 		therapySample1Winner = 2;
 		therapySample2Winner = 2;
 
-		const notExistTHerapyCopy = [...notExistTHerapy];
+		const notExistTherapyCopy = [...notExistTherapy];
 
-		const randomIndex1 = Math.floor(Math.random() * notExistTHerapyCopy.length);
-		const therapyNotExistSelected1 = notExistTHerapyCopy.splice(randomIndex1, 1)[0];
+		const randomIndex1 = Math.floor(Math.random() * notExistTherapyCopy.length);
+		const therapyNotExistSelected1 = notExistTherapyCopy.splice(randomIndex1, 1)[0];
 
-		const randomIndex2 = Math.floor(Math.random() * notExistTHerapyCopy.length);
-		const therapyNotExistSelected2 = notExistTHerapyCopy[randomIndex2];
+		const randomIndex2 = Math.floor(Math.random() * notExistTherapyCopy.length);
+		const therapyNotExistSelected2 = notExistTherapyCopy[randomIndex2];
 
 		elementId = 'slide' + slideId + '-option1';
 		element = document.getElementById(elementId);
@@ -261,7 +261,7 @@ function therapySample(sample) {
 
 		therapySample1Winner = Math.floor(Math.random() * 1)
 		therapySample2Winner = Math.floor(Math.random() * 1)
-		const therapyNotExistSelected = notExistTHerapy[Math.floor(Math.random() * notExistTHerapy.length)];
+		const therapyNotExistSelected = notExistTherapy[Math.floor(Math.random() * notExistTherapy.length)];
 
 		if ( therapySample1Winner == 0 || therapySample2Winner == 0 ) {
 			elementId = 'slide' + slideId + '-option1';
