@@ -95,9 +95,9 @@
 
 /* Gen */
 .gen1:before { content:"Gen"; }
-.gen2:before { content:"Canvi a la proteïna"; }
-.gen3:before { content:"Mutació"; }
-.gen4:before { content:"Tractament"; }
+.gen2:before { content:"Mutació (canvi a la proteïna)"; }
+.gen3:before { content:"Classificació"; }
+.gen4:before { content:"Teràpia dirigida"; }
 
 .gen li:not(.gen1):after { content:"-"; }
 
@@ -126,15 +126,12 @@
 .gen p:before { content:"Llistat de gens amb mutacions"; }
 
 /* Quiz */
-#quiz-section-01-subtitle:before { content:"\0031.\00A0 Seqüència l’ADN del tumor per obtenir el llistat de mutacions"; }
-#quiz-section-01-subtitle:after { content:"(trobaràs el botó per fer-ho a sota del seqüenciador)"; }
-#quiz-section-01-subtitle.analisis-01:before { content:"\0032.\00A0 La seqüenciació de l’ADN ens permet identificar quins gens han patit una mutació i localitzar a quina proteïna hi ha hagut un canvi o mutació. El següent pas serà identificar quines de les mutacions són impulsores."; }
-#quiz-section-01-subtitle.analisis-01:after { content:"(revisa les mutacions a les fitxes dels gens i clica el botó al final del llistat)"; }
-#quiz-section-01-subtitle.analisis-02:before { content:"\0033.\00A0 Finalment, hauràs de cercar si existeix una teràpia per a la mutació"; }
-#quiz-section-01-subtitle.analisis-02:after { content:"(revisa els canvis a les fitxes dels gens i clica el botó al final del llistat)"; }
-#quiz-section-01-subtitle.analisis-03:before { content:"\2713\00A0 Genial, has seguit totes les passes correctament!"; }
-#quiz-section-01-subtitle.analisis-03:after { content:"\279C\00A0 Has encertat quin pacient tindrà més mutacions? Fixa’t que com més mutacions més possibilitats hi haurà que apareguin gens impulsors del càncer. Malauradament, encara no existeixen tractaments per a totes les mutacions impulsores."; background:var(--grey); background:rgba(255,255,255,.1); margin-top:20px; padding:20px; display:block; border-radius:8px; color:var(--white); font-size:16px; line-height:24px; padding:20px 50px; }
+#quiz-section-01-subtitle:before { content:"\0031.\00A0 Seqüencia l’ADN de les mostres per obtenir el seu llistat de mutacions"; }
+#quiz-section-01-subtitle.analisis-01:before { content:"\0032.\00A0 Revisa les mutacions de cada mostra. Quan ho hagis fet, clica el botó a sota per identificar quines són mutacions impulsores."; }
+#quiz-section-01-subtitle.analisis-02:before { content:"\0033.\00A0 Identifica les mutacions impulsores a cada mostra. Quan ho hagis fet, clica el botó a sota per veure si hi ha teràpies dirigides contra aquestes mutacions."; }
+#quiz-section-01-subtitle.analisis-03:before { content:"\2713\00A0 Has seguit totes les passes correctament, felicitats!"; }
+#quiz-section-01-subtitle.analisis-03:after { content:"\279C\00A0 Has encertat la teva predicció inicial? Tot i que podem trobar mutacions que es repeteixen als càncers de diferents pacients, el conjunt de mutacions de cada càncer és únic."; background:var(--grey); background:rgba(255,255,255,.1); margin-top:20px; padding:20px; display:block; border-radius:8px; color:var(--white); font-size:20px; line-height:24px; padding:20px 50px; }
 
-#quiz-section-02-subtitle:before { content:"Com funcionen els factors de risc del càncer?"; }
+#quiz-section-02-subtitle:before { content:"Què has après?"; }
 #quiz-section-02-subtitle:after { content:"(escull el tipus de tumor que vols analitzar)"; }
 
