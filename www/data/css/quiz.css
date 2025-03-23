@@ -34,18 +34,18 @@
 .type-a li.sample:after, .type-b li.sample:after { font-weight:700; color:var(--extrathin); }
 .type-a li.sample:after { content:"Càncer de pell"; }
 .type-b li.sample:after { content:"Càncer de pulmó"; }
-.type li.sample-1a:after { content:"Pacient jove (d'1 a 20 anys)"; }
-.type li.sample-1b:after { content:"Pacient de mitjana edat (de 21 a 60 anys)"; }
-.type li.sample-1c:after { content:"Pacient de la tercera edat (més de 60 anys)"; }
-.type-a li.sample-2a:after { content:"Baixa exposició al sol"; }
+.type li.sample-1a:after { content:"Pacient jove"; }
+.type li.sample-1b:after { content:"Pacient de mitjana edat"; }
+.type li.sample-1c:after { content:"Pacient de la tercera edat"; }
+.type-a li.sample-2a:after { content:"Exposició al sol baixa"; }
 .type-a li.sample-2b:after { content:"Exposició al sol moderada"; }
-.type-a li.sample-2c:after { content:"Alta exposició al sol"; }
-.type-a li.sample-3a:after { content:"Ús de protector solar i roba de protecció solar"; }
-.type-a li.sample-3b:after { content:"Ús esporàdic de protector solar"; }
-.type-a li.sample-3c:after { content:"Sense ús de protector solar"; }
+.type-a li.sample-2c:after { content:"Exposició al sol alta"; }
+.type-a li.sample-3a:after { content:"Ús habitual de protecció solar"; }
+.type-a li.sample-3b:after { content:"Ús ocasional de protecció solar"; }
+.type-a li.sample-3c:after { content:"Ús puntual de protecció solar"; }
 .type-b li.sample-2a:after { content:"No fumador"; }
 .type-b li.sample-2b:after { content:"Fumador ocasional"; }
-.type-b li.sample-2c:after { content:"Fumador regular"; }
+.type-b li.sample-2c:after { content:"Fumador habitual"; }
 .type-b li.sample-3a:after { content:"No exposat al tabac d'altres"; }
 .type-b li.sample-3b:after { content:"Fumador passiu ocasional"; }
 .type-b li.sample-3c:after { content:"Fumador passiu regular"; }
