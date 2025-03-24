@@ -40,7 +40,7 @@
 		
 		<div id="home-menu"><div class="home-menu-wrapper">
 			<span onclick="transitionToPage('about/')" style="cursor:pointer"><img src="data/grafs/gral/logo.svg" class="width-100" alt""></span>
-			<div id="home-container-desc" class="home-text container-text">Una simulació per aprendre sobre el càncer i la medicina personalitzada.</div>
+			<div id="home-container-desc" class="home-text container-text">Una simulació per aprendre sobre el càncer i la medicina personalitzada</div>
 			<div id="home-container-button">
 				<script>
 					var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('home-container-button'), renderer: 'svg', loop: true, autoplay: true, path: 'data/grafs/js/cell-home-button.json' });
@@ -59,10 +59,16 @@
 				<img src="data/grafs/gral/ico-close.svg" alt="Close">
 			</div>
 			<div id="menu">
-				<p>Abans de començar la simulació descobreix què és el càncer i com funciona.</p>
+				<p>
+					Vols aprendre més sobre què és el càncer i com podem estudiar-lo?
+				</p>
 				<ul>
-					<li id="home-menu-2"><span onclick="transitionToPage('introduction/')"><strong>Continua</strong></span></li>
-					<li id="home-menu-1"><span onclick="transitionToPage('analysis/')"><strong>Saltar introducció</strong></span></li>
+					<li id="home-menu-2"><span onclick="transitionToPage('introduction/')"><strong>Què és el càncer?</strong></span></li>
+				<p>
+					Vols començar directament la simulació?
+				</p>
+				
+					<li id="home-menu-1"><span onclick="transitionToPage('analysis/')"><strong>Analitza les mostres</strong></span></li>
 				</ul>
 			</div>
 		</div>
