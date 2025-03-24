@@ -252,7 +252,7 @@ downloadSheet = function() {
 	if (link.download !== undefined) {
 		const url = URL.createObjectURL(blob);
 		link.setAttribute('href', url);
-		link.setAttribute('download', 'data.xls');
+		link.setAttribute('download', 'data-simulation.xls');
 		link.style.visibility = 'hidden';
 		document.body.appendChild(link);
 		link.click();
