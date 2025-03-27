@@ -14,6 +14,7 @@ var a1value, a2value, a3value, a4value, b1value, b2value, b3value, b4value, resu
 function sumar1(sumA1, sumA2, sumA3, sumA4) { resultado1 = sumA1 + sumA2 + sumA3 + sumA4; return resultado1; }
 function sumar2(sumB1, sumB2, sumB3, sumA4) { resultado2 = sumB1 + sumB2 + sumB3 + sumA4; return resultado2; }
 
+
 // funció que genera les dues mostres dels pacients a partir de les variables aleatòries
 function finalitems(type) {
 
@@ -36,7 +37,6 @@ function finalitems(type) {
 	var finalgene2 = finalgene + '-' + randomItemB1 + '-' + randomItemB2 + '-' + randomItemB3 + '-' + randomItemB4;
 
 	// Avoid getting same samples
-	console.log("type", type)
 	if ( finalitem1 == finalitem2 ) {
 		finalitems(type);
 	} else {
