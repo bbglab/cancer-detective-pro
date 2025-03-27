@@ -129,7 +129,7 @@
 #quiz-section-01-subtitle:before { content:"\0031.\00A0 Seqüencia l’ADN de les mostres per obtenir el seu llistat de mutacions"; }
 #quiz-section-01-subtitle.analisis-01:before { content:"\0032.\00A0 Revisa les mutacions de cada mostra. Quan ho hagis fet, clica el botó a sota per identificar quines són mutacions impulsores."; }
 #quiz-section-01-subtitle.analisis-02:before { content:"\0033.\00A0 Identifica les mutacions impulsores a cada mostra. Quan ho hagis fet, clica el botó a sota per veure si hi ha teràpies dirigides contra aquestes mutacions."; }
-#quiz-section-01-subtitle.analisis-03:before { content:"\2713\00A0 Has seguit totes les passes correctament, felicitats!"; }
+#quiz-section-01-subtitle.analisis-03:before { content:"\2713\00A0 Enhorabona! Has seguit totes les passes correctament"; }
 #quiz-section-01-subtitle.analisis-03:after { content:"\279C\00A0 Has encertat la teva predicció inicial? Tot i que podem trobar mutacions que es repeteixen als càncers de diferents pacients, el conjunt de mutacions de cada càncer és únic."; background:var(--grey); background:rgba(255,255,255,.1); margin-top:20px; padding:20px; display:block; border-radius:8px; color:var(--white); font-size:20px; line-height:24px; padding:20px 50px; }
 
 #quiz-section-02-subtitle:before { content:"Què has après?"; }
