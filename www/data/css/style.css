@@ -354,10 +354,10 @@ p strong { font-weight:700; }
 #quiz-00.clicked li button:not(.selected) { opacity:.25; background:rgba(255,255,255,.5); }
 #quiz-00-result.selected { background:var(--blue); }
 #quiz-00-result.selected:before { border-bottom-color:var(--blue); }
-#quiz-00-result.quiz-00-01:before { border-bottom-color:var(--sample1); }
-#quiz-00-result.quiz-00-01, #quiz-00-01.selected { background:var(--sample1); }
-#quiz-00-result.quiz-00-02:before { border-bottom-color:var(--sample2); }
-#quiz-00-result.quiz-00-02, #quiz-00-02.selected { background:var(--sample2); }
+#quiz-00-result.quiz-00-01:before { border-bottom-color:var(--blue); }
+#quiz-00-result.quiz-00-01, #quiz-00-01.selected { background:var(--blue); }
+#quiz-00-result.quiz-00-02:before { border-bottom-color:var(--blue); }
+#quiz-00-result.quiz-00-02, #quiz-00-02.selected { background:var(--blue); }
 #quiz-00-result.quiz-00-01:before { left: calc(20% - 12px); }
 #quiz-00-result.quiz-00-02:before { left: calc(50% - 12px); }
 #quiz-00-result.quiz-00-03:before { left: calc(80% - 12px); }
