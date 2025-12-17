@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 721 979">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: #8fb5bc;
+      }
+
+      .st0, .st1 {
+        stroke-miterlimit: 10;
+      }
+
+      .st0, .st2 {
+        fill: #f4f9f9;
+      }
+
+      .st3 {
+        opacity: .2;
+      }
+
+      .st3, .st4 {
+        fill: #8fb5bc;
+      }
+
+      .st3, .st4, .st5, .st1, .st6 {
+        isolation: isolate;
+      }
+
+      .st4, .st5 {
+        opacity: .1;
+      }
+
+      .st5 {
+        fill: #cad8d8;
+      }
+
+      .st1 {
+        fill: #fff;
+        opacity: .8;
+        stroke: #000;
+      }
+
+      .st7 {
+        fill: #dfe8e8;
+      }
+
+      .st6 {
+        fill: #032836;
+        font-family: FiraSans-Bold, 'Fira Sans';
+        font-size: 25px;
+        font-weight: 700;
+      }
+
+      .st8 {
+        fill: #7f9337;
+      }
+
+      .st9 {
+        opacity: .5;
+      }
+
+      .st10 {
+        fill: #7d46d3;
+      }
+    </style>
+  </defs>
+  <path class="st1" d="M210.9,406.3v30.4c0,3.6,1.5,6.9,4,8.9l8.1,6.5c5.4,4.3,5.4,5.5,0,9.9l-8.1,6.5c-2.5,2-4,5.4-4,8.9v33c0,6-1.2,7.9-6.5,7.9H9.1c-5.2,0-6.5-1.9-6.5-7.9v-104.1c0-6,1.2-7.9,6.5-7.9h195.3c5.3,0,6.5,1.9,6.5,7.9Z"/>
+  <path class="st1" d="M413.1,280.2v30.4c0,3.6-1.5,6.9-4,8.9l-8.1,6.5c-5.4,4.3-5.4,5.5,0,9.9l8.1,6.5c2.5,2,4,5.4,4,8.9v33c0,6,1.2,7.9,6.5,7.9h195.3c5.2,0,6.5-1.9,6.5-7.9v-104.1c0-6-1.2-7.9-6.5-7.9h-195.3c-5.2,0-6.5,1.9-6.5,7.9Z"/>
+  <g id="Capa_11" data-name="Capa_1">
+    <g id="Capa_9">
+      <g>
+        <g class="st9">
+          <path class="st0" d="M271.6,301.8c11.3.4,24.9,1.6,32.8,10.6,1.7,2.3,1.6,4.7,1.6,7.4-.2,5,.4,10.1-.3,15.1-1,3.5-4.3,6-7.3,7.6-.4.3-.7.7-.7,1.2v154.5c-.6,40.6-51.7,40.7-52.3,0v-154.5c0-.5-.3-1-.7-1.2-4-2.1-8.1-5.6-7.6-10.5v-11.1c0-2.5-.4-5.1.9-7.4,7.4-10.1,22.1-11.2,33.6-11.7"/>
+          <path class="st3" d="M296.5,317c.4,11.6-49.8,11.6-49.4,0-.4-11.6,49.8-11.6,49.4,0Z"/>
+        </g>
+        <g>
+          <path class="st4" d="M249.6,415.1v.2c-.1,0,0-.1,0-.2h0Z"/>
+          <path class="st7" d="M249.6,415.3v85.7c0,12.4,10,22.4,22.4,22.4s22.1-9.9,22-22.2v-85c-2.4,8.3-44.9,8.1-44.4-.9Z"/>
+        </g>
+        <path class="st2" d="M294.1,415.3c.4,9.2-45,9.2-44.5,0-.6-9.2,44.9-9.2,44.5,0Z"/>
+      </g>
+    </g>
+  </g>
+  <g id="Capa_12" data-name="Capa_1">
+    <g id="Capa_91" data-name="Capa_9">
+      <g>
+        <g class="st9">
+          <path class="st0" d="M350.6,275.5c11.3.4,24.9,1.6,32.8,10.6,1.7,2.3,1.6,4.7,1.6,7.4-.2,5,.4,10.1-.3,15.1-1,3.5-4.3,6-7.3,7.6-.4.3-.7.7-.7,1.2v154.5c-.6,40.6-51.7,40.7-52.3,0v-154.5c0-.5-.3-1-.7-1.2-4-2.1-8.1-5.6-7.6-10.5v-11.1c0-2.5-.4-5.1.9-7.4,7.5-10.2,22.1-11.2,33.6-11.7"/>
+          <path class="st3" d="M375.6,290.7c.4,11.6-49.8,11.6-49.4,0-.5-11.6,49.7-11.6,49.4,0Z"/>
+        </g>
+        <g>
+          <path class="st5" d="M328.6,388.8v.2-.2h0Z"/>
+          <path class="st7" d="M328.6,389v85.7c0,12.4,10,22.4,22.4,22.4s22.1-9.9,22-22.2v-85c-2.4,8.3-44.9,8.1-44.4-.9Z"/>
+        </g>
+        <path class="st2" d="M373.1,389c.4,9.2-45,9.2-44.5,0-.5-9.2,45-9.2,44.5,0Z"/>
+      </g>
+    </g>
+  </g>
+  <path class="st10" d="M259,354.6v27c9.2,4.1,28.9,4.2,38.7.4v-27c-9.9,3.8-29.6,3.7-38.7-.4Z"/>
+  <path class="st8" d="M377.1,328.5c-9.7,4-30,4-39.2-.3v27c9.2,4.2,29.5,4.3,39.2.3v-27Z"/>
+  <text class="st6" transform="translate(437.9 327.1)"><tspan x="0" y="0">Mutacions del</tspan></text>
+  <text class="st6" transform="translate(465.5 357.1)"><tspan x="0" y="0">pacient 2</tspan></text>
+  <text class="st6" transform="translate(28.8 451.5)"><tspan x="0" y="0">Mutacions del</tspan></text>
+  <text class="st6" transform="translate(56.4 481.5)"><tspan x="0" y="0">pacient 1</tspan></text>
+</svg>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+<title>Cancer Detective: ¿Quieres saber más?</title>
+<meta name="description" content="An analysis simulation based on CGI to learn about cancer and mutations">
+<meta name="author" content="BBGLab">
+<link rel="stylesheet" href="../../data/css/locomotive-scroll.min.css">
+<link rel="stylesheet" href="../../data/css/style.css">
+<link rel="stylesheet" href="../../data/css/responsive.css">
+<script src="../../data/js/lottie.js"></script>
+<link rel="icon" href="../../data/grafs/gral/favicon.ico" type="image/x-icon">
+
+<meta property="og:title" content="Cancer Detective" />
+<meta property="og:description" content="An analysis simulation based on CGI to learn about cancer and mutations" />
+<meta property="og:image" content="https://github.com/bbglab/cancer-detective-pro/blob/main/www/data/grafs/gral/logo-xl-background.png?raw=true" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:type" content="website" />
+
+</head>
+
+<body>
+
+<div id="loader" class="loader">
+	<div id="cell-loader" class="fade-in">
+		<script>
+			var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('cell-loader'), renderer: 'svg', loop: true, autoplay: true, path: '../../data/grafs/js/cell-load.json' });
+			cellLoader.setSpeed(0.5);
+		</script>
+	</div>
+</div>
+<div id="unloader" class="loader"></div>
+
+<div id="scroll-container" data-scroll-container>
+	
+	<a href="#section0" id="button-up" data-scroll-to></a>
+
+	<div class="menu menu-top sticky" id="menu">
+		<input type="checkbox" class="left-menu-toggler" id="menu-check">
+		<div class="left-menu-button"><div></div></div>
+		<div class="left-menu">
+			<span class="home-button" onclick="transitionToPage('../')"><img src="../../data/grafs/gral/home.svg" class="width-100"></span>
+			<span class="lang-button" onclick="transitionToPage('../../')"><img src="../../data/grafs/gral/lang-es.svg" class="width-100"></span>
+			<div>
+				<ul>
+					<li><span onclick="transitionToPage('../introduction/')"><strong>¿Qué es el cáncer?</strong></span></li>
+					<li><span onclick="transitionToPage('../analysis/')"><strong>Analiza las muestras</strong></span></li>
+					<li><a href="#section1" class="selected-menu" id="menu0" data-scroll-to><strong>¿Quieres saber más?</strong></a></li>
+					<li><span onclick="transitionToPage('../about/')"><strong>¿Quiénes somos?</strong></span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--
+	<div class="header header-top sticky" id="header">
+		<div class="sticky-header"><a href="#section0" class="logo" data-scroll-to><span><img src="../../data/grafs/gral/logo-img.svg" class="logo-1"><img src="../../data/grafs/gral/logo-txt-1.svg" class="logo-2"><img src="../../data/grafs/gral/logo-txt-2.svg" class="logo-3"></span></a></div>
+	</div>
+	-->
+	<div class="header header-top sticky" id="header">
+		<div class="sticky-header"><span onclick="transitionToPage('../')" class="logo"><span><img src="../../data/grafs/gral/logo-img.svg" class="logo-1"><img src="../../data/grafs/gral/logo-txt-1.svg" class="logo-2"><img src="../../data/grafs/gral/logo-txt-2.svg" class="logo-3"></span></span></div>
+	</div>
+	
+	<section id="content-container"><div id="content-section" data-scroll-section>
+	
+		<div id="header-background">
+
+			<div id="section0"></div>
+
+			<div id="content" class="content">
+
+				<div id="cell-header-1" class="absolute" data-scroll data-scroll-speed="1">
+					<script>
+						var cellheader1 = bodymovin.loadAnimation({ container: document.getElementById('cell-header-1'), renderer: 'svg', loop: true, autoplay: true, path: '../../data/grafs/js/cell-0.json' });
+						cellheader1.setSpeed(0.25);
+					</script>
+				</div>
+
+				<!-- //////////////////////////////////////////////////// Section 0 //////////////////////////////////////////////////// -->
+
+				<div class="content-width content-width-title relative z-1">
+					<h1 class="title center" data-scroll data-scroll-speed="2"><span data-scroll data-scroll-speed="0.25" data-scroll-direction="horizontal"></span><strong data-scroll data-scroll-speed="-0.25" data-scroll-direction="horizontal">¿Quieres saber más?</strong></h1>
+					<p class="title-desc center">Cancer Detective es una simulación de análisis basada en el <a href="https://www.cancergenomeinterpreter.org/home" target="_blank"><strong>Cancer Genome Interpreter</strong></a>, con un fin educativo. A continuación, encontrarás información para entender mejor esta actividad y ampliar tus conocimientos.</p>
+
+				</div>
+
+				<!-- //////////////////////////////////////////////////// Section 1 //////////////////////////////////////////////////// -->
+
+				<section id="section1" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu1">
+					
+					<div class="height-80"></div>
+					
+					<h2 data-scroll data-scroll-speed="1" class="subtitle right">La célula</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-cell.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><strong>La célula</strong>, del latín <i>cellula</i> o 'habitáculo pequeño', es el elemento básico de la vida. Las células son la unidad estructural, funcional y biológica básica de todos los organismos conocidos.</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>El núcleo</strong> es el centro de control de la célula. Se encuentra cerrado por la envoltura nuclear, aislando su contenido del citoplasma. El núcleo contiene la mayor parte del genoma (con la excepción del mitocondrial), y se encarga de controlar las actividades celulares mediante la expresión de una parte u otra del genoma.</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>El citoplasma</strong> es todo el material de las células, cerrado por la membrana celular, excepto el núcleo celular. Está formado principalmente por el citosol (una sustancia parecida a un gel) y los orgánulos (subestructuras internas de la célula).</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>Los ribosomas</strong> son las "máquinas" que realizan la síntesis de proteínas a partir de la traducción de ARN mensajero.</p>
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 2 //////////////////////////////////////////////////// -->
+
+				<section id="section2" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu2">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-right subtitle left">El ADN y el genoma</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-adn.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+							
+						  <p class="left reveal move-right" data-scroll><strong>El ADN</strong> o ácido desoxirribonucleico es la molécula que contiene instrucciones genéticas para el desarrollo, funcionamiento y reproducción del organismo. El ADN está formado por bloques conocidos como nucleótidos agrupados formando una hélice de dos cadenas. El ADN se encuentra en el núcleo celular.</p>
+
+						  <p class="left reveal move-right" data-scroll><strong>Un gen</strong> es una secuencia de ADN que contiene instrucciones para llevar a cabo tareas concretas dentro de la célula o del organismo. Por ejemplo, el gen de la “lactasa” codifica para una proteína, la lactasa, que nos ayuda a digerir la leche. Los humanos tenemos alrededor de 20,000 genes que codifican para proteínas, y entre 3 y 5 veces más genes que no codifican para proteínas.</p>
+						
+						  <p class="left reveal move-right" data-scroll><strong>El genoma</strong> es el libro de instrucciones de la célula y comprende toda la información genética de un organismo. El genoma contiene genes y otras secuencias, algunas con función aún desconocida. En total, el genoma humano está formado por 3,200 millones de pares de bases de ADN. Para que te hagas una idea, si estiráramos el genoma de una única célula en línea recta, mediría 2 metros.</p>
+
+
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 3 //////////////////////////////////////////////////// -->
+
+				<section id="section3" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu3">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-left subtitle right">El ARN y las proteínas</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-protein.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+
+							<p class="left reveal move-right" data-scroll><strong>El ARN</strong> o ácido ribonucleico es una molécula similar al ADN, que se forma a partir de una copia de una cadena de ADN en un proceso llamado transcripción. Hay diferentes tipos de moléculas de ARN. El ARN que codifica para proteínas se conoce como ARN mensajero (ARNm). El ARNm se genera dentro del núcleo y viaja al citoplasma donde los ribosomas leen su secuencia para dar lugar a las proteínas.</p>
+
+						  <p class="left reveal move-right" data-scroll><strong>Las proteínas</strong> son moléculas que realizan una gran variedad de funciones dentro de las células y los organismos. Están formadas por una secuencia de aminoácidos determinada por la información codificada en el ARNm. Cuando los ribosomas leen la secuencia del ARNm, traducen esa información en aminoácidos. Por ejemplo, si el ARNm contiene los nucleótidos AAA, los ribosomas lo traducirán en un aminoácido llamado lisina. Nuestras proteínas están formadas por combinaciones de 22 aminoácidos diferentes. La función de una proteína en concreto dependerá de los aminoácidos que la formen y de la estructura tridimensional de su conjunto.</p>
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 4 //////////////////////////////////////////////////// -->
+
+				<section id="section4" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu4">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-right subtitle left">Las mutaciones</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-mutation.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><strong>Las mutaciones</strong> son errores o cambios en la secuencia del ADN. Cuando el ADN de una célula acumula una mutación, esta se transmitirá a sus células hijas. Las mutaciones se producen de manera natural en las células de nuestro cuerpo a lo largo de la vida. La mayoría de las mutaciones no tienen ningún efecto, pero algunas pueden alterar la función de las proteínas y provocar cambios a nivel celular.</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>Los mutágenos</strong> son el conjunto de agentes químicos, físicos o biológicos que introducen mutaciones en el ADN. Los mutágenos pueden ser externos (exógenos) o internos (endógenos) según su origen. Los externos son causados por moléculas o reacciones que se originan fuera de nuestro cuerpo, como el tabaco o la luz ultravioleta (UV). Por el contrario, los procesos internos son causados por mecanismos que ocurren dentro de nuestras células y tejidos. Por ejemplo, cada vez que una célula se divide, la célula tiene que duplicar el ADN y durante este proceso se pueden introducir mutaciones en su secuencia.</p>
+
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 5 //////////////////////////////////////////////////// -->
+
+				<section id="section5" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu5">
+
+					<div class="height-80"></div>
+					
+					<h2 data-scroll data-scroll-repeat class="reveal move-left subtitle right">El cáncer</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-tumor.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><strong>El cáncer</strong> es un grupo de enfermedades caracterizadas por el crecimiento y proliferación incontrolada de células anómalas. Las células cancerosas son diferentes a las normales: su crecimiento es más rápido, pueden dividirse ilimitadamente ignorando señales para detenerse, e incluso pueden invadir otros órganos y tejidos distantes (metástasis). Los cánceres también se llaman tumores malignos.</p>
+
+						<p class="left reveal move-right" data-scroll><strong>El genoma del cáncer contiene mutaciones.</strong> Cuando leemos la secuencia de ADN de las células de un cáncer, a menudo encontramos más mutaciones que en las células normales. El número de mutaciones varía según el tipo de cáncer, pero puede ir desde unos pocos cientos hasta cientos de miles de mutaciones. Es clave descubrir cuáles de estas mutaciones han contribuido al desarrollo del cáncer: cuanto mejor entendamos esta enfermedad, mejor podremos tratarla.</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>Las mutaciones impulsoras del cáncer</strong> son aquellas mutaciones que aumentan el potencial de supervivencia, crecimiento y proliferación de las células que las contienen. Es decir, las células que contienen mutaciones impulsoras sobreviven más que las otras células normales a su alrededor y terminan reemplazándolas. El efecto de las mutaciones impulsoras recae en cómo alteran diferentes genes o secuencias del ADN. Se ha calculado que los cánceres, independientemente de su tipo, contienen entre 4 y 6 mutaciones impulsoras en su ADN. En comparación con el total de mutaciones de un cáncer, las mutaciones impulsoras son una fracción muy pequeña.</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>Los genes o proteínas impulsoras del cáncer</strong> son aquellos que se ven afectados por mutaciones impulsoras. Por ejemplo, el gen impulsor más frecuente se llama TP53 y su proteína controla procesos clave como la proliferación y la muerte celular. Cuando TP53 recibe mutaciones que hacen que funcione de manera incorrecta, las células pueden descontrolarse. Ten en cuenta que sólo algunas de las mutaciones que reciben los genes o proteínas impulsores son mutaciones impulsoras: aquellas que hacen cambios en la función de la proteína y aumentan su potencial de supervivencia.</p>
+						</div>
+					  </div>
+					 
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 6 //////////////////////////////////////////////////// -->
+
+				<section id="section9" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu9">
+
+					<div class="height-80"></div>
+					
+					<h2 data-scroll data-scroll-repeat class="reveal move-right subtitle left">La genómica del cáncer</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-biopsia.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+
+						  <p class="left reveal move-right" data-scroll><strong>La genómica del cáncer</strong> es la ciencia que estudia el ADN, los genes y los genomas de los cánceres para entender sus alteraciones. Debido al tamaño del genoma y a la gran cantidad de datos genómicos que podemos obtener, es necesario utilizar herramientas bioinformáticas para analizar e interpretar esta información.</p>
+
+						  <p class="left reveal move-right" data-scroll><strong>La secuenciación del genoma del cáncer</strong> es esencial para identificar las mutaciones en su ADN. Este proceso generalmente consiste en obtener una muestra del cáncer y extraer su ADN. Mediante unas máquinas especializadas, los secuenciadores, podemos leer la secuencia de ADN del tumor y compararla con la secuencia de ADN de células sanas del mismo paciente (por ejemplo, de células de la sangre). Aquellas secuencias o nucleótidos que se encuentren alterados únicamente en el ADN del cáncer serán sus mutaciones.</p>
+
+						</div>	
+					  </div>
+					 
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 7 //////////////////////////////////////////////////// -->
+
+				<section id="section10" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu10">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-left subtitle right">La bioinformática</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-bioinfo.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><strong>La bioinformática</strong> es el campo de la ciencia que utiliza ordenadores, bases de datos, matemáticas y estadísticas para recopilar, almacenar, organizar y analizar grandes cantidades de información biológica, médica y de salud.</p>
+
+						 <p class="left reveal move-right" data-scroll><strong>Un algoritmo</strong> es un proceso o conjunto de reglas que se deben seguir en los cálculos u otras operaciones para resolver problemas, especialmente por un ordenador.</p>
+
+		
+						  <p class="left reveal move-right" data-scroll><strong>El aprendizaje automático</strong> es el uso y desarrollo de sistemas informáticos capaces de aprender y adaptarse sin seguir instrucciones explícitas. Este aprendizaje se logra mediante el uso de algoritmos y modelos estadísticos para extraer patrones "invisibles" dentro de los datos y crear predicciones.</p>
+
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 8 //////////////////////////////////////////////////// -->
+
+				<section id="section11" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu11">
+
+					<div class="height-80"></div>
+					
+					<h2 data-scroll data-scroll-repeat class="reveal move-right subtitle left">Herramientas bioinformáticas del&nbsp;BBGLab</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+
+					<div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							
+						</div>
+						<div class="col-flex flex-wrapper">
+							<p class="left reveal move-right" data-scroll>La genómica del cáncer requiere herramientas bioinformáticas. Por ello, la comunidad científica y médica de todo el mundo ha desarrollado métodos y algoritmos para estudiar los genomas de los cánceres. Estos son algunos de los métodos que hemos creado en el laboratorio <a href="https://bbglab.irbbarcelona.org/" target="_blank"><strong>Barcelona Biomedical Genomics Lab</strong></a> y en los que se basa el Cancer Detective.</p>
+						</div>
+						</div>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<img src="../../data/grafs/cells/intogen-logo.svg" class="width-100" alt"">
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><a href="https://www.intogen.org/search" target="_blank"><strong>IntOGen</strong></a> es un recurso unificado que fusiona información de diferentes métodos estadísticos e identifica proteínas impulsoras del cáncer. IntOGen utiliza mutaciones de miles de cánceres de pacientes diferentes para realizar sus análisis.</p>
+						</div>
+					  </div>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<img src="../../data/grafs/cells/boostdm-logo.svg" class="width-100" alt"">
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><a href="https://www.intogen.org/boostdm/search" target="_blank"><strong>BoostDM</strong></a> es un algoritmo de aprendizaje automático que puede predecir qué mutaciones dentro de las proteínas impulsoras del cáncer contribuyen al desarrollo del tumor. Este punto es fundamental, dado que no todas las mutaciones en una proteína impulsora son mutaciones impulsoras.</p>
+						</div>
+					  </div>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="height-50"></div>
+							<img src="../../data/grafs/cells/cgi.svg" class="width-100" alt"">
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll>El <a href="https://www.cancergenomeinterpreter.org/home" target="_blank"><strong>Cancer Genome Interpreter (CGI)</strong></a> es una herramienta bioinformática que analiza e interpreta las mutaciones identificadas en tumores de pacientes con cáncer. CGI utiliza los datos generados por IntOGen, BoostDM y otros recursos para determinar si una mutación en una proteína identificada en un tumor es un impulsor del cáncer y si existe un tratamiento específico para esa alteración. Actualmente, se está llevando a cabo un proyecto a nivel europeo para desarrollar una versión más avanzada del Cancer Genome Interpreter que pueda ser utilizada en hospitales y centros médicos. Si quieres saber más, visita la web del <a href="https://www.cgiclinics.eu/" target="_blank"><strong>CGI-Clinics</strong></a>.</p>
+						</div>
+					  </div>
+					 
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 9 //////////////////////////////////////////////////// -->
+
+				<section id="section8" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu8">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-left subtitle right">La medicina oncológica de&nbsp;precisión<br></h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-medicine.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><strong>La medicina oncológica de precisión</strong> utiliza información molecular del cáncer de un paciente para tratarlo según las alteraciones específicas de su enfermedad. En otras palabras, se usa la información de las alteraciones del ADN, ARN y proteínas del cáncer para seleccionar los tratamientos más adecuados para el paciente.</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>Las terapias dirigidas</strong> son tratamientos diseñados contra alteraciones específicas de las células del cáncer, como pueden ser las mutaciones impulsoras del cáncer. Como estas alteraciones no están presentes en las células normales, las terapias dirigidas suelen tener menos efectos secundarios que las terapias no dirigidas, como la quimioterapia. Por ejemplo, algunos pacientes con melanoma, un tipo de cáncer de piel, tienen alterada una proteína llamada BRAF que favorece el crecimiento y la división celular. En muchos de estos casos, el gen BRAF contiene mutaciones en el aminoácido 600 de la proteína. Cuando se encuentran estas mutaciones, los pacientes pueden tratarse con Vemurafenib, un fármaco que inhibe BRAF solo cuando tiene alterado este aminoácido en concreto, causando la muerte de las células cancerosas. Aunque las terapias dirigidas son eficaces, a veces los cánceres encuentran maneras de esquivarlas y volverse resistentes a estas terapias.</p>
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section end //////////////////////////////////////////////////// -->
+
+				<div class="height-150"></div>
+				
+			</div>
+			
+			<!-- //////////////////////////////////////////////////// Section Footer //////////////////////////////////////////////////// -->
+			
+		</div>
+		
+		<footer>
+				<div class="footer-wrapper">
+					<ul>
+						<li class="bbglab"><a href="https://bbglab.irbbarcelona.org" target="_blank"><img src="../../data/grafs/gral/bbglab.svg"></a></li>
+						<li class="copyright">
+						  <p>© Barcelona Biomedical Genomics&nbsp;Lab</p>
+						</li>
+						<li class="rrss">
+						  <ul>
+							<li class="gh"><a href="https://github.com/bbglab/cancer-detective-pro" target="_blank"><img src="../../data/grafs/gral/ico-gh.svg"></a></li>
+							<li class="tw"><a href="https://twitter.com/bbglab" target="_blank"><img src="../../data/grafs/gral/ico-tw.svg"></a></li>
+						  </ul>
+						</li>
+					</ul>
+				</div>
+		</footer>
+		
+	</div></section>
+		
+</div>
+	
+<!-- js -->
+<script src="../../data/js/w3.js"></script>
+<script src="../../data/js/imagesloaded.pkgd.min.js"></script>
+<script src="../../data/js/locomotive-scroll.min.js"></script>
+<script src="../../data/js/script.js"></script>
+
+</body>
+</html>
