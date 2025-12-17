@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+<title>Cancer Detective: About us</title>
+<meta name="description" content="An analysis simulation based on CGI to learn about cancer and mutations">
+<meta name="author" content="BBGLab">
+<link rel="stylesheet" href="../../data/css/locomotive-scroll.min.css">
+<link rel="stylesheet" href="../../data/css/style.css">
+<link rel="stylesheet" href="../../data/css/responsive.css">
+<script src="../../data/js/lottie.js"></script>
+<link rel="icon" href="../../data/grafs/gral/favicon.ico" type="image/x-icon">
+
+<meta property="og:title" content="Cancer Detective" />
+<meta property="og:description" content="An analysis simulation based on CGI to learn about cancer and mutations" />
+<meta property="og:image" content="https://github.com/bbglab/cancer-detective-pro/blob/main/www/data/grafs/gral/logo-xl-background.png?raw=true" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:type" content="website" />
+</head>
+
+<body>
+
+<div id="loader" class="loader">
+	<div id="cell-loader" class="fade-in">
+		<script>
+			var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('cell-loader'), renderer: 'svg', loop: true, autoplay: true, path: '../../data/grafs/js/cell-load.json' });
+			cellLoader.setSpeed(0.5);
+		</script>
+	</div>
+</div>
+<div id="unloader" class="loader"></div>
+
+<div id="scroll-container" data-scroll-container>
+	
+	<a href="#section0" id="button-up" data-scroll-to></a>
+
+	<div class="menu menu-top sticky" id="menu">
+		<input type="checkbox" class="left-menu-toggler" id="menu-check">
+		<div class="left-menu-button"><div></div></div>
+		<div class="left-menu">
+			<span class="home-button" onclick="transitionToPage('../')"><img src="../../data/grafs/gral/home.svg" class="width-100"></span>
+			<span class="lang-button" onclick="transitionToPage('../../')"><img src="../../data/grafs/gral/lang-en.svg" class="width-100"></span>
+			<div>
+				<ul>
+					<li><span onclick="transitionToPage('../introduction/')"><strong>What is cancer?</strong></span></li>
+					<li><span onclick="transitionToPage('../analysis/')"><strong>Analyze the samples</strong></span></li>
+					<li><span onclick="transitionToPage('../resources/')"><strong>Want to learn more?</strong></span></li>
+					<li><a href="#section1" class="selected-menu" id="menu0" data-scroll-to><strong>About us</strong></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--
+	<div class="header header-top sticky" id="header">
+		<div class="sticky-header"><a href="#section0" class="logo" data-scroll-to><span><img src="../../data/grafs/gral/logo-img.svg" class="logo-1"><img src="../../data/grafs/gral/logo-txt-1.svg" class="logo-2"><img src="../../data/grafs/gral/logo-txt-2.svg" class="logo-3"></span></a></div>
+	</div>
+	-->
+	<div class="header header-top sticky" id="header">
+		<div class="sticky-header"><span onclick="transitionToPage('../')" class="logo"><span><img src="../../data/grafs/gral/logo-img.svg" class="logo-1"><img src="../../data/grafs/gral/logo-txt-1.svg" class="logo-2"><img src="../../data/grafs/gral/logo-txt-2.svg" class="logo-3"></span></span></div>
+	</div>
+	
+	<section id="content-container"><div id="content-section" data-scroll-section>
+	
+		<div id="header-background">
+
+			<div id="section0"></div>
+
+			<div id="content" class="content">
+
+				<div id="cell-header-1" class="absolute" data-scroll data-scroll-speed="1">
+					<script>
+						var cellheader1 = bodymovin.loadAnimation({ container: document.getElementById('cell-header-1'), renderer: 'svg', loop: true, autoplay: true, path: '../../data/grafs/js/cell-0.json' });
+						cellheader1.setSpeed(0.25);
+					</script>
+				</div>
+
+				<!-- //////////////////////////////////////////////////// Section 0 //////////////////////////////////////////////////// -->
+
+				<div class="content-width content-width-title relative z-1">
+					<h1 class="title center" data-scroll data-scroll-speed="2"><span data-scroll data-scroll-speed="0.25" data-scroll-direction="horizontal"></span><strong data-scroll data-scroll-speed="-0.25" data-scroll-direction="horizontal">About us</strong></h1>
+					<p class="title-desc center">The Cancer Detective has been developed by the research team at the <a href="https://bbglab.irbbarcelona.org/" target="_blank"><strong>Barcelona Biomedical Genomics Lab</strong></a>.</p>
+				</div>
+					
+				<div class="height-100"></div>
+
+				<!-- //////////////////////////////////////////////////// Section 1 //////////////////////////////////////////////////// -->
+
+				<section id="section1" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu1">
+
+					<h2 data-scroll data-scroll-speed="1" class="subtitle right">Barcelona Biomedical Genomics&nbsp;Lab</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex" data-scroll data-scroll-speed="1">
+							<img src="../../data/grafs/gral/bbglab-logo.svg" class="width-100" alt"">
+						</div>
+						<div class="col-flex flex-wrapper">
+							<p class="left reveal move-right" data-scroll>The <a href="https://bbglab.irbbarcelona.org" target="_blank"><strong>Barcelona Biomedical Genomics Lab</strong></a> (BBGLab) is a biomedical research group dedicated to the computational study of cancer at the genomic level. The BBGLab is part of the <a href="https://www.irbbarcelona.org" target="_blank"><strong>Institut de Recerca Biomèdica de Barcelona</strong></a> (IRB Barcelona), located at the Barcelona Science Park.</p>
+
+						  <p class="left reveal move-right" data-scroll>BBGLab’s research focuses on studying cancer from a genomic perspective. One of its main lines of investigation is the identification of cancer driver mutations and genes through the analysis of millions of mutations obtained from thousands of tumors from cancer patients around the world.<br><br>In addition, BBGLab studies the mutational processes that occur in different tissues and parts of the genome, both in cancer and in healthy tissues, to understand how mutations arise in the first place.<br><br>The group also applies this knowledge to contribute to the improvement of the therapeutic strategies available to cancer patients.<br><br>
+						  </p>
+						</div>
+					  </div>
+					 
+					</div>
+
+					<!-- //////////////////////////////////////////////////// Section 2 //////////////////////////////////////////////////// -->
+					<h2 data-scroll data-scroll-repeat class="reveal move-right subtitle left">Cancer Detective</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+
+					  <div class="cols-flex cols-2-1 cols-large gap-0">
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><strong>Cancer Detective</strong> grew out of a science outreach activity, the “Live Research Fair” (Fira de Recerca en Directe),  organized by the Barcelona Science Park in 2019. In its early days, Cancer Detective was an in-person activity in which participants had to “sequence” a cancer sample to find and interpret its mutations, guided by the BBGLab team. After the COVID pandemic, the idea of a fully virtual version of Cancer Detective came about, allowing participants to engage in the activity solo from anywher. This new format helps spread knowledge about cancer genomics and BBGLab's research to a much broader audience.</p>
+
+						</div>
+						<div class="col-flex" data-scroll data-scroll-speed="1">
+							<img src="../../data/grafs/gral/logo-img.svg" class="width-100" alt"">
+						</div>
+					  </div>					 
+					</div>
+		
+					<div id="footer-background">
+						
+						<div class="height-40"></div>
+						<h2 data-scroll data-scroll-repeat class="reveal move-left subtitle right">The Cancer Detective team</h2>
+						
+						<div class="content-width">
+							<p class="center">Cancer Detective was made possible by many people at BBGLab, including:</p>
+							<div class="height-20"></div>
+							<ul class="perso">
+								<li><a href="https://www.irbbarcelona.org/es/research/claudia-arnedo" target="_blank"><img src="../../data/grafs/fotos/claudia.jpg"><strong>Claudia Arnedo</strong> Coordination, content, software</a></li>  
+								<li><a href="https://www.irbbarcelona.org/es/research/raquel-blanco" target="_blank"><img src="../../data/grafs/fotos/raquel.jpg"><strong>Raquel Blanco</strong> Content, illustrations</a></li>  
+								<li><a href="https://www.irbbarcelona.org/es/research/jordi-deu" target="_blank"><img src="../../data/grafs/fotos/jordi.jpg"><strong>Jordi Deu</strong> Software</a></li>  
+							</ul>
+							<div class="clear"></div>
+							<ul class="perso"> 
+								<li><a href="https://www.irbbarcelona.org/es/research/olivia-dove" target="_blank"><img src="../../data/grafs/fotos/olivia-dove.jpg"><strong>Olivia Dove</strong> Content</a></li>  
+								<li><a href="https://www.irbbarcelona.org/es/research/martina-gasull" target="_blank"><img src="../../data/grafs/fotos/martina.jpg"><strong>Martina Gasull</strong> Coordination, content</a></li> 
+								<li><a href="https://www.irbbarcelona.org/en/research/paula-gomis" target="_blank"><img src="../../data/grafs/fotos/paula.jpg"><strong>Paula Gomis</strong> Software</a></li>  
+							</ul>
+							<div class="clear"></div>
+							<ul class="perso">
+								<li><a href="https://www.irbbarcelona.org/es/research/erika-lopez" target="_blank"><img src="../../data/grafs/fotos/erika.jpg"><strong>Erika López</strong> Content</a></li>  
+								<li><a href="https://www.irbbarcelona.org/es/research/carlos-lopez" target="_blank"><img src="../../data/grafs/fotos/carlos.jpg"><strong>Carlos López</strong> Software</a></li> 
+								<li><a href="https://www.irbbarcelona.org/es/research/nuria-lopez-bigas" target="_blank"><img src="../../data/grafs/fotos/nuria.jpg"><strong>Núria López-Bigas</strong> Support</a></li>  
+							</ul>
+							<div class="clear"></div>
+							<ul class="perso"> 
+								<li><a href="https://www.irbbarcelona.org/es/research/david-martinez" target="_blank"><img src="../../data/grafs/fotos/david.jpg"><strong>David Martínez</strong> Software</a></li>  
+								<li><a href="https://www.irbbarcelona.org/es/research/iker-reyes" target="_blank"><img src="../../data/grafs/fotos/iker.jpg"><strong>Iker Reyes</strong> Software</a></li>
+								<li><a href="https://www.irbbarcelona.org/es/research/monica-sanchez" target="_blank"><img src="../../data/grafs/fotos/monica.jpg"><strong>Mònica Sànchez</strong> Content, illustrations</a></li>  
+							</ul>
+							<div class="clear"></div>
+
+
+							<div class="height-40"></div>
+							<p class="center">With contributions from:</p>
+							<div class="height-20"></div>
+							<ul class="perso">
+								<li><p>Laia Abelló<br>Katyayani Anshu<br>Santi Demajo<br>Maria Escurriola<br>Abel González<br>Magda Guardiola</p></li>  
+								<li><p>Hanna Kranas<br>Ricard Lambea<br>Francisco Martínez<br>Ferran Muiños<br>Winona Oliveros<br>Stefano Pellegrini</p></li>  
+								<li><p>Morena Pinheiro<br>Juan Enrique Ramis<br>Nuria Samper<br>Lenka Segura<br>Olivia Tort</p></li>  								
+							</ul>
+							<div class="clear"></div>
+						</div>
+						  
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section end //////////////////////////////////////////////////// -->
+				
+			</div>
+			
+			<!-- //////////////////////////////////////////////////// Section Footer //////////////////////////////////////////////////// -->
+			
+		</div>
+			
+		<footer>
+				<div class="footer-wrapper">
+					<div class="height-80"></div>
+					<ul>
+						<li class="bbglab"><a href="https://bbglab.irbbarcelona.org" target="_blank"><img src="../../data/grafs/gral/bbglab.svg"></a></li>
+						<li class="copyright">
+						  <p>© Barcelona Biomedical Genomics&nbsp;Lab</p>
+						</li>
+						<li class="rrss">
+						  <ul>
+							<li class="gh"><a href="https://github.com/bbglab/cancer-detective-pro" target="_blank"><img src="../../data/grafs/gral/ico-gh.svg"></a></li>
+							<li class="tw"><a href="https://twitter.com/bbglab" target="_blank"><img src="../../data/grafs/gral/ico-tw.svg"></a></li>
+						  </ul>
+						</li>
+					</ul>
+				</div>
+		</footer>
+		
+	</div></section>
+		
+</div>
+	
+<!-- js -->
+<script src="../../data/js/w3.js"></script>
+<script src="../../data/js/imagesloaded.pkgd.min.js"></script>
+<script src="../../data/js/locomotive-scroll.min.js"></script>
+<script src="../../data/js/script.js"></script>
+
+</body>
+</html>

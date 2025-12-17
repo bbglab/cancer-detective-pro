@@ -3,6 +3,6 @@ services:
     web:
         image: nginx:alpine
         volumes:
-            - ./www:/usr/share/nginx/html
+            - ./cancer-detective-pro:/usr/share/nginx/html
         ports:
             - 8080:80

@@ -1,14 +1,14 @@
 # Cancer Detective
 
-![Cancer Detective logo](www/data/grafs/gral/logo-xl.svg)
+![Cancer Detective logo](cancer-detective-pro/data/grafs/gral/logo-xl.svg)
 
-This project is a web application for cancer detection. The application is structured into two main directories: `__MACOSX` and `www`.
+This project is a web application for cancer detection. The application is structured into two main directories: `__MACOSX` and `cancer-detective-pro`.
 
 ## Directory Structure
 
-- `__MACOSX`: This is a system directory created by macOS when you compress files. It contains metadata about the files in the `www` directory and is not typically used in the application code.
+- `__MACOSX`: This is a system directory created by macOS when you compress files. It contains metadata about the files in the `cancer-detective-pro` directory and is not typically used in the application code.
 
-- `www`: This is the main directory for the web application. It contains several subdirectories, each corresponding to a different page or feature of the website. Each of these directories contains an `index.html` file, which is typically the main HTML file that a web server will serve when a client navigates to the directory's URL.
+- `cancer-detective-pro`: This is the main directory for the web application. It contains several subdirectories, each corresponding to a different page or feature of the website. Each of these directories contains an `index.html` file, which is typically the main HTML file that a web server will serve when a client navigates to the directory's URL.
 
   - `introduction`: This directory contains the `index.html` file which includes content about understanding cancer cells and their functioning. It uses various CSS classes for styling and layout.
 
@@ -26,4 +26,4 @@ The application is containerized using Docker. To run the application, you need 
 2. Run the Docker container: `docker-compose up`
 3. Access the application at `http://localhost:8080`
 
-Please note that any changes made to the files in the `www` directory will be reflected in the running application.
+Please note that any changes made to the files in the `cancer-detective-pro` directory will be reflected in the running application.

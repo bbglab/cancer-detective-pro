@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+<title>Cancer Detective: Analiza las muestras</title>
+<meta name="description" content="An analysis simulation based on CGI to learn about cancer and mutations">
+<meta name="author" content="BBGLab">
+<link rel="stylesheet" href="../../data/css/locomotive-scroll.min.css">
+<link rel="stylesheet" href="../../data/css/style.css">
+<link rel="stylesheet" href="../../data/css/responsive.css">
+<script src="../../data/js/lottie.js"></script>
+<link rel="icon" href="../../data/grafs/gral/favicon.ico" type="image/x-icon">
+<!--
+	MARK: Analysis quiz
+-->
+<link rel="stylesheet" href="../../data/css/quiz.css">
+
+<meta property="og:title" content="Cancer Detective" />
+<meta property="og:description" content="An analysis simulation based on CGI to learn about cancer and mutations" />
+<meta property="og:image" content="https://github.com/bbglab/cancer-detective-pro/blob/main/www/data/grafs/gral/logo-xl-background.png?raw=true" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:type" content="website" />
+</head>
+
+<body id="lang-es">
+
+<div id="loader" class="loader">
+	<div id="cell-loader" class="fade-in">
+		<script>
+			var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('cell-loader'), renderer: 'svg', loop: true, autoplay: true, path: '../../data/grafs/js/cell-load.json' });
+			cellLoader.setSpeed(0.5);
+		</script>
+	</div>
+</div>
+<div id="unloader" class="loader"></div>
+
+<div id="scroll-container" data-scroll-container>
+	
+	<a href="#section0" id="button-up" data-scroll-to></a>
+
+	<div class="menu menu-top sticky" id="menu">
+		<input type="checkbox" class="left-menu-toggler" id="menu-check">
+		<div class="left-menu-button"><div></div></div>
+		<div class="left-menu">
+			<span class="home-button" onclick="transitionToPage('../')"><img src="../../data/grafs/gral/home.svg" class="width-100"></span>
+			<span class="lang-button" onclick="transitionToPage('../../')"><img src="../../data/grafs/gral/lang-es.svg" class="width-100"></span>
+			<div>
+				<ul>
+					<li><span onclick="transitionToPage('../introduction/')"><strong>¿Qué es el cáncer?</strong></span></li>
+					<li><a href="#section1" class="selected-menu" id="menu0" data-scroll-to><strong>Analiza las muestras</strong></a></li>
+					<li><span onclick="transitionToPage('../resources/')" id="menu8"><strong>¿Quieres saber más?</strong></span></li>
+					<li><span onclick="transitionToPage('../about/')" id="menu7"><strong>¿Quiénes somos?</strong></span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="header header-top sticky" id="header">
+		<div class="sticky-header"><span onclick="transitionToPage('../')" class="logo"><span><img src="../../data/grafs/gral/logo-img.svg" class="logo-1"><img src="../../data/grafs/gral/logo-txt-1.svg" class="logo-2"><img src="../../data/grafs/gral/logo-txt-2.svg" class="logo-3"></span></span></div>
+	</div>
+	
+	<section id="content-container"><div id="content-section" data-scroll-section>
+	
+		<div id="header-background">
+
+			<div id="section0"></div>
+
+			<div id="content" class="content">
+
+				<div id="cell-header-1" class="absolute" data-scroll data-scroll-speed="1">
+					<script>
+						var cellheader1 = bodymovin.loadAnimation({ container: document.getElementById('cell-header-1'), renderer: 'svg', loop: true, autoplay: true, path: '../../data/grafs/js/cell-0.json' });
+						cellheader1.setSpeed(0.25);
+					</script>
+				</div>
+
+				<!-- //////////////////////////////////////////////////// Section 0 //////////////////////////////////////////////////// -->
+				<!--
+					MARK: Section 0
+				-->
+				<div class="content-width content-width-title relative z-1">
+					<h1 class="title center" data-scroll data-scroll-speed="2"> <span data-scroll data-scroll-speed="0.5" data-scroll-direction="horizontal"></span> <strong data-scroll data-scroll-speed="-0.5" data-scroll-direction="horizontal">Analiza las muestras</strong></h1>
+					<p class="title-desc center">A continuación, simularemos lo que ocurre cuando llegan dos muestras de pacientes al laboratorio del hospital. Ponte en la piel de la persona del equipo científico&nbsp;que&nbsp;las&nbsp;recibe.</p>
+				</div>
+
+				<!-- //////////////////////////////////////////////////// Section 1 //////////////////////////////////////////////////// -->
+				<!--
+					MARK: Section 1
+				-->
+
+				<section id="section1" class="section" data-scroll data-scroll-repeat data-scroll-call="menu1">
+
+					<div class="height-150"></div>
+
+					<h2 data-scroll data-scroll-speed="1" class="subtitle left z-1">¿Cómo lo haremos?</h2>
+
+					<div class="height-40"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+
+					  <div id="cell-02" class="absolute" data-scroll data-scroll-speed="1">
+						  <script>
+							  var cell0 = bodymovin.loadAnimation({ container: document.getElementById('cell-02'), renderer: 'svg', loop: true, autoplay: true, path: '../../data/grafs/js/cell-0.json' });
+							  cell0.setSpeed(0.25);
+						  </script>
+					  </div>
+
+					  <div class="cols-flex gap-0">
+						<div class="col-flex">
+						  <div class="flex-wrapper">
+							  <p class="right reveal move-up" data-scroll><strong>Analiza las muestras</strong> para identificar las mutaciones impulsoras en cada tumor y poder asignar un tratamiento para cada paciente. Hazlo siguiendo los siguientes pasos:</p>
+						  </div>
+						</div>
+						<div class="col-flex">
+							<div class="width-100 lg-width-50 sm-width-30 height-500 lg-height-150 sm-height-200 relative">
+								<img src="../../data/grafs/cells/lab-1a.svg" class="width-100 plr-20 z-1 absolute" alt"">
+								<img src="../../data/grafs/cells/lab-1b.svg" class="width-100 plr-20 z-1 absolute" alt"" data-scroll data-scroll-speed="-1">
+							</div>
+						</div>
+						<div class="col-flex flex-wrapper flex-end z-1">
+						  <p class="left reveal move-up" data-scroll><span class="number green">01.</span><br><strong>Revisa los datos de los pacientes, el tipo de cáncer y la exposición a los factores de riesgo</strong><div class="height-60 sm-responsive-remove"></div></p>
+						</div>
+					  </div>
+
+					  <div class="cols-flex-lineal sm-responsive-remove">
+
+						<div class="col-flex"> <img src="../../data/grafs/cells/icons-2b-es.svg" class="width-100 z-1" alt"Cell drawing" data-scroll data-scroll-speed="1.5" data-scroll-direction="horizontal"> </div>
+						<div class="col-flex responsive-remove"> <img src="../../data/grafs/cells/icons-2arrow.svg" class="width-100 z-1" alt"Cell drawing"> </div>
+						<div class="col-flex"> <img src="../../data/grafs/cells/icons-2a-es.svg" class="width-100 z-1" alt"Cell drawing" data-scroll data-scroll-speed="-1.5" data-scroll-direction="horizontal"> </div>
+
+					  </div>
+						
+					<div class="height-60 sm-responsive-remove"></div>
+					
+					  <div class="height-20"></div>
+
+					  <div class="cols-flex cols-1-2 width-80 sm-width-100 gap-0 m-0-auto">
+						<div class="col-flex flex-wrapper" data-scroll-speed="1" data-scroll>
+						  <p class="right reveal" data-scroll><span class="number blue">02.</span><br><strong>Analiza el ADN de cada tumor para identificar sus mutaciones y qué genes y proteínas están afectados</strong></p>
+						</div>
+						<div class="col-flex flex-wrapper sm-responsive-remove">
+							<div class="width-100 height-300 sm-height-250 relative">
+								<img src="../../data/grafs/cells/lab-2a.svg" class="width-100 plr-20 absolute" alt"" data-scroll data-scroll-speed="-1">
+							</div>
+						</div>
+					  </div>
+					
+					  <div class="height-20"></div>
+
+					  <div class="cols-flex cols-2-1 width-80 sm-width-100 gap-0 m-0-auto">
+						<div class="col-flex flex-wrapper sm-responsive-remove"> <img src="../../data/grafs/cells/computer-1.svg" class="width-90" alt"Cell drawing"> </div>
+						<div class="col-flex flex-wrapper" data-scroll-speed="1" data-scroll>
+						  <p class="left reveal" data-scroll><span class="number yellow">03.</span><br><strong>Identifica qué mutaciones son impulsoras del cáncer y si existe un tratamiento específico para cada una</strong></p>
+						</div>
+					  </div>
+					
+					  <div class="height-20"></div>
+
+					  <div class="cols-flex width-80 sm-width-100 gap-0 m-0-auto">
+						<div class="col-flex flex-wrapper" data-scroll-speed="1" data-scroll>
+						  <p class="right reveal" data-scroll><span class="number orange">04.</span><br><strong>Analiza los resultados y pon a prueba tus conocimientos</strong></p>
+						</div>
+						<div class="col-flex flex-wrapper mt-25"> <img src="../../data/grafs/cells/info-0-es.svg" class="width-60" alt"Cell drawing"> </div>
+					  </div>
+
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 2 //////////////////////////////////////////////////// -->
+				<!--
+					MARK: Section 2
+				-->
+
+				<div class="height-80"></div>
+
+			</div>
+			<div id="footer-background">
+			
+				<section id="section2" class="section section-form col-flex flex-wrapper dark-bg" data-scroll data-scroll-repeat data-scroll-call="menu2">
+
+					<div class="height-100"></div>
+
+					<!-- //////////////////////////////////////////////////// Analysis 0 - Botó inici //////////////////////////////////////////////////// -->
+					<!--
+						MARK: Analysis 0 - Botó inici
+					-->
+						
+					<div id="quiz-section-button" class="quiz-section active">
+
+						<h2 data-scroll data-scroll-speed="1" class="subtitle right">Análisis de las muestras</h2>
+						
+						<div class="height-50"></div>
+						<div id="quiz-button">
+							<p>¿Qué tipo de cancer quieres analizar?</p>
+							<ul class="quiz-list flex">
+								<li class="quiz-item">
+									<div id="quiz-00-00-1" class="quiz-button">
+										<div class="quiz-button-content">
+											<img src="../../data/grafs/cells/skin.svg" class="quiz-button-img" alt="">
+											<div class="quiz-button-text">Cáncer<br>de piel</div>
+										</div>
+
+										<script>
+											var cellLoader = bodymovin.loadAnimation({
+												container: document.getElementById('quiz-00-00-1'),
+												renderer: 'svg',
+												loop: true,
+												autoplay: true,
+												path: '../../data/grafs/js/cell-home-button.json'
+											});
+											cellLoader.setSpeed(0.4);
+										</script>
+									</div>
+
+									<div id="quiz-00-00-2" class="quiz-button">
+										<div class="quiz-button-content">
+											<img src="../../data/grafs/cells/lung.svg" class="quiz-button-img" alt="">
+											<div class="quiz-button-text">Cáncer<br>de pulmón</div>
+										</div>
+
+										<script>
+											var cellLoader = bodymovin.loadAnimation({
+												container: document.getElementById('quiz-00-00-2'),
+												renderer: 'svg',
+												loop: true,
+												autoplay: true,
+												path: '../../data/grafs/js/cell-home-button.json'
+											});
+											cellLoader.setSpeed(0.4);
+										</script>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div id="quiz-loader" class="quiz-loader-style opacity-00">
+							<img src="../../data/grafs/gral/loader.svg" class="width-100" alt"">
+						</div>
+						<div class="height-50"></div>
+
+					</div>
+
+					<!-- //////////////////////////////////////////////////// Analysis 1 - Mostres aleatòries de cada pacient //////////////////////////////////////////////////// -->
+					<!--
+						MARK: Analysis 1 - Mostres aleatòries de cada pacient
+					-->
+						
+					<div id="quiz-section-00" class="quiz-section opacity-00">
+
+						<h2 data-scroll data-scroll-speed="1" class="subtitle right">Muestras recibidas</h2>
+
+						<div class="sub-header content-width min-width center">
+							<p class="m-0-auto">Has recibido dos muestras de cáncer de dos pacientes diferentes:</p>
+						</div>
+						<div id="sample-types">
+							<div id="sample-types-wrapper">
+								<!-- Js random items -->
+							</div>
+						</div>
+						<div id="quiz-section-00-01"></div>
+						<div class="height-50"></div>
+						<p>¿Crees que los cánceres de los dos pacientes tendrán las mismas mutaciones?</p>
+						<ul id="quiz-00" class="quiz-list flex">
+							<li><button id="quiz-00-01" class="button blue-bg">Creo que sí</button></li>
+							<li><button id="quiz-00-02" class="button blue-bg">Creo que No</button></li>
+							<li><button id="quiz-00-03" class="button blue-bg">No lo sé</button></li>
+						</ul>
+						<div id="quiz-00-result" class="bubble-text flex">
+							<p class="quiz-00-result active">Selecciona una respuesta...</p>
+							<p class="quiz-00-result" id="quiz-00-result-01" style="font-size: 20px">Los tumores de los dos pacientes tendrán las mismas mutaciones.</p>
+							<p class="quiz-00-result" id="quiz-00-result-02" style="font-size: 20px">Los tumores de los dos pacientes tendrán mutaciones diferentes.</p>
+							<p class="quiz-00-result" id="quiz-00-result-03" style="font-size: 20px">¡Sigue analizando para descubrirlo!</p>
+						</div>
+						<div class="height-50"></div>
+
+					</div>
+					
+					<!-- //////////////////////////////////////////////////// Analysis 2 - Llistat de mutacions //////////////////////////////////////////////////// -->
+					<!--
+						MARK: Analysis 2 - Llistat de mutacions
+					-->
+					
+					<div id="quiz-section-01" class="quiz-section">
+						
+						<div class="height-100"></div>
+						<div class="content-width min-width center">
+							<p id="quiz-section-01-subtitle" class="subtitle-p"></p>
+						</div>
+						<div class="height-20"></div>
+						<div class="relative" id="quiz-secuenciador">
+							<img src="../../data/grafs/gral/loader.svg" class="absolute opacity-00" id="quiz-secuenciador-00" alt"">
+							<img src="../../data/grafs/cells/computer-0.svg" class="width-140 top-20 absolute left-100 opacity-00" id="quiz-computer-01" alt"">
+							<img src="../../data/grafs/cells/computer-2a.svg" class="width-140 top-20 absolute opacity-00" id="quiz-computer-02a" alt"">
+							<img src="../../data/grafs/cells/computer-2b.svg" class="width-140 top-20 absolute opacity-00" id="quiz-computer-02b" alt"">
+							<img src="../../data/grafs/cells/computer-2c.svg" class="width-140 top-20 absolute opacity-00" id="quiz-computer-02c" alt"">
+							<img src="../../data/grafs/cells/lab-2a.svg" class="width-100 absolute" id="quiz-secuenciador-01" alt"">
+							<img src="../../data/grafs/cells/lab-2d-es.svg" class="width-100 absolute" id="quiz-secuenciador-02" alt"">
+							<img src="../../data/grafs/cells/lab-2e-es.svg" class="width-100 absolute scale-00" alt"" id="quiz-secuenciador-04">
+							<img src="../../data/grafs/cells/lab-2c.svg" class="width-100 absolute opacity-00" alt"" id="quiz-secuenciador-03">
+						</div>
+						<div class="opacity-00 hide" id="quiz-results">
+							<div class="gen gen-sample-1">
+								<div class="sample-type"></div>
+								<p></p>
+								<!-- Js mutacions corresponents a random items A -->
+							</div>
+							<div class="gen gen-sample-2">
+								<div class="sample-type"></div>
+								<p></p>
+								<!-- Js mutacions corresponents a random items B -->
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div id="quiz-01-01-wrapper" class="quiz-01-wrapper">
+							<button id="quiz-01-01" class="button blue-bg scaleInOut" style="font-size: 25px; padding: 30px 30px">Identifica los genes mutados<br>y los cambios en la proteína</button>
+						</div>
+						<div id="quiz-01-02-wrapper" class="quiz-01-wrapper scale-00 hide">
+							<button id="quiz-01-02-back" class="button button-margin white-bg">Volver<br>atrás</button>
+							<button id="quiz-01-02" class="button button-margin blue-bg scaleInOut" style="font-size: 25px; padding: 30px 30px">Identifica las mutaciones<br>impulsoras</button>
+						</div>
+						<div id="quiz-01-03-wrapper" class="quiz-01-wrapper scale-00 hide">
+							<button id="quiz-01-03-back" class="button button-margin white-bg">Volver<br>atrás</button>
+							<button id="quiz-01-03" class="button button-margin blue-bg scaleInOut" style="font-size: 25px; padding: 30px 30px">Identifica las terapias<br>dirigidas</button>
+						</div> 
+						<div id="quiz-01-04-wrapper" class="quiz-01-wrapper scale-00 hide">
+							<button id="quiz-01-04-back" class="button button-margin white-bg">Volver<br>atrás</button>
+							<button id="quiz-01-04" class="button button-margin blue-bg scaleInOut" style="font-size: 25px; padding: 30px 30px">¡Pon a prueba<br>tus conocimientos!</button>
+						</div>
+						<div id="quiz-01-06-wrapper" class="quiz-01-wrapper scale-00 hide">
+							<!-- //////////////////////////////////////////////////////////////////////// -->
+						</div>
+						<div class="height-50"></div>
+						
+					</div>
+					
+					<!-- //////////////////////////////////////////////////// Analysis 3 - Test //////////////////////////////////////////////////// -->
+					<!--
+						MARK: Analysis 3 - Test
+					-->
+					
+					<div id="quiz-section-02" class="quiz-section relative">
+						<div id="sample-analysis" class="sample-wrapper">
+						
+							<!-- //////////////////////////////////////////////////// Slide inici //////////////////////////////////////////////////// -->
+							<div class="sample-selection active" id="slide-0">
+
+								<div class="relative">
+									<h2 class="subtitle-form">¿Qué has aprendido con el Cancer Detective?</h2>
+									<p class="content-width min-width">Elige el tipo de cáncer que has analizado:</p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="sample-1">
+											<div>
+												<img src="../../data/grafs/cells/icon-1.svg" alt="">
+											</div>
+											<span><strong>Cáncer de piel</strong></span>
+										</li>
+										<li id="sample-2">
+											<div>
+												<img src="../../data/grafs/cells/icon-2.svg" alt="">
+											</div>
+											<span><strong>Cáncer de pulmón</strong></span>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 1 pell //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 1 pell
+							-->
+							<div class="sample-selection" id="slide-1-skin">
+
+								<div class="relative">
+									<p class="content-width min-width">La edad es el principal factor de riesgo del cáncer. Teniendo en cuenta las muestras y los pacientes que has analizado hasta ahora, ¿de qué persona esperarías que la muestra tuviera <strong>más mutaciones asociadas a la edad</strong>?</p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide1-skin-option1">
+											<div><img src="../../data/grafs/cells/icon-1i2-1.svg" alt=""><p><strong>Paciente de edad joven</strong></p></div>
+											<span><strong>Paciente de edad joven</strong></span>
+										</li>
+										<li id="slide1-skin-option2">
+											<div><img src="../../data/grafs/cells/icon-1i2-2.svg" alt=""><p><strong>Paciente de mediana edad</strong></p></div>
+											<span><strong>Paciente de mediana edad</strong></span>
+										</li>
+										<li id="slide1-skin-option3">
+											<div><img src="../../data/grafs/cells/icon-1i2-3.svg" alt=""><p><strong>Paciente de la tercera edad</strong></p></div>
+											<span><strong>Paciente de la tercera edad</strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide1-skin-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 2 pell //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 2 pell
+							-->
+							<div class="sample-selection" id="slide-2-skin">
+
+								<div class="relative">
+
+									<p class="content-width min-width">La luz ultravioleta del sol es un factor de riesgo importante para el cáncer de piel. ¿Qué nivel de exposición solar crees que generará <strong>más mutaciones en la piel</strong>?</p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide2-skin-option1">
+											<div><img src="../../data/grafs/cells/icon-1b-1.svg" alt=""><p><strong>Exposición baja</strong></p></div>
+											<span><strong>Baja exposición</strong> al sol</span>
+										</li>
+										<li id="slide2-skin-option2">
+											<div><img src="../../data/grafs/cells/icon-1b-2.svg" alt=""><p><strong>Exposición moderada</strong></p></div>
+											<span><strong>Exposición moderada</strong> al sol</span>
+										</li>
+										<li id="slide2-skin-option3">
+											<div><img src="../../data/grafs/cells/icon-1b-3.svg" alt=""><p><strong>Exposición alta</strong></p></div>
+											<span><strong>Alta exposición</strong> al sol</span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide2-skin-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 3 pell //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 3 pell
+							-->
+							<div class="sample-selection" id="slide-3-skin">
+
+								<div class="relative">
+
+									<p class="content-width min-width">
+										La protección solar nos ayuda a evitar el daño causado por la luz ultravioleta. ¿Qué nivel de protección solar crees que <strong>reducirá más el riesgo de mutaciones en la piel</strong>?</p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide3-skin-option1">
+											<div><img src="../../data/grafs/cells/icon-1c-1.svg" alt=""><p><strong>Protección habitual</strong></p></div>
+											<span><strong>Uso habitual de protección solar</strong></span>
+										</li>
+										<li id="slide3-skin-option2">
+											<div><img src="../../data/grafs/cells/icon-1c-2.svg" alt=""><p><strong>Protección ocasional</strong></p></div>
+											<span><strong>Uso ocasional de protección solar</strong></span>
+										</li>
+										<li id="slide3-skin-option3">
+											<div><img src="../../data/grafs/cells/icon-1c-3.svg" alt=""><p><strong>Protección puntual</strong></p></div>
+											<span><strong>Uso puntual o infrecuente de protección solar</strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide3-skin-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 1 pulmó //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 1 pulmó
+							-->
+							<div class="sample-selection" id="slide-1-lung">
+
+								<div class="relative">
+									<p class="content-width min-width">La edad es el principal factor de riesgo del cáncer. Teniendo en cuenta las muestras y los pacientes que has analizado hasta ahora, ¿de qué persona esperarías que la muestra tuviera <strong>más mutaciones asociadas a la edad</strong>?</p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide1-lung-option1">
+											<div><img src="../../data/grafs/cells/icon-1i2-1.svg" alt=""><p><strong>Paciente de edad joven</strong></p></div>
+											<span><strong>Paciente de edad joven</strong></span>
+										</li>
+										<li id="slide1-lung-option2">
+											<div><img src="../../data/grafs/cells/icon-1i2-2.svg" alt=""><p><strong>Paciente de mediana edad</strong></p></div>
+											<span><strong>Paciente de mediana edad</strong></span>
+										</li>
+										<li id="slide1-lung-option3">
+											<div><img src="../../data/grafs/cells/icon-1i2-3.svg" alt=""><p><strong>Paciente de la tercera edad</strong></p></div>
+											<span><strong>Paciente de la tercera edad</strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide1-lung-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 2 pulmó //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 2 pulmó
+							-->
+							<div class="sample-selection" id="slide-2-lung">
+
+								<div class="relative">
+
+									<p class="content-width min-width">
+										El tabaco es uno de los principales factores de riesgo del cáncer de pulmón. ¿Qué tipo de consumo de tabaco crees que <strong>aumentará más el riesgo de acumular mutaciones en los pulmones</strong>?</p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide2-lung-option1">
+											<div><img src="../../data/grafs/cells/icon-2b-1.svg" alt=""><p><strong>No fumador</strong></p></div>
+											<span><strong>No fumador</strong></span>
+										</li>
+										<li id="slide2-lung-option2">
+											<div><img src="../../data/grafs/cells/icon-2b-2.svg" alt=""><p><strong>Fumador ocasional</strong></p></div>
+											<span><strong>Fumador ocasional</strong></span>
+										</li>
+										<li id="slide2-lung-option3">
+											<div><img src="../../data/grafs/cells/icon-2b-3.svg" alt=""><p><strong>Fumador habitual</strong></p></div>
+											<span><strong>Fumador habitual</strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide2-lung-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 3 pulmó //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 3 pulmó
+							-->
+							<div class="sample-selection" id="slide-3-lung">
+
+								<div class="relative">
+
+									<p class="content-width min-width">
+										Respirar el humo del tabaco de otra persona puede tener el mismo efecto que fumar uno mismo. ¿Qué tipo de exposición al tabaco crees que tendrá <strong>menos riesgo de causar mutaciones en el pulmón</strong>?</p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide3-lung-option1">
+											<div><img src="../../data/grafs/cells/icon-2c-1.svg" alt=""><p><strong>Sin exposición</strong></p></div>
+											<span><strong>Sin exposición</strong></span>
+										</li>
+										<li id="slide3-lung-option2">
+											<div><img src="../../data/grafs/cells/icon-2c-2.svg" alt=""><p><strong>Exposición ocasional</strong></p></div>
+											<span><strong>Fumador pasivo ocasional</strong></span>
+										</li>
+										<li id="slide3-lung-option3">
+											<div><img src="../../data/grafs/cells/icon-2c-3.svg" alt=""><p><strong>Exposición habitual</strong></p></div>
+											<span><strong>Fumador pasivo habitual</strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide3-lung-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							
+							<!-- //////////////////////////////////////////////////// Slide Test (Modificar) //////////////////////////////////////////////////// -->
+							<!--
+							<div class="sample-selection" id="slide-test-1">
+
+								<div class="relative">
+
+									<p class="content-width min-width"><strong>Pregunta test 1</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slidetest1-option1">
+											<div><img src="../../data/grafs/cells/icon-test1-1.svg" alt=""><p><strong>Opció&nbsp;1</strong></p></div>
+											<span><strong>Text de la <b>opció 1</b> de test 1</strong></span>
+										</li>
+										<li id="slidetest1-option2">
+											<div><img src="../../data/grafs/cells/icon-test1-2.svg" alt=""><p><strong>Opció&nbsp;2</strong></p></div>
+											<span><strong>Text de la <b>opció 2</b> de test 1 (Opció correcte)</strong></span>
+										</li>
+										<li id="slidetest1-option3">
+											<div><img src="../../data/grafs/cells/icon-test1-3.svg" alt=""><p><strong>Opció&nbsp;3</strong></p></div>
+											<span><strong>Text de la <b>opció 3</b> de test 1</strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slidetest1-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							-->
+							
+							<!-- //////////////////////////////////////////////////// Slide 4 comú //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 4 comú
+							-->
+							<div class="sample-selection" id="slide-4">
+
+								<div class="relative">
+
+									<p class="content-width min-width">Vuelve a revisar las muestras que has analizado. ¿Cuál de los dos cánceres tiene <strong>más mutaciones en total</strong>?</p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide4-option1">
+											<div><img src="../../data/grafs/cells/icon-pacient-1-es.svg" alt=""><p><strong>Muestra del paciente&nbsp;1</strong></p></div>
+											<span><strong>El cáncer del paciente&nbsp;1 <b>tiene más&nbsp;mutaciones en total</b></strong></span>
+										</li>
+										<li id="slide4-option2">
+											<div><img src="../../data/grafs/cells/icon-pacient-2-es.svg" alt=""><p><strong>Muestra del paciente&nbsp;2</strong></p></div>
+											<span><strong>El cáncer del paciente&nbsp;2  <b>tiene más&nbsp;mutaciones en total</b></strong></span>
+										</li>
+										<li id="slide4-option3">
+											<div><img src="../../data/grafs/cells/icon-pacient-0-es.svg" alt=""><p><strong>Muestras de los dos pacientes</strong></p></div>
+											<span><strong>Los dos cánceres <b>tienen el mismo número de mutaciones en total</b></strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide4-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							
+							<!-- //////////////////////////////////////////////////// Slide 5 comú //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 5 comú
+							-->
+							<div class="sample-selection" id="slide-5">
+
+								<div class="relative">
+
+									<p class="content-width min-width">
+										¿Cuál de los dos cánceres de los dos pacientes tiene <strong>más mutaciones impulsoras?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide5-option1">
+											<div><img src="../../data/grafs/cells/icon-pacient-1-es.svg" alt=""><p><strong>Muestra del paciente&nbsp;1</strong></p></div>
+											<span><strong>El cáncer del paciente&nbsp;1 <b>tiene más&nbsp;mutaciones&nbsp;impulsoras</b></strong></span>
+										</li>
+										<li id="slide5-option2">
+											<div><img src="../../data/grafs/cells/icon-pacient-2-es.svg" alt=""><p><strong>Muestra del paciente&nbsp;2</strong></p></div>
+											<span><strong>El cáncer del paciente&nbsp;2 <b>tiene más&nbsp;mutaciones&nbsp;impulsoras</b></strong></span>
+										</li>
+										<li id="slide5-option3">
+											<div><img src="../../data/grafs/cells/icon-pacient-0-es.svg" alt=""><p><strong>Muestras de ambos pacientes</strong></p></div>
+											<span><strong>Los dos cánceres <b>tienen el mismo número de mutaciones&nbsp;impulsoras</b></strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide5-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							
+							<!-- //////////////////////////////////////////////////// Slide 6 comú //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 6 comú
+							-->
+							<div class="sample-selection" id="slide-6">
+
+								<div class="relative">
+
+									<p class="content-width min-width">Según las mutaciones de cada muestra, ¿cuál de los dos pacientes tiene <strong>más opciones de terapias dirigidas</strong>?</p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide6-option1">
+											<div><img src="../../data/grafs/cells/icon-pacient-1-es.svg" alt=""><p><strong>Paciente 1</strong></p></div>
+											<span><strong>El paciente 1 <b>tiene más opciones terapéuticas</b></strong></span>
+										</li>
+										<li id="slide6-option2">
+											<div><img src="../../data/grafs/cells/icon-pacient-2-es.svg" alt=""><p><strong>Paciente 2</strong></p></div>
+											<span><strong>El paciente 2 <b>tiene más opciones terapéuticas</b></strong></span>
+										</li>
+										<li id="slide6-option3">
+											<div><img src="../../data/grafs/cells/icon-pacient-0-es.svg" alt=""><p><strong>Ambos pacientes</strong></p></div>
+											<span><strong>Ambos pacientes <b>tienen el mismo número de opciones terapéuticas</b></strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide6-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							
+							<!-- //////////////////////////////////////////////////// Slide 7 comú //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 7 comú
+							-->
+							<div class="sample-selection" id="slide-7">
+
+								<div class="relative">
+
+									<p class="content-width min-width">Según las mutaciones de la muestra del paciente 1, <strong>¿cuál de estos genes es un gen impulsor?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide7-option1">
+											<div><img src="../../data/grafs/cells/driver-gene-sm.svg" alt=""><p><strong></strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+										<li id="slide7-option2">
+											<div><img src="../../data/grafs/cells/driver-gene-sm.svg" alt=""><p><strong></strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+										<li id="slide7-option3">
+											<div><img src="../../data/grafs/cells/driver-gene-sm.svg" alt=""><p><strong></strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide7-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+
+							<!-- //////////////////////////////////////////////////// Slide 8 comú //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 8 comú
+							-->
+							<div class="sample-selection" id="slide-8">
+
+								<div class="relative">
+
+									<p class="content-width min-width">Según las mutaciones de la muestra del paciente 2, <strong>¿cuál de estos genes es un gen impulsor?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide8-option1">
+											<div><img src="../../data/grafs/cells/driver-gene-sm.svg" alt=""><p><strong></strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+										<li id="slide8-option2">
+											<div><img src="../../data/grafs/cells/driver-gene-sm.svg" alt=""><p><strong></strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+										<li id="slide8-option3">
+											<div><img src="../../data/grafs/cells/driver-gene-sm.svg" alt=""><p><strong></strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide8-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+
+							<!-- //////////////////////////////////////////////////// Slide 9 comú //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 9 comú
+							-->
+							<div class="sample-selection" id="slide-9">
+
+								<div class="relative">
+
+									<p class="content-width min-width">Según las mutaciones de la muestra del paciente 1, <strong>¿cuáles de los siguientes tratamientos podría recibir?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide9-option1">
+											<div><img src="../../data/grafs/cells/treatment1.svg" alt=""><p><strong></strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+										<li id="slide9-option2">
+											<div><img src="../../data/grafs/cells/treatment2.svg" alt=""><p><strong></strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+										<li id="slide9-option3">
+											<div><img src="../../data/grafs/cells/treatment3.svg" alt=""><p><strong></strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide9-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide 10 comú //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide 10 comú
+							-->
+							<div class="sample-selection" id="slide-10">
+
+								<div class="relative">
+
+									<p class="content-width min-width">Según las mutaciones de la muestra del paciente 2, <strong>¿cuáles de los siguientes tratamientos podría recibir?</strong></p>
+									<div class="height-20"></div>
+									<ul class="quest">
+										<li id="slide10-option1">
+											<div><img src="../../data/grafs/cells/treatment1.svg" alt=""><p><strong></strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+										<li id="slide10-option2">
+											<div><img src="../../data/grafs/cells/treatment2.svg" alt=""><p><strong></strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+										<li id="slide10-option3">
+											<div><img src="../../data/grafs/cells/treatment3.svg" alt=""><p><strong>C</strong></p></div>
+											<span><strong></b></strong></span>
+										</li>
+									</ul>
+									<div class="slide-back"><strong id="slide10-back">Retroceder</strong></div>
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slide end //////////////////////////////////////////////////// -->
+							<!--
+								MARK: Slide end
+							-->
+							<div class="sample-selection" id="sample-end">
+
+								<div class="relative">
+									
+									<img src="../../data/grafs/cells/icon-end.svg" alt="" class="img-end">
+									<!-- ! //////////////////////////////////////////////////// Si s'afegeix un nou slide s'ha de canviar el número de preguntes (Modificar) //////////////////////////////////////////////////// -->
+									<h2 class="subtitle-form">¡Has acertado <strong id="sample-end-var"></strong> de 10 preguntas!</h2>
+									
+									<p class="bubble-text">La simulación que has hecho depende del azar, como sucede en la vida real. Cuantas más muestras analices, más conocimientos adquirirás. ¿Por qué no <strong>descargas los resultados</strong> de estas muestras y los comparas con muestras nuevas? ¡Esta vez puedes probar a <strong>analizar un tipo de cáncer diferente</strong>!
+										<br>
+										<span class="button-container">
+											<span onclick="downloadSheet()" class="button orange-bg-2">Descarga la simulación</span>
+											<span onclick="transitionToAnchor()" class="button green-bg">Analiza más muestras</span>
+										</span>
+									</p>
+									
+									<div class="height-40 responsive-remove-sm"></div>
+									
+									<p class="desc-form content-width min-width center">Si quieres aprender más sobre Cancer Detective y la genómica del cáncer, echa un vistazo a la sección <a href="../resources/index.html"><strong>¿Quieres saber más?</strong></a> o visita las webs de los proyectos <a href="https://www.cgiclinics.eu" target="_blank" class="link"><strong>CGI clinics</strong></a> y <a href="https://www.cancergenomeinterpreter.org/home" target="_blank"><strong>Cancer Genome Interpreter</strong></a></p>
+									<br>
+									<img src="../../data/grafs/gral/logo-cgi.svg" alt="" class="img-end">
+									<br>
+									<img src="../../data/grafs/gral/european-union.png" alt="Funded by the European Union" class="img-end">
+									<br>
+									<p class="desc-form desc-peq">This project has received funding from the European Union's Horizon Europe programme under grant agreement CGI-Clinics 101057509. | Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Health and Digital Executive Agency (HADEA). Neither the European Union nor the granting authority can be held responsible for them.</p>
+
+								</div>
+
+							</div>
+							<!-- //////////////////////////////////////////////////// Slides end //////////////////////////////////////////////////// -->
+						</div>
+					</div>
+					
+					<!-- //////////////////////////////////////////////////// End Analysis 3 - Factors de risc del càncer //////////////////////////////////////////////////// -->
+
+				</section>
+				
+				<!-- //////////////////////////////////////////////////// Section Footer //////////////////////////////////////////////////// -->
+				<!--
+					MARK: Section Footer
+				-->
+			
+				<footer>
+					<div class="footer-wrapper">
+						<ul>
+							<li class="bbglab"><a href="https://bbglab.irbbarcelona.org" target="_blank"><img src="../../data/grafs/gral/bbglab.svg"></a></li>
+							<li class="copyright">
+							  <p>© Barcelona Biomedical Genomics&nbsp;Lab</p>
+							</li>
+							<li class="rrss">
+							  <ul>
+								<li class="gh"><a href="https://github.com/bbglab/cancer-detective-pro" target="_blank"><img src="../../data/grafs/gral/ico-gh.svg"></a></li>
+								<li class="tw"><a href="https://twitter.com/bbglab" target="_blank"><img src="../../data/grafs/gral/ico-tw.svg"></a></li>
+							  </ul>
+							</li>
+						</ul>
+					</div>
+				</footer>
+		
+			</div>
+			
+		</div>
+	</div></section>
+		
+</div>
+
+<!-- //////////////////////////////////////////////////// Popups slider //////////////////////////////////////////////////// -->
+<!--
+		MARK: Popups slider
+-->
+<div class="popup" id="popup-error">
+	<div>
+		<p><strong>No es correcto, sigue intentando.</strong></p>
+		<button id="popup-close" class="button red-bg">Aceptar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-1-skin">
+	<div>
+		<p><strong>¡Correcto!</strong><br>Las mutaciones en la piel se acumulan con la edad. Por eso la gente mayor tiende a tener más que la joven.</p>
+		<button id="popup-slide-1-skin-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-2-skin">
+	<div>
+		<p><strong>¡Correcto!</strong><br>Cuanto mayor sea la exposición solar, mayor será el riesgo de acumular mutaciones en la piel.</p>
+		<button id="popup-slide-2-skin-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-3-skin">
+	<div>
+		<p><strong>¡Correcto!</strong><br>El uso habitual de protección solar reduce más el riesgo de acumular mutaciones causadas por el sol en la piel.</p>
+		<button id="popup-slide-3-skin-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-1-lung">
+	<div>
+		<p><strong>¡Correcto!</strong><br>Las mutaciones en los pulmones <strong>se acumulan con la edad</strong>. Por eso, las personas mayores tienden a tener más que las jóvenes.</p>
+		<button id="popup-slide-1-lung-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-2-lung">
+	<div>
+		<p><strong>¡Correcto!</strong><br>Los productos químicos que contiene el tabaco provocan mutaciones. Como consecuencia, los pulmones de las personas fumadoras tienden a presentar más mutaciones.</p>
+		<button id="popup-slide-2-lung-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<div class="popup" id="popup-slide-3-lung">
+	<div>
+		<p><strong>¡Correcto!</strong><br>Cuando se respira el humo del tabaco de otra persona (fumador pasivo), los propios pulmones también pueden acumular mutaciones causadas por el tabaco. Los fumadores pasivos tienden a tener más mutaciones que quienes no lo son.</p>
+		<button id="popup-slide-3-lung-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+	
+<!-- //////////////////////////////////////////////////// Popup Slide Test (Modificar) //////////////////////////////////////////////////// -->
+<!--
+<div class="popup" id="popup-slide-test-1">
+	<div>
+		<p><strong>¡Correcto!</strong><br>Text de l'slide.</p>
+		<button id="popup-slide-test-1-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+-->
+
+<div class="popup" id="popup-slide-4">
+	<div>
+		<p>
+			<strong>¡Correcto!</strong><br>
+			<span id="mutations-1">El cáncer del paciente 1 tiene más mutaciones en total.</span>
+			<span id="mutations-2">El cáncer del paciente 2 tiene más mutaciones en total.</span>
+			<span id="mutations-3">Los dos cánceres tienen el mismo número de mutaciones en total.</span>
+		</p>
+		<button id="popup-slide-4-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+
+<div class="popup" id="popup-slide-5">
+	<div>
+		<p>
+			<strong>¡Correcto!</strong><br>
+			<span id="driver-1">El cáncer del paciente 1 tiene más mutaciones impulsoras.</span>
+			<span id="driver-2">El cáncer del paciente 2 tiene más mutaciones impulsoras.</span>
+			<span id="driver-3">Los dos cánceres tienen el mismo número de mutaciones impulsoras.</span>
+		</p>
+		<button id="popup-slide-5-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+
+<div class="popup" id="popup-slide-6">
+	<div>
+		<p>
+			<strong>¡Correcto!</strong><br>
+			<span id="therapy-1">El paciente 1 tiene más opciones terapéuticas.</span>
+			<span id="therapy-2">El paciente 2 tiene más opciones terapéuticas.</span>
+			<span id="therapy-3">Ambos pacientes tienen el mismo número de opciones terapéuticas.</span>
+		</p>
+		<button id="popup-slide-6-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+
+<div class="popup" id="popup-slide-7">
+	<div>
+		<p>
+			<strong>¡Correcto!</strong><br>
+			<span id="driver-gen-1"></span>
+		</p>
+		<button id="popup-slide-7-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+
+<div class="popup" id="popup-slide-8">
+	<div>
+		<p>
+			<strong>¡Correcto!</strong><br>
+			<span id="driver-gen-2"></span>
+		</p>
+		<button id="popup-slide-8-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+
+<div class="popup" id="popup-slide-9">
+	<div>
+		<p>
+			<strong>¡Correcto!</strong><br>
+			<span id="therapy-res-1"></span>
+		</p>
+		<button id="popup-slide-9-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+
+<div class="popup" id="popup-slide-10">
+	<div>
+		<p>
+			<strong>¡Correcto!</strong><br>
+			<span id="therapy-res-2"></span>
+		</p>
+		<button id="popup-slide-10-close" class="button green-bg">Continuar</button>
+	</div>
+</div>
+<!-- js -->
+<script src="../../data/js/w3.js"></script>
+<script src="../../data/js/imagesloaded.pkgd.min.js"></script>
+<script src="../../data/js/locomotive-scroll.min.js"></script>
+<script src="../../data/js/script.js"></script>
+<script src="../../data/js/gens.js"></script>
+<script src="../../data/js/quiz.js"></script>
+<script src="../../data/js/analysis-slider.js"></script>
+	
+<script>
+if (window.location.search.indexOf('redo=true') > -1) {
+	setTimeout(function() {
+		scroll.scrollTo('#section2');
+    }, 1000);
+}
+</script>
+
+</body>
+</html>

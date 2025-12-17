@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+<title>Cancer Detective: Want to learn more?</title>
+<meta name="description" content="An analysis simulation based on CGI to learn about cancer and mutations">
+<meta name="author" content="BBGLab">
+<link rel="stylesheet" href="../../data/css/locomotive-scroll.min.css">
+<link rel="stylesheet" href="../../data/css/style.css">
+<link rel="stylesheet" href="../../data/css/responsive.css">
+<script src="../../data/js/lottie.js"></script>
+<link rel="icon" href="../../data/grafs/gral/favicon.ico" type="image/x-icon">
+
+<meta property="og:title" content="Cancer Detective" />
+<meta property="og:description" content="An analysis simulation based on CGI to learn about cancer and mutations" />
+<meta property="og:image" content="https://github.com/bbglab/cancer-detective-pro/blob/main/www/data/grafs/gral/logo-xl-background.png?raw=true" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:type" content="website" />
+</head>
+
+<body>
+
+<div id="loader" class="loader">
+	<div id="cell-loader" class="fade-in">
+		<script>
+			var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('cell-loader'), renderer: 'svg', loop: true, autoplay: true, path: '../../data/grafs/js/cell-load.json' });
+			cellLoader.setSpeed(0.5);
+		</script>
+	</div>
+</div>
+<div id="unloader" class="loader"></div>
+
+<div id="scroll-container" data-scroll-container>
+	
+	<a href="#section0" id="button-up" data-scroll-to></a>
+
+	<div class="menu menu-top sticky" id="menu">
+		<input type="checkbox" class="left-menu-toggler" id="menu-check">
+		<div class="left-menu-button"><div></div></div>
+		<div class="left-menu">
+			<span class="home-button" onclick="transitionToPage('../')"><img src="../../data/grafs/gral/home.svg" class="width-100"></span>
+			<span class="lang-button" onclick="transitionToPage('../../')"><img src="../../data/grafs/gral/lang-en.svg" class="width-100"></span>
+			<div>
+				<ul>
+					<li><span onclick="transitionToPage('../introduction/')"><strong>What is cancer?</strong></span></li>
+					<li><span onclick="transitionToPage('../analysis/')"><strong>Analyze the samples</strong></span></li>
+					<li><a href="#section1" class="selected-menu" id="menu0" data-scroll-to><strong>Want to learn more?</strong></a></li>
+					<li><span onclick="transitionToPage('../about/')"><strong>About us</strong></span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--
+	<div class="header header-top sticky" id="header">
+		<div class="sticky-header"><a href="#section0" class="logo" data-scroll-to><span><img src="../../data/grafs/gral/logo-img.svg" class="logo-1"><img src="../../data/grafs/gral/logo-txt-1.svg" class="logo-2"><img src="../../data/grafs/gral/logo-txt-2.svg" class="logo-3"></span></a></div>
+	</div>
+	-->
+	<div class="header header-top sticky" id="header">
+		<div class="sticky-header"><span onclick="transitionToPage('../')" class="logo"><span><img src="../../data/grafs/gral/logo-img.svg" class="logo-1"><img src="../../data/grafs/gral/logo-txt-1.svg" class="logo-2"><img src="../../data/grafs/gral/logo-txt-2.svg" class="logo-3"></span></span></div>
+	</div>
+	
+	<section id="content-container"><div id="content-section" data-scroll-section>
+	
+		<div id="header-background">
+
+			<div id="section0"></div>
+
+			<div id="content" class="content">
+
+				<div id="cell-header-1" class="absolute" data-scroll data-scroll-speed="1">
+					<script>
+						var cellheader1 = bodymovin.loadAnimation({ container: document.getElementById('cell-header-1'), renderer: 'svg', loop: true, autoplay: true, path: '../../data/grafs/js/cell-0.json' });
+						cellheader1.setSpeed(0.25);
+					</script>
+				</div>
+
+				<!-- //////////////////////////////////////////////////// Section 0 //////////////////////////////////////////////////// -->
+
+				<div class="content-width content-width-title relative z-1">
+					<h1 class="title center" data-scroll data-scroll-speed="2"><span data-scroll data-scroll-speed="0.25" data-scroll-direction="horizontal"></span><strong data-scroll data-scroll-speed="-0.25" data-scroll-direction="horizontal">Do you want to know more?</strong></h1>
+					<p class="title-desc center">Cancer Detective is a simulation based on the <a href="https://www.cancergenomeinterpreter.org/home" target="_blank"><strong>Cancer Genome Interpreter</strong></a>, designed for educational purposes. Below, you will find information to help you better understand this activity and broaden your knowledge.</p>
+
+				</div>
+
+				<!-- //////////////////////////////////////////////////// Section 1 //////////////////////////////////////////////////// -->
+
+				<section id="section1" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu1">
+					
+					<div class="height-80"></div>
+					
+					<h2 data-scroll data-scroll-speed="1" class="subtitle right">Cells</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-cell.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><strong>The cell</strong>, from the Latin cellula meaning 'small room', is the basic unit of life. Cells are the basic structural, functional, and biological unit of all known organisms.</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>The nucleus</strong> is the control center of the cell. It is enclosed by the nuclear envelope, isolating its contents from the cytoplasm. The nucleus contains most of the genome (except for the mitochondrial genome), and is responsible for controlling cellular activities through the expression of different parts of the genome.</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>The cytoplasm</strong> includes all the material within a cell that is enclosed by the cell membrane, excluding the nucleus. It consists mainly of the cytosol (a gel-like substance) and the organelles (internal substructures of the cell).</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>Ribosomes</strong> are the "machines" that perform protein synthesis by translating messenger RNA.</p>
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 2 //////////////////////////////////////////////////// -->
+
+				<section id="section2" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu2">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-right subtitle left">DNA and the genome</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-adn.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+							
+						  <p class="left reveal move-right" data-scroll><strong>DNA</strong>, or deoxyribonucleic acid, is the molecule that contains genetic instructions for the development, functioning, and reproduction of an organism. DNA is made up of building blocks called nucleotides, which group together to form a double helix. DNA is located in the cell nucleus.</p>
+
+						  <p class="left reveal move-right" data-scroll><strong>A gene</strong> is a DNA sequence that contains instructions to carry out specific tasks within the cell or organism. For example, the gene for “lactase” encodes a protein, lactase, which helps us digest milk. Humans have around 20,000 protein-coding genes, and between 3 to 5 times more genes that do not code for proteins.				
+						</p>
+						
+						  <p class="left reveal move-right" data-scroll><strong>The genome</strong> is the instruction book of the cell and comprises all the genetic information of an organism. The genome contains genes and other sequences, some with still unknown functions. In total, the human genome consists of 3.2 billion base pairs of DNA. To give you an idea, if we stretched the genome of a single cell in a straight line, it would measure 2 meters.				
+						</p>
+
+
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 3 //////////////////////////////////////////////////// -->
+
+				<section id="section3" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu3">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-left subtitle right">RNA and proteins</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-protein.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+
+							<p class="left reveal move-right" data-scroll><strong>RNA</strong>, or ribonucleic acid, is a molecule similar to DNA and is formed from a copy of a DNA strand through a process called transcription. There are different types of RNA molecules. The RNA that codes for proteins is known as messenger RNA (mRNA). mRNA is created  inside the nucleus and then travels to the cytoplasm, where ribosomes read its sequence to produce proteins.
+							</p>
+
+						  <p class="left reveal move-right" data-scroll><strong>Proteins</strong> are molecules that perform a wide variety of functions within cells and organisms. They are made up of a sequence of amino acids determined by the information encoded in mRNA. When ribosomes read the mRNA sequence, they translate this information into amino acids. For example, if the mRNA contains the nucleotides AAA, the ribosomes will translate it  into an amino acid called lysine. The proteins  in our bodies comprise combinations of 22 different  amino acids. The function of a specific protein is determined by the amino acids that make it up and how they fold into a three-dimensional structure.
+						</p>
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 4 //////////////////////////////////////////////////// -->
+
+				<section id="section4" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu4">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-right subtitle left">Mutations</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-mutation.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><strong>Mutations</strong> are errors or changes in the DNA sequence. When a cell’s DNA acquires a mutation, it will be passed on to its daughter cells. Mutations occur naturally in the cells of our bodies throughout life. Most mutations have no effect, but some can alter protein function and cause changes at the cellular level.</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>Mutagens</strong> are a set of chemical, physical, or biological agents that introduce mutations into DNA. Mutagens can be external (exogenous) or internal (endogenous) depending on their origin. External mutagens are caused by molecules or reactions originating outside our body, such as tobacco or ultraviolet (UV) light. In contrast, internal processes are caused by mechanisms that happen within our cells and tissues. For example, each time a cell divides, it must duplicate its DNA, and mutations can be introduced into its sequence during this process.
+						  </p>
+
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 5 //////////////////////////////////////////////////// -->
+
+				<section id="section5" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu5">
+
+					<div class="height-80"></div>
+					
+					<h2 data-scroll data-scroll-repeat class="reveal move-left subtitle right">Cancer</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-tumor.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><strong>Cancer</strong> is a group of diseases characterized by the uncontrolled growth and proliferation of abnormal cells. Cancer cells are different from normal cells: they grow faster, they can divide indefinitely, ignoring signals to stop, and they can even invade other distant organs and tissues (metastasis). Cancers are also called malignant tumors.
+						</p>
+
+						<p class="left reveal move-right" data-scroll><strong>The cancer genome contains mutations.</strong> When we read the DNA sequence of cancer cells, we often find more mutations than in normal cells. The number of mutations varies depending on the type of cancer, but it can range from a few hundred to hundreds of thousands of mutations. It is crucial to find out which ones have contributed to cancer development: the better we understand this disease, the better we can treat it..
+						</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>Cancer driver mutations</strong> are those mutations that increase the survival, growth, and proliferation potential of the cells that carry them. That is, cells with driver mutations can survive better than the surrounding normal cells and can eventually replace them. The effect of driver mutations depends on how they alter different genes or DNA sequences. It has been estimated that cancers, regardless of type, contain between 4 and 6 driver mutations in their DNA. Compared to the total mutations in a tumor, driver mutations account for a very small fraction.</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>Cancer driver genes or proteins</strong> are those affected by driver mutations. For example, the most frequent driver gene is called TP53, and its corresponding protein  controls key processes such as cell proliferation and cell death. When TP53 acquires mutations that cause it to malfunction, cells can become uncontrolled . Note that only some of the mutations in driver genes or proteins are driver mutations, namely those that alter the protein's function and enhance cell  survival. 
+						
+						</p>
+						</div>
+					  </div>
+					 
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 6 //////////////////////////////////////////////////// -->
+
+				<section id="section9" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu9">
+
+					<div class="height-80"></div>
+					
+					<h2 data-scroll data-scroll-repeat class="reveal move-right subtitle left">Cancer genomics</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-biopsia.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+
+						  <p class="left reveal move-right" data-scroll><strong>Cancer genomics</strong> is the science that studies the DNA, genes, and genomes of tumors to understand their alterations. Due to the size of the genome and the large amount of genomic data we can obtain, it is essential to use bioinformatics tools to analyze and interpret this information.
+							</p>
+
+						  <p class="left reveal move-right" data-scroll><strong>Sequencing the cancer genome</strong> is essential to identify mutations in its DNA. This process generally involves obtaining a tumor sample  and extracting its DNA. Using specialized machines called sequencers, we can read the DNA sequence of the tumor and compare it to the DNA sequence of healthy cells from the same patient (for example, blood cells). Those sequences or nucleotides that are altered only in the cancer DNA are considered mutations. 
+						</p>
+
+						</div>	
+					  </div>
+					 
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 7 //////////////////////////////////////////////////// -->
+
+				<section id="section10" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu10">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-left subtitle right">Bioinformatics</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-bioinfo.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><strong>Bioinformatics</strong> is the field of science that uses computers, databases, mathematics, and statistics to collect, store, organize, and analyze large amounts of biological, medical, and health information.</p>
+
+						 <p class="left reveal move-right" data-scroll>An <strong>algorithm</strong> is a process or set of rules to follow in calculations or other problem-solving operations, usually executed by a computer.</p>
+
+		
+						  <p class="left reveal move-right" data-scroll><strong>Machine learning</strong> is the use and development of computer systems capable of learning and adapting without following explicit instructions. This learning is achieved through the use of algorithms and statistical models to extract "invisible" patterns within data and make predictions.</p>
+
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 8 //////////////////////////////////////////////////// -->
+
+				<section id="section11" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu11">
+
+					<div class="height-80"></div>
+					
+					<h2 data-scroll data-scroll-repeat class="reveal move-right subtitle left">BBGLab bioinformatic tools</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+
+					<div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							
+						</div>
+						<div class="col-flex flex-wrapper">
+							<p class="left reveal move-right" data-scroll>
+							Cancer genomics relies on bioinformatics tools. The scientific and medical community worldwide has therefore developed methods and algorithms to study cancer genomes. These are some of the methods we have developed at the <a href="https://bbglab.irbbarcelona.org/" target="_blank"><strong>Barcelona Biomedical Genomics Lab</strong></a> and on which Cancer Detective is based.
+							</p>
+						</div>
+						</div>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<img src="../../data/grafs/cells/intogen-logo.svg" class="width-100" alt"">
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><a href="https://www.intogen.org/search" target="_blank"><strong>IntOGen</strong></a> is a unified resource that combines information from different statistical methods and identifies cancer driver proteins. IntOGen analyzes are based on mutations from thousands of tumors from different patients.
+						</p>
+						</div>
+					  </div>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<img src="../../data/grafs/cells/boostdm-logo.svg" class="width-100" alt"">
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><a href="https://www.intogen.org/boostdm/search" target="_blank"><strong>BoostDM</strong></a> is a machine-learning algorithm that can predict which mutations within cancer driver proteins contribute to tumor development. This point is crucial, since not all mutations in a driver protein are driver mutations.</p>
+						</div>
+					  </div>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="height-50"></div>
+							<img src="../../data/grafs/cells/cgi.svg" class="width-100" alt"">
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll>The <a href="https://www.cancergenomeinterpreter.org/home" target="_blank"><strong>Cancer Genome Interpreter (CGI)</strong></a> is a bioinformatics tool that analyzes and interprets mutations identified in tumors from cancer patients. CGI uses data generated by IntOGen, BoostDM, and other resources to determine whether a mutation in a protein identified in a tumor is a cancer driver and whether there is a specific treatment for that alteration. A Europe-wide project is currently underway to develop a more advanced version of CGI to be used in hospitals and medical centers. If you want to learn more, visit the <a href="https://www.cgiclinics.eu/" target="_blank"><strong>CGI-Clinics</strong></a> website.
+						</p>
+						</div>
+					  </div>
+					 
+					</div>
+
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section 9 //////////////////////////////////////////////////// -->
+
+				<section id="section8" class="section not-height" data-scroll data-scroll-repeat data-scroll-call="menu8">
+
+					<div class="height-80"></div>
+
+					<h2 data-scroll data-scroll-repeat class="reveal move-left subtitle right">Precision oncology medicine</h2>
+
+					<div class="height-40 responsive-remove"></div>
+
+					<div class="content-width relative" data-scroll data-scroll-repeat>
+						
+					  <div class="cols-flex cols-1-2 cols-large gap-0">
+						<div class="col-flex reveal move-left" data-scroll>
+							<div class="circle width-100 sm-width-50"><img src="../../data/grafs/gral/ico-medicine.svg" class="width-100" alt""></div>
+						</div>
+						<div class="col-flex flex-wrapper">
+						  <p class="left reveal move-right" data-scroll><strong>Precision oncology medicine</strong> uses the molecular information from a patient’s tumor—specifically, alterations in its DNA, RNA, and proteins—to select the most suitable treatments for the patient.</p>
+							
+						  <p class="left reveal move-right" data-scroll><strong>Targeted therapies</strong> are treatments designed to address specific alterations in cancer cells, such as cancer driver mutations. Since these alterations are not present in normal cells, targeted therapies tend to have fewer side effects than non-targeted ones like chemotherapy. For example, some patients with melanoma, a type of skin cancer, have an altered protein called BRAF that promotes cell growth and division. In many of these cases, the BRAF gene contains mutations at amino acid 600 of the protein. When these mutations are found, patients can be treated with Vemurafenib, a drug that inhibits BRAF only when this specific amino acid is altered, causing cancer cells to die. Although targeted therapies are effective, sometimes cancers find ways to evade them and become resistant to these treatments.</p>
+						</div>
+					  </div>
+					 
+					</div>
+					
+				</section>
+
+				<!-- //////////////////////////////////////////////////// Section end //////////////////////////////////////////////////// -->
+
+				<div class="height-150"></div>
+				
+			</div>
+			
+			<!-- //////////////////////////////////////////////////// Section Footer //////////////////////////////////////////////////// -->
+			
+		</div>
+		
+		<footer>
+				<div class="footer-wrapper">
+					<ul>
+						<li class="bbglab"><a href="https://bbglab.irbbarcelona.org" target="_blank"><img src="../../data/grafs/gral/bbglab.svg"></a></li>
+						<li class="copyright">
+						  <p>© Barcelona Biomedical Genomics&nbsp;Lab</p>
+						</li>
+						<li class="rrss">
+						  <ul>
+							<li class="gh"><a href="https://github.com/bbglab/cancer-detective-pro" target="_blank"><img src="../../data/grafs/gral/ico-gh.svg"></a></li>
+							<li class="tw"><a href="https://twitter.com/bbglab" target="_blank"><img src="../../data/grafs/gral/ico-tw.svg"></a></li>
+						  </ul>
+						</li>
+					</ul>
+				</div>
+		</footer>
+		
+	</div></section>
+		
+</div>
+	
+<!-- js -->
+<script src="../../data/js/w3.js"></script>
+<script src="../../data/js/imagesloaded.pkgd.min.js"></script>
+<script src="../../data/js/locomotive-scroll.min.js"></script>
+<script src="../../data/js/script.js"></script>
+
+</body>
+</html>
