@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
 # Copy website files
-COPY www /usr/share/nginx/html
+COPY cancer-detective-pro /usr/share/nginx/html
 
 # Copy custom nginx config
 COPY nginx.conf /etc/nginx/templates/default.conf.template
