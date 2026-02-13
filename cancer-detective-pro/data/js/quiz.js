@@ -9,6 +9,9 @@ function random_item3(items3) { return items3[Math.floor(Math.random()*items3.le
 var items3 = ['3a', '3b', '3c']; // variables pel factor: protecció solar / fumador passiu
 function random_item4(items4) { return items4[Math.floor(Math.random()*items4.length)]; }
 var items4 = ['4a', '4b', '4c', '4d', '4e', '4f', '4g', '4h', '4i', '4j']; // variable adicional per randomitzar mostra
+// item4 values whose driver mutations have an available therapy
+var items4WithTherapy_a = ['4a', '4b', '4c', '4d', '4e']; // skin: BRAF V600E/K → Vemurafenib
+var items4WithTherapy_b = ['4b', '4c', '4f', '4h', '4i', '4j']; // lung: EGFR L858R/L861Q → Erlotinib
 // variables per les mostres dels dos pacients
 var a1value, a2value, a3value, a4value, b1value, b2value, b3value, b4value, resultado1, resultado2;
 function sumar1(sumA1, sumA2, sumA3, sumA4) { resultado1 = sumA1 + sumA2 + sumA3 + sumA4; return resultado1; }
@@ -31,6 +34,18 @@ function finalitems(type) {
 	var randomItemB2 = random_item2(items2);
 	var randomItemB3 = random_item3(items3);
 	var randomItemB4 = random_item4(items4);
+
+	// Ensure at least one sample has a therapy-eligible driver mutation
+	var therapyItems = (type === 'a') ? items4WithTherapy_a : items4WithTherapy_b;
+	if ( therapyItems.indexOf(randomItemA4) === -1 && therapyItems.indexOf(randomItemB4) === -1 ) {
+		// Neither sample has a treatment — re-roll one at random
+		if ( Math.random() < 0.5 ) {
+			randomItemA4 = therapyItems[Math.floor(Math.random() * therapyItems.length)];
+		} else {
+			randomItemB4 = therapyItems[Math.floor(Math.random() * therapyItems.length)];
+		}
+	}
+
 	var finalitem1 = finaltype + '-' + randomItemA1 + '-' + randomItemA2 + '-' + randomItemA3 + '-' + randomItemA4;
 	var finalitem2 = finaltype + '-' + randomItemB1 + '-' + randomItemB2 + '-' + randomItemB3 + '-' + randomItemB4;
 	var finalgene1 = finalgene + '-' + randomItemA1 + '-' + randomItemA2 + '-' + randomItemA3 + '-' + randomItemA4;
