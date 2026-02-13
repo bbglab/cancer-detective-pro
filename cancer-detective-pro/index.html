@@ -30,14 +30,14 @@
 <div id="home" class="fade-in">
 
 	<div id="home-container" data-scroll-container>
-		
+
 		<div id="home-container-cell" class="fade-in">
 			<script>
 				var cellLoader = bodymovin.loadAnimation({ container: document.getElementById('home-container-cell'), renderer: 'svg', loop: true, autoplay: true, path: 'data/grafs/js/cell-home.json' });
 				cellLoader.setSpeed(0.4);
 			</script>
 		</div>
-		
+
 		<div id="home-menu"><div class="home-menu-wrapper">
 			<span><img src="data/grafs/gral/logo.svg" class="width-100" alt""></span>
 			<div id="home-container-desc" class="home-text container-text">&nbsp;</div>
@@ -49,13 +49,13 @@
 				<div class="button-lang"><span onclick="transitionToPage('ca/')">CA</span>|<span onclick="transitionToPage('es/')">ES</span>|<span onclick="transitionToPage('en/')">EN</span></div>
 			</div>
 		</div></div>
-		
-		
-		
+
+
+
 	</div>
-	
+
 </div>
-				
+
 <footer id="home-footer">
 	<ul>
 		<li class="bbglab"><a href="https://bbglab.irbbarcelona.org" target="_blank"><img src="data/grafs/gral/bbglab.svg"></a></li>
@@ -66,7 +66,6 @@
 		<li class="rrss">
 			<ul>
 				<li class="gh"><a href="https://github.com/bbglab/cancer-detective-pro" target="_blank"><img src="data/grafs/gral/ico-gh.svg"></a></li>
-				<li class="tw"><a href="https://twitter.com/bbglab" target="_blank"><img src="data/grafs/gral/ico-tw.svg"></a></li>
 			</ul>
 		</li>
 	</ul>
@@ -76,9 +75,9 @@
 /* Page transition */
 window.transitionToPage = function(href) {
 	document.getElementById('unloader').classList.add('visible');
-	setTimeout(function() { 
+	setTimeout(function() {
         window.location.href = href;
-		setTimeout(function() { 
+		setTimeout(function() {
 			document.getElementById('unloader').classList.remove('visible');
 		}, 500);
     }, 500);
