@@ -27,20 +27,17 @@
     ca: {
       message: 'Utilitzem galetes analítiques per millorar el lloc web. Podeu acceptar-les o rebutjar-les.',
       accept:  'Acceptar',
-      decline: 'Rebutjar',
-      policy:  'Més informació'
+      decline: 'Rebutjar'
     },
     es: {
       message: 'Usamos cookies analíticas para mejorar el sitio web. Puedes aceptarlas o rechazarlas.',
       accept:  'Aceptar',
-      decline: 'Rechazar',
-      policy:  'Más información'
+      decline: 'Rechazar'
     },
     en: {
       message: 'We use analytics cookies to improve the website. You can accept or decline them.',
       accept:  'Accept',
-      decline: 'Decline',
-      policy:  'Learn more'
+      decline: 'Decline'
     }
   };
 
