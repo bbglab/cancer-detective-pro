@@ -45,11 +45,6 @@ def is_ga_collect(url: str) -> bool:
     return False
 
 
-def clear_consent(page):
-    page.evaluate(f"localStorage.removeItem('{STORAGE_KEY}')")
-    page.reload()
-    page.wait_for_load_state("domcontentloaded")
-
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
