@@ -22,8 +22,7 @@ def check(name, ok, detail=""):
 def clear_storage(page):
     """Remove the consent key so the banner always shows."""
     page.evaluate(f"localStorage.removeItem('{STORAGE_KEY}')")
-    page.reload()
-    page.wait_for_load_state("domcontentloaded")
+    page.reload(wait_until="domcontentloaded")
 
 
 with sync_playwright() as p:
