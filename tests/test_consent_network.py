@@ -62,16 +62,16 @@ with sync_playwright() as p:
 
     ga_requests_after_decline = []
 
-    # Start capturing before the page loads
+    # Start capturing before the page loads (catches any unintended GA hits on initial load)
+    page1.on(
+        "request",
+        lambda req: ga_requests_after_decline.append(req.url) if is_ga_collect(req.url) else None,
+    )
+
     page1.goto(BASE_URL, wait_until="domcontentloaded")
     # Clear any pre-existing consent and reload
     page1.evaluate(f"localStorage.removeItem('{STORAGE_KEY}')")
     page1.reload(wait_until="domcontentloaded")
-
-    # Attach listener BEFORE clicking Decline so we catch every request
-    page1.on("request", lambda req: ga_requests_after_decline.append(req.url)
-             if is_ga_collect(req.url) else None)
-
     decline_btn = page1.locator("#cd-consent-decline")
     check("Decline button is visible", decline_btn.is_visible())
     decline_btn.click()
