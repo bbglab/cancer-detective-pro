@@ -2,8 +2,7 @@
 Test: Cookie consent banner — Accept & Deny buttons
 URL : http://localhost:8080/
 """
-from playwright.sync_api import sync_playwright, expect
-import sys
+from playwright.sync_api import sync_playwright
 
 BASE_URL = "http://localhost:8080/"
 STORAGE_KEY = "cd_cookie_consent"
