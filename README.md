@@ -53,8 +53,27 @@ The main application directory contains the following structure:
 
 The application is containerized using Docker. To run the application, you need to have Docker and Docker Compose installed on your machine.
 
-1. Build the Docker image: `docker-compose -f docker-compose.yml up --build`. You only need to do this once.
-2. Run the Docker container: `docker-compose up`
+1. Build the Docker image: `docker compose -f docker-compose.yml up --build`. You only need to do this once.
+2. Run the Docker container: `docker compose up`
 3. Access the application at `http://localhost:8080`
 
 Please note that any changes made to the files in the `cancer-detective-pro` directory will be reflected in the running application.
+
+## Running Tests
+
+To run tests for the application, you can use the following environment setup:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install playwright
+python3 -m playwright install chromium
+```
+
+Then, you can run the tests with the following commands:
+
+```bash
+docker compose -f docker-compose.yml restart 
+python3 tests/test_consent_buttons.py
+python3 tests/test_consent_network.py
+```
