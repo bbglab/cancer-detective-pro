@@ -1,0 +1,87 @@
+/* ── Cookie Consent Banner ────────────────────────────────────────── */
+#cd-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background: #1C304A; /* --dark */
+  color: #fff;
+  padding: 16px 20px;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.35);
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#cd-consent-banner.cd-consent-hidden {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.cd-consent-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cd-consent-text {
+  margin: 0;
+  flex: 0 1 auto;
+  color: #B3EFFF; /* --light */
+  text-align: center;
+}
+
+.cd-consent-buttons {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.cd-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 20px;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.cd-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.cd-btn-accept {
+  background: #00CFFF; /* --blue */
+  color: #1C304A;
+}
+
+.cd-btn-decline {
+  background: transparent;
+  color: #B3EFFF;
+  border: 1px solid #B3EFFF;
+}
+
+@media (max-width: 600px) {
+  .cd-consent-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cd-consent-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
