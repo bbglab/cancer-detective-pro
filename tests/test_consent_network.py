@@ -1,128 +1,39 @@
 """
-Test: After clicking Decline, no data-collection requests reach Google Analytics.
-After clicking Accept, analytics_storage consent is 'granted' in the dataLayer.
-
-Domains / paths watched:
-  - google-analytics.com/g/collect   (GA4 hit endpoint)
-  - google-analytics.com/collect     (UA hit endpoint)
-  - analytics.google.com/g/collect   (GA4 regional endpoint)
+Network-level GA tests: verify that no GA collect requests fire on Decline
+and no gtag.js script is fetched until consent is granted. Also asserts that
+the consent bootstrap (ga-consent-init.js) loads on every locale page.
 """
-from playwright.sync_api import sync_playwright
-import sys
+from __future__ import annotations
 
-BASE_URL   = "http://localhost:8080/"
-STORAGE_KEY = "cd_cookie_consent"
+import pytest
+from playwright.sync_api import Page, expect
 
-# GA data-collection endpoints (script downloads are NOT included)
-GA_COLLECT_PATTERNS = [
-    "/g/collect",
-    "/collect",
+from conftest import STORAGE_KEY, is_ga_collect, is_ga_script
+
+
+LOCALE_PAGES = [
+    "",
+    "ca/",
+    "ca/about/",
+    "ca/analysis/",
+    "ca/introduction/",
+    "ca/resources/",
+    "en/",
+    "en/about/",
+    "en/analysis/",
+    "en/introduction/",
+    "en/resources/",
+    "es/",
+    "es/about/",
+    "es/analysis/",
+    "es/introduction/",
+    "es/resources/",
 ]
-GA_DOMAINS = [
-    "google-analytics.com",
-    "analytics.google.com",
-]
-
-PASS = "\033[32m✔\033[0m"
-FAIL = "\033[31m✘\033[0m"
-INFO = "\033[34mℹ\033[0m"
-
-results = []
-
-def check(name, ok, detail=""):
-    icon = PASS if ok else FAIL
-    print(f"  {icon}  {name}" + (f"  →  {detail}" if detail else ""))
-    results.append((name, ok))
 
 
-def is_ga_collect(url: str) -> bool:
-    """Return True if the URL is a GA data-collection endpoint."""
-    for domain in GA_DOMAINS:
-        if domain in url:
-            for path in GA_COLLECT_PATTERNS:
-                if path in url:
-                    return True
-    return False
-
-
-
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=True)
-
-    # ── TEST 1: DECLINE → no GA collect requests ─────────────────────────────
-    print(f"\n{INFO}  TEST 1 — Decline should produce ZERO GA collect requests")
-
-    ctx1 = browser.new_context()
-    page1 = ctx1.new_page()
-
-    ga_requests_after_decline = []
-
-    # Start capturing before the page loads (catches any unintended GA hits on initial load)
-    page1.on(
-        "request",
-        lambda req: ga_requests_after_decline.append(req.url) if is_ga_collect(req.url) else None,
-    )
-
-    page1.goto(BASE_URL, wait_until="domcontentloaded")
-    # Clear any pre-existing consent and reload
-    page1.evaluate(f"localStorage.removeItem('{STORAGE_KEY}')")
-    page1.reload(wait_until="domcontentloaded")
-    decline_btn = page1.locator("#cd-consent-decline")
-    check("Decline button is visible", decline_btn.is_visible())
-    decline_btn.click()
-
-    # Wait long enough for any pending GA hit to fire (GA4 sends within ~2 s)
-    page1.wait_for_timeout(3000)
-
-    check(
-        "No GA collect requests sent after Decline",
-        len(ga_requests_after_decline) == 0,
-        f"intercepted: {ga_requests_after_decline}" if ga_requests_after_decline else "none intercepted ✓",
-    )
-
-    # Also verify consent state in the dataLayer
-    consent_state = page1.evaluate("""
-        () => {
-            // Walk dataLayer looking for the most recent consent update
-            var dl = window.dataLayer || [];
-            for (var i = dl.length - 1; i >= 0; i--) {
-                var entry = dl[i];
-                if (entry[0] === 'consent' && entry[1] === 'update') {
-                    return entry[2];
-                }
-            }
-            return null;
-        }
-    """)
-    print(f"       dataLayer consent update entry: {consent_state}")
-    check(
-        "dataLayer consent update sets analytics_storage to 'denied'",
-        consent_state is not None and consent_state.get("analytics_storage") == "denied",
-        str(consent_state),
-    )
-    check(
-        "dataLayer consent update keeps ad_storage 'denied'",
-        consent_state is not None and consent_state.get("ad_storage") == "denied",
-        str(consent_state),
-    )
-
-    ctx1.close()
-
-    # ── TEST 2: ACCEPT → consent update sets analytics_storage granted ────────
-    print(f"\n{INFO}  TEST 2 — Accept should set analytics_storage to 'granted' in dataLayer")
-
-    ctx2 = browser.new_context()
-    page2 = ctx2.new_page()
-    page2.goto(BASE_URL, wait_until="domcontentloaded")
-    page2.evaluate(f"localStorage.removeItem('{STORAGE_KEY}')")
-    page2.reload(wait_until="domcontentloaded")
-
-    accept_btn = page2.locator("#cd-consent-accept")
-    check("Accept button is visible", accept_btn.is_visible())
-    accept_btn.click()
-    page2.wait_for_timeout(1000)
-
-    consent_state_accept = page2.evaluate("""
+def _latest_consent_update(page: Page):
+    return page.evaluate(
+        """
         () => {
             var dl = window.dataLayer || [];
             for (var i = dl.length - 1; i >= 0; i--) {
@@ -133,50 +44,115 @@ with sync_playwright() as p:
             }
             return null;
         }
-    """)
-    print(f"       dataLayer consent update entry: {consent_state_accept}")
-    check(
-        "dataLayer consent update sets analytics_storage to 'granted'",
-        consent_state_accept is not None and consent_state_accept.get("analytics_storage") == "granted",
-        str(consent_state_accept),
-    )
-    check(
-        "dataLayer consent update keeps ad_storage 'denied' even after Accept",
-        consent_state_accept is not None and consent_state_accept.get("ad_storage") == "denied",
-        str(consent_state_accept),
+        """
     )
 
-    ctx2.close()
 
-    # ── TEST 3: Page load with stored 'denied' — gtag default stays denied ────
-    print(f"\n{INFO}  TEST 3 — Page reload with stored 'denied' should not fire collect requests")
+def test_decline_no_collect_requests(page: Page, base_url: str) -> None:
+    collected: list[str] = []
+    page.on("request", lambda req: collected.append(req.url) if is_ga_collect(req.url) else None)
 
-    ctx3 = browser.new_context()
-    page3 = ctx3.new_page()
-    page3.goto(BASE_URL, wait_until="domcontentloaded")
-    page3.evaluate(f"localStorage.setItem('{STORAGE_KEY}', 'denied')")
+    page.goto(base_url, wait_until="domcontentloaded")
+    page.evaluate(f"localStorage.removeItem('{STORAGE_KEY}')")
+    page.reload(wait_until="domcontentloaded")
+    page.locator("#cd-consent-decline").click()
+    page.wait_for_load_state("networkidle")
 
-    ga_on_reload = []
-    page3.on("request", lambda req: ga_on_reload.append(req.url)
-             if is_ga_collect(req.url) else None)
+    assert collected == [], f"GA collect requests intercepted: {collected}"
 
-    page3.reload(wait_until="domcontentloaded")
-    page3.wait_for_timeout(3000)
+    state = _latest_consent_update(page)
+    assert state is not None
+    assert state.get("analytics_storage") == "denied"
+    assert state.get("ad_storage") == "denied"
 
-    check(
-        "No GA collect requests on reload when consent is stored as 'denied'",
-        len(ga_on_reload) == 0,
-        f"intercepted: {ga_on_reload}" if ga_on_reload else "none intercepted ✓",
+
+def test_accept_dataLayer_analytics_granted(page: Page, base_url: str) -> None:
+    page.goto(base_url, wait_until="domcontentloaded")
+    page.evaluate(f"localStorage.removeItem('{STORAGE_KEY}')")
+    page.reload(wait_until="domcontentloaded")
+    page.locator("#cd-consent-accept").click()
+
+    page.wait_for_function(
+        """
+        () => {
+            var dl = window.dataLayer || [];
+            for (var i = dl.length - 1; i >= 0; i--) {
+                var e = dl[i];
+                if (e[0] === 'consent' && e[1] === 'update'
+                    && e[2] && e[2].analytics_storage === 'granted') return true;
+            }
+            return false;
+        }
+        """
+    )
+    state = _latest_consent_update(page)
+    assert state["analytics_storage"] == "granted"
+    assert state["ad_storage"] == "denied"
+
+
+def test_stored_denied_no_collect_on_reload(page: Page, base_url: str) -> None:
+    page.goto(base_url, wait_until="domcontentloaded")
+    page.evaluate(f"localStorage.setItem('{STORAGE_KEY}', 'denied')")
+
+    collected: list[str] = []
+    page.on("request", lambda req: collected.append(req.url) if is_ga_collect(req.url) else None)
+
+    page.reload(wait_until="domcontentloaded")
+    page.wait_for_load_state("networkidle")
+
+    assert collected == [], f"GA collect requests intercepted: {collected}"
+
+
+def test_no_gtag_script_fetched_when_consent_absent(page: Page, base_url: str) -> None:
+    scripts: list[str] = []
+    page.on("request", lambda req: scripts.append(req.url) if is_ga_script(req.url) else None)
+
+    page.goto(base_url, wait_until="domcontentloaded")
+    page.evaluate(f"localStorage.removeItem('{STORAGE_KEY}')")
+    page.reload(wait_until="domcontentloaded")
+    page.wait_for_load_state("networkidle")
+
+    assert scripts == [], f"gtag.js fetched without consent: {scripts}"
+
+
+def test_no_gtag_script_fetched_when_denied_stored(page: Page, base_url: str) -> None:
+    page.goto(base_url, wait_until="domcontentloaded")
+    page.evaluate(f"localStorage.setItem('{STORAGE_KEY}', 'denied')")
+
+    scripts: list[str] = []
+    page.on("request", lambda req: scripts.append(req.url) if is_ga_script(req.url) else None)
+
+    page.reload(wait_until="domcontentloaded")
+    page.wait_for_load_state("networkidle")
+
+    assert scripts == [], f"gtag.js fetched with 'denied' stored: {scripts}"
+
+
+def test_gtag_script_fetched_on_accept(page: Page, base_url: str) -> None:
+    page.goto(base_url, wait_until="domcontentloaded")
+    page.evaluate(f"localStorage.removeItem('{STORAGE_KEY}')")
+    page.reload(wait_until="domcontentloaded")
+
+    with page.expect_request(lambda req: is_ga_script(req.url), timeout=5000):
+        page.locator("#cd-consent-accept").click()
+
+
+@pytest.mark.parametrize("path", LOCALE_PAGES)
+def test_ga_init_loads_on_every_page(page: Page, base_url: str, path: str) -> None:
+    init_responses: list[int] = []
+
+    def _record(resp):
+        if resp.url.endswith("/data/js/ga-consent-init.js"):
+            init_responses.append(resp.status)
+
+    page.on("response", _record)
+
+    page.goto(base_url + path, wait_until="domcontentloaded")
+
+    assert init_responses, f"ga-consent-init.js was not requested on {path!r}"
+    assert all(s == 200 for s in init_responses), (
+        f"ga-consent-init.js returned non-200 on {path!r}: {init_responses}"
     )
 
-    ctx3.close()
-    browser.close()
-
-# ── Summary ───────────────────────────────────────────────────────────────────
-print()
-passed = sum(1 for _, ok in results if ok)
-failed = sum(1 for _, ok in results if not ok)
-total  = passed + failed
-print(f"Results: {PASS} {passed}/{total} passed  {FAIL} {failed}/{total} failed\n")
-sys.exit(0 if failed == 0 else 1)
-
+    has_datalayer = page.evaluate("() => Array.isArray(window.dataLayer) && window.dataLayer.length > 0")
+    assert has_datalayer, f"window.dataLayer not populated on {path!r}"

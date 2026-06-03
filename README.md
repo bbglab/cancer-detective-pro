@@ -61,19 +61,24 @@ Please note that any changes made to the files in the `cancer-detective-pro` dir
 
 ## Running Tests
 
-To run tests for the application, you can use the following environment setup:
+Tests are written with `pytest` + `pytest-playwright` and managed with [uv](https://docs.astral.sh/uv/).
+They spawn their own static HTTP server, so no running Docker stack is required.
+
+One-time setup:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install playwright
-python3 -m playwright install chromium
+# install uv (https://docs.astral.sh/uv/getting-started/installation/)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# install Python deps + browser
+uv sync
+uv run playwright install chromium
 ```
 
-Then, you can run the tests with the following commands:
+Run the suite:
 
 ```bash
-docker compose -f docker-compose.yml restart 
-python3 tests/test_consent_buttons.py
-python3 tests/test_consent_network.py
+uv run pytest                       # all tests
+uv run pytest -v                    # verbose
+uv run pytest tests/test_consent_network.py::test_decline_no_collect_requests
 ```
