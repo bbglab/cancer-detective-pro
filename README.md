@@ -53,8 +53,32 @@ The main application directory contains the following structure:
 
 The application is containerized using Docker. To run the application, you need to have Docker and Docker Compose installed on your machine.
 
-1. Build the Docker image: `docker-compose -f docker-compose.yml up --build`. You only need to do this once.
-2. Run the Docker container: `docker-compose up`
+1. Build the Docker image: `docker compose -f docker-compose.yml up --build`. You only need to do this once.
+2. Run the Docker container: `docker compose up`
 3. Access the application at `http://localhost:8080`
 
 Please note that any changes made to the files in the `cancer-detective-pro` directory will be reflected in the running application.
+
+## Running Tests
+
+Tests are written with `pytest` + `pytest-playwright` and managed with [uv](https://docs.astral.sh/uv/).
+They spawn their own static HTTP server, so no running Docker stack is required.
+
+One-time setup:
+
+```bash
+# install uv (https://docs.astral.sh/uv/getting-started/installation/)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# install Python deps + browser
+uv sync
+uv run playwright install chromium
+```
+
+Run the suite:
+
+```bash
+uv run pytest                       # all tests
+uv run pytest -v                    # verbose
+uv run pytest tests/test_consent_network.py::test_decline_no_collect_requests
+```
