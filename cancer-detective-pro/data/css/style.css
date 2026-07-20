@@ -268,7 +268,7 @@ p strong { font-weight:700; }
 .top-75 { top:75%!important; }
 .top-100 { top:100%!important; }
 
-.button { padding:20px; font-size:20px; line-height:28px; font-weight:600; border-radius:5px; text-decoration:none; cursor:pointer; display:inline-block; border:none; background:var(--blue); }
+.button { padding:20px; font-size:20px; line-height:28px; font-weight:600; border-radius:5px; text-decoration:none; cursor:pointer; display:inline-block; vertical-align:middle; border:none; background:var(--blue); }
 .button-margin { margin:0 20px; }
 .orange-bg { background:var(--orange); }
 .orange-bg-2 { background:var(--orange-2); }
