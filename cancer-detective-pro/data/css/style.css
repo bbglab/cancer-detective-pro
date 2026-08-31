@@ -158,6 +158,17 @@ div:not(.menu-content) a, .cont-img-link, .preloader, .logo, .left-menu, .left-m
 .logo-cgi { max-width:200px; width:80%; height:auto; }
 .logo-eu { max-width:150px; width:80%; height:auto; }
 
+/* Logo stack for vertically stacked logos with better alignment */
+.logos-stack {
+	align-items: center;
+	gap: 30px;
+}
+.logos-stack-img {
+	max-width: 280px;
+	width: 80%;
+	height: auto;
+}
+
 /* Scroll animations */
 .reveal { opacity:0; }
 .reveal.move-left { transform:translate3d(-20%, 0, 0); }

@@ -4,4 +4,4 @@ services:
         volumes:
             - ./cancer-detective-pro:/usr/share/nginx/html
         ports:
-            - 8080:80
+            - "127.0.0.1:8080:80"

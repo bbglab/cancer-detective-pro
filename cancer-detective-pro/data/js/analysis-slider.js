@@ -52,7 +52,7 @@ function mutationsCount() {
 }
 function sampleSlide4ok() {
 	w3.addClass('#popup-slide-4','visible');
-	setTimeout(function() { 
+	setTimeout(function() {
 		w3.addClass('#popup-slide-4, #popup-slide-4 div','active');
 		scroll.scrollTo('#quiz-section-02');
 	}, 10);
@@ -65,7 +65,7 @@ var sample1driver;
 var sample2driver;
 
 function driverCount() {
-	w3.addClass('.BRAF.V600E .gen3, .BRAF.V600K .gen3, .CDKN2A.P81L .gen3, .EGFR.L858R .gen3, .EGFR.L861Q .gen3, .HRAS.G12V .gen3, .KEAP1.C23Y .gen3, .KEAP1.V155F .gen3, .KRAS.G12C .gen3, .KRAS.G12D .gen3, .NF1.R1276P .gen3, .NFE2L2.G31R .gen3, .NRAS.Q61H .gen3, .NRAS.Q61K .gen3, .PTEN.D162G .gen3, .TP53.L145R .gen3, .TP53.P151S .gen3, .TP53.R248G .gen3, .TP53.R273H .gen3, .TP53.Y220C .gen3','driver');	
+	w3.addClass('.BRAF.V600E .gen3, .BRAF.V600K .gen3, .CDKN2A.P81L .gen3, .EGFR.L858R .gen3, .EGFR.L861Q .gen3, .HRAS.G12V .gen3, .KEAP1.C23Y .gen3, .KEAP1.V155F .gen3, .KRAS.G12C .gen3, .KRAS.G12D .gen3, .NF1.R1276P .gen3, .NFE2L2.G31R .gen3, .NRAS.Q61H .gen3, .NRAS.Q61K .gen3, .PTEN.D162G .gen3, .TP53.L145R .gen3, .TP53.P151S .gen3, .TP53.R248G .gen3, .TP53.R273H .gen3, .TP53.Y220C .gen3','driver');
 	sample1driver = document.querySelectorAll('.gen-sample-1 .driver').length;
 	sample2driver = document.querySelectorAll('.gen-sample-2 .driver').length;
 	if ( sample1driver > sample2driver ) {
@@ -81,7 +81,7 @@ function driverCount() {
 }
 function sampleSlide5ok() {
 	w3.addClass('#popup-slide-5','visible');
-	setTimeout(function() { 
+	setTimeout(function() {
 		w3.addClass('#popup-slide-5, #popup-slide-5 div','active');
 		scroll.scrollTo('#quiz-section-02');
 	}, 10);
@@ -91,7 +91,7 @@ function sampleSlide5ok() {
 
 function sampleSlide6ok() {
 	w3.addClass('#popup-slide-6','visible');
-	setTimeout(function() { 
+	setTimeout(function() {
 		w3.addClass('#popup-slide-6, #popup-slide-6 div','active');
 		scroll.scrollTo('#quiz-section-02');
 	}, 10);
@@ -258,8 +258,8 @@ function therapySample(sample) {
 		span.innerHTML = "<strong>Ninguno de los anteriores</strong>";
 		par.innerHTML = "<strong>Ninguno de los anteriores</strong>";
 	} else if (bodyId === "lang-en") {
-		span.innerHTML = "<strong>None of the above</strong>";
-		par.innerHTML = "<strong>None of the above</strong>";
+		span.innerHTML = "<strong>None of these</strong>";
+		par.innerHTML = "<strong>None of these</strong>";
 	}
 	// lang
 
@@ -412,13 +412,13 @@ function sampleSlide10ok() {
 // Functions Close Popup
 function popupClose() {
     w3.removeClass('.popup, .popup div','active');
-	setTimeout(function() { 
+	setTimeout(function() {
 		w3.removeClass('.popup','visible');
     }, 600);
 }
 function activaPopupError() {
     w3.addClass('#popup-error','visible');
-	setTimeout(function() { 
+	setTimeout(function() {
 		w3.addClass('#popup-error, #popup-error div','active');
 	}, 10);
 }
@@ -458,7 +458,7 @@ document.getElementById("slide1-skin-option3").addEventListener('click', functio
 	if ( countVarSlide1 == 2 ) { countVarSlide1 = 1; }
 	//
 	w3.addClass('#popup-slide-1-skin','visible');
-	setTimeout(function() { 
+	setTimeout(function() {
 		w3.addClass('#popup-slide-1-skin, #popup-slide-1-skin div','active');
 		scroll.scrollTo('#quiz-section-02');
 	}, 10);
@@ -479,7 +479,7 @@ document.getElementById("slide2-skin-option3").addEventListener('click', functio
 	if ( countVarSlide2 == 2 ) { countVarSlide2 = 1; }
 	//
 	w3.addClass('#popup-slide-2-skin','visible');
-	setTimeout(function() { 
+	setTimeout(function() {
 		w3.addClass('#popup-slide-2-skin, #popup-slide-2-skin div','active');
 		scroll.scrollTo('#quiz-section-02');
 	}, 10);
@@ -490,11 +490,11 @@ document.getElementById("slide3-skin-option1").addEventListener('click', functio
 	if ( countVarSlide3 == 2 ) { countVarSlide3 = 1; }
 	//
 	w3.addClass('#popup-slide-3-skin','visible');
-	setTimeout(function() { 
+	setTimeout(function() {
 		w3.addClass('#popup-slide-3-skin, #popup-slide-3-skin div','active');
 		scroll.scrollTo('#quiz-section-02');
 	}, 10);
-	
+
 });
 document.getElementById("slide3-skin-option2").addEventListener('click', function(){
 	if ( countVarSlide3 == 2 ) { countVarSlide3 = 0; }
@@ -523,7 +523,7 @@ document.getElementById("slide1-lung-option3").addEventListener('click', functio
 	scroll.scrollTo('#quiz-section-02');
 	//
 	w3.addClass('#popup-slide-1-lung','visible');
-	setTimeout(function() { 
+	setTimeout(function() {
 		w3.addClass('#popup-slide-1-lung, #popup-slide-1-lung div','active');
 		scroll.scrollTo('#quiz-section-02');
 	}, 10);
@@ -544,7 +544,7 @@ document.getElementById("slide2-lung-option3").addEventListener('click', functio
 	if ( countVarSlide2 == 2 ) { countVarSlide2 = 1; }
 	//
 	w3.addClass('#popup-slide-2-lung','visible');
-	setTimeout(function() { 
+	setTimeout(function() {
 		w3.addClass('#popup-slide-2-lung, #popup-slide-2-lung div','active');
 		scroll.scrollTo('#quiz-section-02');
 	}, 10);
@@ -555,7 +555,7 @@ document.getElementById("slide3-lung-option1").addEventListener('click', functio
 	if ( countVarSlide3 == 2 ) { countVarSlide3 = 1; }
 	//
 	w3.addClass('#popup-slide-3-lung','visible');
-	setTimeout(function() { 
+	setTimeout(function() {
 		w3.addClass('#popup-slide-3-lung, #popup-slide-3-lung div','active');
 		scroll.scrollTo('#quiz-section-02');
 	}, 10);
